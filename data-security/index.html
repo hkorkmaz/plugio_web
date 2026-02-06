@@ -4,12 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Data Security Statement - Plugio</title>
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/themes.css">
 </head>
 <body class="page-policy">
   <header class="header-light">
     <div class="header-inner">
-      <a href="/" class="logo"><img src="/img/plugio-logo.svg" alt="Plugio" height="28"></a>
+      <a href="/" class="logo"><img src="/img/plugio-text-dark.svg" alt="Plugio" height="28"></a>
       <nav>
         <a href="/privacy-policy">Privacy</a>
         <a href="/terms-of-service">Terms</a>
@@ -24,26 +26,26 @@
     <p class="effective-date">Effective Date: February 6, 2026</p>
 
     <h2>1. Overview</h2>
-    <p>At Plugio, data security is fundamental to how we build our products. Our Jira visualization plugin (gauge, counter, and progress bar gadgets) has been designed with a security-first approach: <strong>we do not collect, store, process, or transmit any data</strong>. This document outlines our security posture and architecture.</p>
+    <p>At Plugio, data security is fundamental to how we build our products. Our Atlassian visualization plugins (gauge, counter, and progress bar gadgets) have been designed with a security-first approach: <strong>we do not collect, store, process, or transmit any data</strong>. This document outlines our security posture and architecture.</p>
 
     <h2>2. Architecture: No Data Collection</h2>
-    <p>The Plugio plugin operates entirely within your Atlassian Jira environment. Our architecture ensures:</p>
+    <p>The Plugio plugin operates entirely within your Atlassian environment. Our architecture ensures:</p>
     <ul>
       <li><strong>No external servers:</strong> Plugio does not operate any backend servers, databases, or cloud infrastructure that receives your data.</li>
       <li><strong>No network calls:</strong> The Plugin does not make any network requests to Plugio-owned or third-party endpoints.</li>
-      <li><strong>Client-side rendering:</strong> All visualization rendering occurs in the user's browser within the Jira application context.</li>
-      <li><strong>Jira-native data access:</strong> The Plugin reads data exclusively through Atlassian's standard gadget APIs, the same mechanism used by Jira's built-in gadgets.</li>
+      <li><strong>Client-side rendering:</strong> All visualization rendering occurs in the user's browser within the Atlassian application context.</li>
+      <li><strong>Native data access:</strong> The Plugin reads data exclusively through Atlassian's standard gadget APIs, the same mechanism used by built-in gadgets.</li>
     </ul>
 
     <h2>3. Data Flow</h2>
     <p>The data flow within our Plugin is straightforward and contained:</p>
     <ol>
-      <li>The user configures a gadget on their Jira dashboard (e.g., selecting a JQL filter or a project metric).</li>
-      <li>The gadget configuration is stored by Jira's own dashboard system — not by Plugio.</li>
-      <li>When the dashboard loads, the Plugin reads the configured data from Jira using standard Atlassian APIs.</li>
+      <li>The user configures a gadget on their dashboard (e.g., selecting a JQL filter or a project metric).</li>
+      <li>The gadget configuration is stored by the product's own dashboard system — not by Plugio.</li>
+      <li>When the dashboard loads, the Plugin reads the configured data using standard Atlassian APIs.</li>
       <li>The Plugin renders the data as a visual widget (gauge, counter, or progress bar) directly in the browser.</li>
     </ol>
-    <p>At no point does data leave your Jira instance through the Plugin.</p>
+    <p>At no point does data leave your Atlassian instance through the Plugin.</p>
 
     <h2>4. What We Do Not Have</h2>
     <ul>
@@ -51,15 +53,15 @@
       <li>No server infrastructure that processes user data.</li>
       <li>No analytics or telemetry collection.</li>
       <li>No cookies, local storage usage, or browser fingerprinting.</li>
-      <li>No access tokens, API keys, or credentials stored outside of Jira.</li>
-      <li>No logging of user activity or Jira data.</li>
+      <li>No access tokens, API keys, or credentials stored outside of Atlassian.</li>
+      <li>No logging of user activity or instance data.</li>
     </ul>
 
     <h2>5. Atlassian Security Compliance</h2>
     <p>As an Atlassian Marketplace app, Plugio adheres to Atlassian's security requirements for marketplace vendors. The Plugin is distributed through the Atlassian Marketplace and is subject to Atlassian's review processes.</p>
 
     <h2>6. Your Data Stays with Atlassian</h2>
-    <p>Your Jira data remains under the control of your Atlassian instance at all times. The security of your underlying Jira data is governed by Atlassian's own security practices and your organization's Jira administration policies. Plugio does not alter, affect, or introduce any additional risk to your Jira data security posture.</p>
+    <p>Your data remains under the control of your Atlassian instance at all times. The security of your underlying data is governed by Atlassian's own security practices and your organization's administration policies. Plugio does not alter, affect, or introduce any additional risk to your data security posture.</p>
 
     <h2>7. Vulnerability Reporting</h2>
     <p>If you believe you have discovered a security vulnerability in the Plugio plugin, please report it to us promptly. We take all reports seriously and will investigate and respond as quickly as possible.</p>
@@ -84,5 +86,6 @@
       <span class="footer-copy">&copy; 2026 Plugio. All rights reserved.</span>
     </div>
   </footer>
+  <script src="/js/theme-switcher.js"></script>
 </body>
 </html>

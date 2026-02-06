@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 40 40" fill="none">
+  <!-- Badge background -->
+  <rect width="40" height="40" rx="10" fill="#0052CC"/>
+  <!-- Prongs -->
+  <rect x="12" y="5" width="4.5" height="11" rx="2.25" fill="#FFFFFF"/>
+  <rect x="23.5" y="5" width="4.5" height="11" rx="2.25" fill="#FFFFFF"/>
+  <!-- Plug body -->
+  <rect x="7" y="14" width="26" height="15" rx="5" fill="#FFFFFF"/>
+  <!-- Socket holes -->
+  <circle cx="15" cy="21.5" r="3" fill="#0052CC"/>
+  <circle cx="25" cy="21.5" r="3" fill="#0052CC"/>
+  <!-- Cable connector -->
+  <rect x="16" y="29" width="8" height="6" rx="4" fill="#FFFFFF"/>
+</svg>

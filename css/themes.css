@@ -228,6 +228,25 @@
   --trust-icon-bg: rgba(45, 212, 191, 0.1);
 }
 
+/* 9. Cyan (from sample - Slate 900 + Cyan 400) */
+[data-theme="cyan"] {
+  --navy: #0F172A;
+  --navy-light: #1E293B;
+  --navy-mid: #334155;
+  --accent: #22D3EE;
+  --accent-hover: #06B6D4;
+  --accent-contrast: #0F172A;
+  --green: #22C55E;
+  --text-white: #F8FAFC;
+  --text-gray: #94A3B8;
+  --text-muted: #64748B;
+  --border-dark: #334155;
+  --accent-glow: rgba(34, 211, 238, 0.15);
+  --accent-glow-border: rgba(34, 211, 238, 0.25);
+  --icon-bg: rgba(34, 211, 238, 0.1);
+  --trust-icon-bg: rgba(34, 197, 94, 0.1);
+}
+
 /* ============================
    LIGHT THEMES
    ============================ */
@@ -302,4 +321,22 @@
   --accent-glow-border: rgba(124, 58, 237, 0.18);
   --icon-bg: rgba(124, 58, 237, 0.08);
   --trust-icon-bg: rgba(22, 163, 74, 0.08);
+}
+
+/* 13. Cobalt (white + brand blue) */
+[data-theme="cobalt"] {
+  --navy: #F8FAFF;
+  --navy-light: #F0F4FF;
+  --navy-mid: #E8EDFA;
+  --accent: #0052CC;
+  --accent-hover: #003D99;
+  --green: #22C55E;
+  --text-white: #0F172A;
+  --text-gray: #3D5280;
+  --text-muted: #8093B8;
+  --border-dark: #D4DDEF;
+  --accent-glow: rgba(0, 82, 204, 0.08);
+  --accent-glow-border: rgba(0, 82, 204, 0.18);
+  --icon-bg: rgba(0, 82, 204, 0.08);
+  --trust-icon-bg: rgba(34, 197, 94, 0.08);
 }

@@ -7,14 +7,16 @@ document.addEventListener('DOMContentLoaded', function () {
     { id: 'ember',     color: '#F59E0B', label: 'Ember' },
     { id: 'rose',      color: '#F43F5E', label: 'Rose' },
     { id: 'slate',     color: '#94A3B8', label: 'Slate' },
-    { id: 'electric',  color: '#818CF8', label: 'Electric' }
+    { id: 'electric',  color: '#818CF8', label: 'Electric' },
+    { id: 'cyan',      color: '#22D3EE', label: 'Cyan' }
   ];
 
   var lightThemes = [
     { id: 'clean',  color: '#2563EB', label: 'Clean' },
     { id: 'sand',   color: '#D97706', label: 'Sand' },
     { id: 'frost',  color: '#0D9488', label: 'Frost' },
-    { id: 'pearl',  color: '#7C3AED', label: 'Pearl' }
+    { id: 'pearl',  color: '#7C3AED', label: 'Pearl' },
+    { id: 'cobalt', color: '#0052CC', label: 'Cobalt' }
   ];
 
   var lightIds = lightThemes.map(function (t) { return t.id; });
@@ -30,12 +32,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // swap logo based on theme brightness
   function updateLogo(themeId) {
-    var logo = document.querySelector('.header-dark .logo img');
+    var logo = document.querySelector('.header-dark .logo img') || document.querySelector('.header-light .logo img');
     if (!logo) return;
     if (lightIds.indexOf(themeId) !== -1) {
-      logo.setAttribute('src', '/img/plugio-logo.svg');
+      logo.setAttribute('src', '/img/plugio-text-dark.svg');
     } else {
-      logo.setAttribute('src', '/img/plugio-logo-white.svg');
+      logo.setAttribute('src', '/img/plugio-text-light.svg');
     }
   }
 

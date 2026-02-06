@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 40" fill="none">
-  <!-- Badge -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 40" fill="none">
+  <!-- Badge icon -->
   <rect width="40" height="40" rx="10" fill="#3B82F6"/>
   <rect x="12" y="5" width="4.5" height="11" rx="2.25" fill="#FFFFFF"/>
   <rect x="23.5" y="5" width="4.5" height="11" rx="2.25" fill="#FFFFFF"/>
@@ -8,5 +8,5 @@
   <circle cx="25" cy="21.5" r="3" fill="#3B82F6"/>
   <rect x="16" y="29" width="8" height="6" rx="4" fill="#FFFFFF"/>
   <!-- Text -->
-  <text x="50" y="28" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="24" font-weight="700" fill="#F1F5F9">Plugio</text>
+  <text x="48" y="28" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="24" font-weight="700" fill="#F1F5F9">Plugio</text>
 </svg>
