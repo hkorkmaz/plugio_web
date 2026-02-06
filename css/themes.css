@@ -1,0 +1,305 @@
+/* ============================
+   THEME SWITCHER UI
+   ============================ */
+
+.theme-switcher {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  flex-wrap: wrap;
+  max-width: 360px;
+}
+
+.theme-switcher span {
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-right: 4px;
+}
+
+.theme-dot {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: border-color 0.15s, transform 0.15s;
+  position: relative;
+}
+
+.theme-dot:hover {
+  transform: scale(1.15);
+}
+
+.theme-dot.active {
+  border-color: #FFFFFF;
+}
+
+.theme-dot.light-dot.active {
+  border-color: #0F172A;
+}
+
+.theme-dot::after {
+  content: attr(data-label);
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 11px;
+  font-weight: 500;
+  color: #FFF;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 3px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s;
+}
+
+.theme-dot:hover::after {
+  opacity: 1;
+}
+
+.theme-divider {
+  width: 1px;
+  height: 16px;
+  background: rgba(255, 255, 255, 0.15);
+  margin: 0 4px;
+}
+
+/* ============================
+   DARK THEMES
+   ============================ */
+
+/* 1. Midnight Blue (default) */
+[data-theme="midnight"] {
+  --navy: #0B1120;
+  --navy-light: #131C31;
+  --navy-mid: #1A2540;
+  --accent: #3B82F6;
+  --accent-hover: #2563EB;
+  --green: #22C55E;
+  --text-white: #F1F5F9;
+  --text-gray: #94A3B8;
+  --text-muted: #64748B;
+  --border-dark: #1E293B;
+  --accent-glow: rgba(59, 130, 246, 0.15);
+  --accent-glow-border: rgba(59, 130, 246, 0.25);
+  --icon-bg: rgba(59, 130, 246, 0.1);
+  --trust-icon-bg: rgba(34, 197, 94, 0.1);
+}
+
+/* 2. Charcoal */
+[data-theme="charcoal"] {
+  --navy: #18181B;
+  --navy-light: #1F1F23;
+  --navy-mid: #27272A;
+  --accent: #A78BFA;
+  --accent-hover: #8B5CF6;
+  --green: #34D399;
+  --text-white: #FAFAFA;
+  --text-gray: #A1A1AA;
+  --text-muted: #71717A;
+  --border-dark: #2D2D31;
+  --accent-glow: rgba(167, 139, 250, 0.15);
+  --accent-glow-border: rgba(167, 139, 250, 0.25);
+  --icon-bg: rgba(167, 139, 250, 0.1);
+  --trust-icon-bg: rgba(52, 211, 153, 0.1);
+}
+
+/* 3. Ocean */
+[data-theme="ocean"] {
+  --navy: #0C1222;
+  --navy-light: #0F1A2E;
+  --navy-mid: #152240;
+  --accent: #06B6D4;
+  --accent-hover: #0891B2;
+  --green: #2DD4BF;
+  --text-white: #F0F9FF;
+  --text-gray: #7DD3FC;
+  --text-muted: #38BDF8;
+  --border-dark: #164E63;
+  --accent-glow: rgba(6, 182, 212, 0.15);
+  --accent-glow-border: rgba(6, 182, 212, 0.25);
+  --icon-bg: rgba(6, 182, 212, 0.1);
+  --trust-icon-bg: rgba(45, 212, 191, 0.1);
+}
+
+/* 4. Forest */
+[data-theme="forest"] {
+  --navy: #0A1510;
+  --navy-light: #0F1F17;
+  --navy-mid: #162B20;
+  --accent: #22C55E;
+  --accent-hover: #16A34A;
+  --green: #4ADE80;
+  --text-white: #F0FDF4;
+  --text-gray: #86EFAC;
+  --text-muted: #4ADE80;
+  --border-dark: #14532D;
+  --accent-glow: rgba(34, 197, 94, 0.15);
+  --accent-glow-border: rgba(34, 197, 94, 0.25);
+  --icon-bg: rgba(34, 197, 94, 0.1);
+  --trust-icon-bg: rgba(74, 222, 128, 0.1);
+}
+
+/* 5. Ember */
+[data-theme="ember"] {
+  --navy: #1C1008;
+  --navy-light: #27180C;
+  --navy-mid: #352010;
+  --accent: #F59E0B;
+  --accent-hover: #D97706;
+  --green: #34D399;
+  --text-white: #FFFBEB;
+  --text-gray: #D4A574;
+  --text-muted: #92704A;
+  --border-dark: #3D2810;
+  --accent-glow: rgba(245, 158, 11, 0.15);
+  --accent-glow-border: rgba(245, 158, 11, 0.25);
+  --icon-bg: rgba(245, 158, 11, 0.1);
+  --trust-icon-bg: rgba(52, 211, 153, 0.1);
+}
+
+/* 6. Rose */
+[data-theme="rose"] {
+  --navy: #1A0A14;
+  --navy-light: #24101C;
+  --navy-mid: #2F1626;
+  --accent: #F43F5E;
+  --accent-hover: #E11D48;
+  --green: #34D399;
+  --text-white: #FFF1F2;
+  --text-gray: #FDA4AF;
+  --text-muted: #9F6170;
+  --border-dark: #4C1D3A;
+  --accent-glow: rgba(244, 63, 94, 0.15);
+  --accent-glow-border: rgba(244, 63, 94, 0.25);
+  --icon-bg: rgba(244, 63, 94, 0.1);
+  --trust-icon-bg: rgba(52, 211, 153, 0.1);
+}
+
+/* 7. Slate */
+[data-theme="slate"] {
+  --navy: #0F172A;
+  --navy-light: #1E293B;
+  --navy-mid: #334155;
+  --accent: #F8FAFC;
+  --accent-hover: #E2E8F0;
+  --green: #22C55E;
+  --text-white: #F8FAFC;
+  --text-gray: #CBD5E1;
+  --text-muted: #64748B;
+  --border-dark: #334155;
+  --accent-glow: rgba(248, 250, 252, 0.1);
+  --accent-glow-border: rgba(248, 250, 252, 0.15);
+  --icon-bg: rgba(248, 250, 252, 0.08);
+  --trust-icon-bg: rgba(34, 197, 94, 0.1);
+}
+
+/* 8. Electric */
+[data-theme="electric"] {
+  --navy: #0D0221;
+  --navy-light: #150535;
+  --navy-mid: #1A0840;
+  --accent: #818CF8;
+  --accent-hover: #6366F1;
+  --green: #2DD4BF;
+  --text-white: #EEF2FF;
+  --text-gray: #A5B4FC;
+  --text-muted: #6366F1;
+  --border-dark: #2E1065;
+  --accent-glow: rgba(129, 140, 248, 0.15);
+  --accent-glow-border: rgba(129, 140, 248, 0.25);
+  --icon-bg: rgba(129, 140, 248, 0.1);
+  --trust-icon-bg: rgba(45, 212, 191, 0.1);
+}
+
+/* ============================
+   LIGHT THEMES
+   ============================ */
+
+/* 9. Clean (light white + blue) */
+[data-theme="clean"] {
+  --navy: #FFFFFF;
+  --navy-light: #F8FAFC;
+  --navy-mid: #F1F5F9;
+  --accent: #2563EB;
+  --accent-hover: #1D4ED8;
+  --green: #16A34A;
+  --text-white: #0F172A;
+  --text-gray: #475569;
+  --text-muted: #94A3B8;
+  --border-dark: #E2E8F0;
+  --accent-glow: rgba(37, 99, 235, 0.08);
+  --accent-glow-border: rgba(37, 99, 235, 0.18);
+  --icon-bg: rgba(37, 99, 235, 0.08);
+  --trust-icon-bg: rgba(22, 163, 74, 0.08);
+}
+
+/* 10. Sand (warm white + amber) */
+[data-theme="sand"] {
+  --navy: #FFFCF5;
+  --navy-light: #FEF9EE;
+  --navy-mid: #FDF3E0;
+  --accent: #D97706;
+  --accent-hover: #B45309;
+  --green: #16A34A;
+  --text-white: #1C1008;
+  --text-gray: #6B5C3E;
+  --text-muted: #A89070;
+  --border-dark: #E8DCC8;
+  --accent-glow: rgba(217, 119, 6, 0.08);
+  --accent-glow-border: rgba(217, 119, 6, 0.18);
+  --icon-bg: rgba(217, 119, 6, 0.08);
+  --trust-icon-bg: rgba(22, 163, 74, 0.08);
+}
+
+/* 11. Frost (cool gray + teal) */
+[data-theme="frost"] {
+  --navy: #F8FAFB;
+  --navy-light: #F0F4F5;
+  --navy-mid: #E6ECEE;
+  --accent: #0D9488;
+  --accent-hover: #0F766E;
+  --green: #0D9488;
+  --text-white: #0C1222;
+  --text-gray: #3D5A5E;
+  --text-muted: #7B9EA3;
+  --border-dark: #D1DEE0;
+  --accent-glow: rgba(13, 148, 136, 0.08);
+  --accent-glow-border: rgba(13, 148, 136, 0.18);
+  --icon-bg: rgba(13, 148, 136, 0.08);
+  --trust-icon-bg: rgba(13, 148, 136, 0.08);
+}
+
+/* 12. Pearl (pure white + violet) */
+[data-theme="pearl"] {
+  --navy: #FAFAFE;
+  --navy-light: #F4F2FB;
+  --navy-mid: #EDE9F7;
+  --accent: #7C3AED;
+  --accent-hover: #6D28D9;
+  --green: #16A34A;
+  --text-white: #1E1040;
+  --text-gray: #5B4E76;
+  --text-muted: #9B8FB8;
+  --border-dark: #DDD5ED;
+  --accent-glow: rgba(124, 58, 237, 0.08);
+  --accent-glow-border: rgba(124, 58, 237, 0.18);
+  --icon-bg: rgba(124, 58, 237, 0.08);
+  --trust-icon-bg: rgba(22, 163, 74, 0.08);
+}
