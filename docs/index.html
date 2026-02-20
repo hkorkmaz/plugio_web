@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation - Plugio Gauge & Counter for Jira</title>
+    <meta name="description"
+        content="Documentation and setup guide for Plugio Gauge, Counter & Progress Bar for Jira Dashboard.">
+    <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        /* Documentation specific overrides to match existing theme */
+        .docs-nav {
+            position: sticky;
+            top: 100px;
+            padding-right: 20px;
+        }
+
+        .docs-nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .docs-nav li {
+            margin-bottom: 12px;
+        }
+
+        .docs-nav a {
+            color: var(--text-muted);
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .docs-nav a:hover,
+        .docs-nav a.active {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .docs-grid {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 60px;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+
+        .docs-content h1 {
+            font-size: 42px;
+            color: var(--text-white);
+            margin-bottom: 16px;
+        }
+
+        .docs-content h2 {
+            font-size: 24px;
+            color: var(--text-white);
+            margin-top: 60px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-dark);
+        }
+
+        .docs-content h3 {
+            font-size: 18px;
+            color: var(--text-white);
+            margin-top: 32px;
+        }
+
+        .docs-content p,
+        .docs-content li {
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text-gray);
+        }
+
+        .docs-content ul,
+        .docs-content ol {
+            padding-left: 20px;
+            margin-bottom: 24px;
+        }
+
+        .docs-content li {
+            margin-bottom: 12px;
+        }
+
+        .code-block {
+            background: var(--navy-mid);
+            border: 1px solid var(--border-dark);
+            border-radius: 8px;
+            padding: 16px;
+            font-family: 'Monaco', 'Consolas', monospace;
+            font-size: 14px;
+            color: var(--accent);
+            margin: 16px 0;
+            overflow-x: auto;
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            font-size: 14px;
+            font-weight: 700;
+            margin-right: 12px;
+        }
+
+        @media (max-width: 900px) {
+            .docs-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .docs-nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body class="page-landing">
+
+    <header class="header-dark">
+        <div class="header-inner">
+            <a href="/" class="logo"><img src="/img/plugio-text-light.svg" alt="Plugio" height="30"></a>
+            <nav>
+                <a href="/docs">Documentation</a>
+                <a href="/privacy-policy">Privacy</a>
+                <a href="/terms-of-service">Terms</a>
+                <a href="/data-security">Security</a>
+                <a href="/eula">EULA</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="docs-grid">
+        <aside class="docs-nav">
+            <ul>
+                <li><a href="#getting-started" class="active">Getting Started</a></li>
+                <li><a href="#visualization-types">Visualization Types</a></li>
+                <li><a href="#data-sources">Data Sources</a></li>
+                <li><a href="#advanced-features">Advanced Features</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#support">Support</a></li>
+            </ul>
+        </aside>
+
+        <main class="docs-content">
+            <section id="getting-started">
+                <h1>Documentation</h1>
+                <p>Welcome to the Plugio Gauge documentation. This guide will help you set up and customize your Jira
+                    Dashboard gadgets to visualize your data effectively.</p>
+
+                <h2>Getting Started</h2>
+                <p>Follow these simple steps to add your first gadget to a Jira Dashboard:</p>
+                <ol>
+                    <li><span class="step-number">1</span> Open any Jira Dashboard and click <strong>Add
+                            Gadget</strong>.</li>
+                    <li><span class="step-number">2</span> Search for <strong>"Plugio Gauge"</strong> and click Add.
+                    </li>
+                    <li><span class="step-number">3</span> On the gadget, click the <strong>three dots (...)</strong>
+                        and select <strong>Configure</strong>.</li>
+                    <li><span class="step-number">4</span> Use the live preview editor to choose your visualization type
+                        and connect your data.</li>
+                </ol>
+            </section>
+
+            <section id="visualization-types">
+                <h2>Visualization Types</h2>
+                <p>Plugio Gauge offers three professional-grade visualization components:</p>
+
+                <h3>1. Radial Gauge</h3>
+                <p>Perfect for tracking KPIs against ranges. Ideal for Sprint Velocity, SLA compliance, or health
+                    metrics.</p>
+
+                <h3>2. Progress Bar</h3>
+                <p>Best for visualizing completion status. You can add multiple series and target lines to track
+                    milestones like "Backend Completion" vs. "Frontend Completion".</p>
+
+                <h3>3. Numeric Counter</h3>
+                <p>Designed for high-impact numbers. Use this to highlight critical metrics like "Open Critical Bugs" or
+                    "Total Story Points in Backlog".</p>
+            </section>
+
+            <section id="data-sources">
+                <h2>Data Sources & JQL</h2>
+                <p>Your gadgets are powered by real-time Jira data. You have two ways to connect your data:</p>
+
+                <h3>Standard JQL</h3>
+                <p>Enter any valid Jira Query Language (JQL) string. The gadget will automatically count the results or
+                    sum the fields you specify.</p>
+                <div class="code-block">
+                    project = "MYPROJ" AND status = "In Progress"
+                </div>
+
+                <h3>Saved Filters</h3>
+                <p>Select any filter you have already saved in Jira. This makes it easy to reuse complex logic across
+                    multiple dashboards.</p>
+
+                <h3>Metrics & Measures</h3>
+                <ul>
+                    <li><strong>Issue Count:</strong> Displays the total number of issues returned by the query.</li>
+                    <li><strong>Numeric Sum:</strong> Sums up values in a specific field (e.g., Story Points, Time
+                        Spent, or any custom numeric field).</li>
+                    <li><strong>Percentage Mode:</strong> Compare a numerator query against a denominator query to show
+                        a percentage (e.g., Resolved Issues vs. Total Issues).</li>
+                </ul>
+            </section>
+
+            <section id="advanced-features">
+                <h2>Advanced Features</h2>
+
+                <h3>Dynamic Thresholds</h3>
+                <p>Define custom color ranges (Green, Yellow, Red) for your Gauges. This provides immediate visual
+                    context for your metrics (e.g., Red if bugs > 20).</p>
+
+                <h3>Target Lines</h3>
+                <p>Add vertical markers to your Progress Bars to show goals, budgets, or historical averages. Perfect
+                    for tracking "Current Progress" vs. "Sprint Target".</p>
+
+                <h3>Styling & Color Palettes</h3>
+                <p>Choose from curated color templates or define your own. The gadgets support both Jira Light and Dark
+                    modes automatically.</p>
+            </section>
+
+            <section id="faq">
+                <h2>FAQ</h2>
+                <h3>Does my data leave Jira?</h3>
+                <p>No. Plugio is a Forge-based app. All data fetching and processing happens entirely within your own
+                    Atlassian Cloud instance. We never store or transmit your Jira data.</p>
+
+                <h3>Can I use custom fields?</h3>
+                <p>Yes. Any standard or custom numeric field (number, currency, time spent) can be used for summation
+                    metrics.</p>
+            </section>
+
+            <section id="support">
+                <h2>Support</h2>
+                <p>Need help or have a feature request? We're here to help you get the most out of your Jira dashboards.
+                </p>
+                <p>Email: <a href="mailto:support@plugio.io">support@plugio.io</a></p>
+            </section>
+        </main>
+    </div>
+
+    <footer class="footer-dark">
+        <div class="footer-inner">
+            <nav>
+                <a href="/privacy-policy">Privacy Policy</a>
+                <a href="/terms-of-service">Terms of Service</a>
+                <a href="/data-security">Data Security</a>
+                <a href="/eula">EULA</a>
+            </nav>
+            <span class="footer-copy">&copy; 2026 Plugio. All rights reserved.</span>
+        </div>
+    </footer>
+
+    <script>
+        // Simple scroll spy for navigation highlight
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.docs-content section');
+            const navLinks = document.querySelectorAll('.docs-nav a');
+
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 120) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

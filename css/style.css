@@ -1,4 +1,6 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -164,8 +166,15 @@ img {
 }
 
 @keyframes pulse-glow {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.4; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
 }
 
 /* Heading */
@@ -275,9 +284,17 @@ img {
   margin-left: 0;
 }
 
-.avatar-stack .avatar:nth-child(1) { background: #334155; }
-.avatar-stack .avatar:nth-child(2) { background: #475569; }
-.avatar-stack .avatar:nth-child(3) { background: #64748B; }
+.avatar-stack .avatar:nth-child(1) {
+  background: #334155;
+}
+
+.avatar-stack .avatar:nth-child(2) {
+  background: #475569;
+}
+
+.avatar-stack .avatar:nth-child(3) {
+  background: #64748B;
+}
 
 .social-text strong {
   color: var(--text-white);
@@ -320,9 +337,17 @@ img {
 
 /* SVG animations */
 @keyframes gauge-sweep {
-  0% { transform: rotate(-40deg); }
-  50% { transform: rotate(10deg); }
-  100% { transform: rotate(-40deg); }
+  0% {
+    transform: rotate(-40deg);
+  }
+
+  50% {
+    transform: rotate(10deg);
+  }
+
+  100% {
+    transform: rotate(-40deg);
+  }
 }
 
 .gauge-needle {
@@ -331,37 +356,92 @@ img {
 }
 
 @keyframes bar-pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
 }
 
-.bar-1 { animation: bar-pulse 3s ease-in-out infinite; }
-.bar-2 { animation: bar-pulse 3s ease-in-out infinite 0.3s; }
-.bar-3 { animation: bar-pulse 3s ease-in-out infinite 0.6s; }
-.bar-4 { animation: bar-pulse 3s ease-in-out infinite 0.9s; }
-.bar-5 { animation: bar-pulse 3s ease-in-out infinite 1.2s; }
+.bar-1 {
+  animation: bar-pulse 3s ease-in-out infinite;
+}
+
+.bar-2 {
+  animation: bar-pulse 3s ease-in-out infinite 0.3s;
+}
+
+.bar-3 {
+  animation: bar-pulse 3s ease-in-out infinite 0.6s;
+}
+
+.bar-4 {
+  animation: bar-pulse 3s ease-in-out infinite 0.9s;
+}
+
+.bar-5 {
+  animation: bar-pulse 3s ease-in-out infinite 1.2s;
+}
 
 @keyframes progress-pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.6; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.6;
+  }
 }
 
-.progress-fill { animation: progress-pulse 3s ease-in-out infinite; }
-.p-1 { animation-delay: 0s; }
-.p-2 { animation-delay: 0.4s; }
-.p-3 { animation-delay: 0.8s; }
+.progress-fill {
+  animation: progress-pulse 3s ease-in-out infinite;
+}
+
+.p-1 {
+  animation-delay: 0s;
+}
+
+.p-2 {
+  animation-delay: 0.4s;
+}
+
+.p-3 {
+  animation-delay: 0.8s;
+}
 
 @keyframes counter-pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.7; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.7;
+  }
 }
 
-.counter-num { animation: counter-pulse 3s ease-in-out infinite; }
+.counter-num {
+  animation: counter-pulse 3s ease-in-out infinite;
+}
 
 /* Floating card */
 @keyframes float-card {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 .hero-float-card {

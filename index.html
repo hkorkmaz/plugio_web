@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Plugio - Simple Atlassian Plugins That Just Work</title>
-  <meta name="description" content="Plugio builds reliable visualization gadgets for Atlassian products. Gauge, counter, and progress bar widgets for your dashboards.">
+  <meta name="description"
+    content="Plugio builds reliable visualization gadgets for Atlassian products. Gauge, counter, and progress bar widgets for your dashboards.">
   <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/css/style.css">
 </head>
+
 <body class="page-landing">
 
   <header class="header-dark">
     <div class="header-inner">
       <a href="/" class="logo"><img src="/img/plugio-text-light.svg" alt="Plugio" height="30"></a>
       <nav>
+        <a href="/docs">Documentation</a>
         <a href="/privacy-policy">Privacy</a>
         <a href="/terms-of-service">Terms</a>
         <a href="/data-security">Security</a>
@@ -33,11 +37,16 @@
           Atlassian Marketplace Partner
         </span>
         <h1>Simple Atlassian plugins that <span class="accent">just work</span>.</h1>
-        <p class="hero-sub">Lightweight, focused plugins designed to extend Atlassian products without complexity. Built for developers and product teams who value stability and speed.</p>
+        <p class="hero-sub">Lightweight, focused plugins designed to extend Atlassian products without complexity. Built
+          for developers and product teams who value stability and speed.</p>
         <div class="hero-buttons">
           <a href="#products" class="hero-cta">
             View plugins
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
           </a>
         </div>
       </div>
@@ -48,77 +57,94 @@
         <div class="hero-graphic">
           <svg viewBox="0 0 400 400" class="hero-svg" xmlns="http://www.w3.org/2000/svg">
             <!-- Dashboard background -->
-            <rect x="20" y="20" width="360" height="360" rx="20" fill="var(--navy-light)" stroke="var(--border-dark)" stroke-width="1.5"/>
+            <rect x="20" y="20" width="360" height="360" rx="20" fill="var(--navy-light)" stroke="var(--border-dark)"
+              stroke-width="1.5" />
 
             <!-- Top bar -->
-            <rect x="20" y="20" width="360" height="40" rx="20" fill="var(--navy-mid)"/>
-            <rect x="20" y="40" width="360" height="20" fill="var(--navy-mid)"/>
-            <circle cx="48" cy="40" r="5" fill="var(--text-muted)" opacity="0.4"/>
-            <circle cx="66" cy="40" r="5" fill="var(--text-muted)" opacity="0.4"/>
-            <circle cx="84" cy="40" r="5" fill="var(--text-muted)" opacity="0.4"/>
-            <rect x="250" y="34" width="60" height="12" rx="6" fill="var(--accent)" opacity="0.2"/>
-            <rect x="320" y="34" width="36" height="12" rx="6" fill="var(--accent)" opacity="0.15"/>
+            <rect x="20" y="20" width="360" height="40" rx="20" fill="var(--navy-mid)" />
+            <rect x="20" y="40" width="360" height="20" fill="var(--navy-mid)" />
+            <circle cx="48" cy="40" r="5" fill="var(--text-muted)" opacity="0.4" />
+            <circle cx="66" cy="40" r="5" fill="var(--text-muted)" opacity="0.4" />
+            <circle cx="84" cy="40" r="5" fill="var(--text-muted)" opacity="0.4" />
+            <rect x="250" y="34" width="60" height="12" rx="6" fill="var(--accent)" opacity="0.2" />
+            <rect x="320" y="34" width="36" height="12" rx="6" fill="var(--accent)" opacity="0.15" />
 
             <!-- === GAUGE WIDGET (top-left) === -->
             <g transform="translate(44, 80)">
-              <rect width="152" height="140" rx="12" fill="var(--navy)" stroke="var(--border-dark)" stroke-width="1"/>
-              <text x="16" y="24" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="var(--text-muted)">Sprint Velocity</text>
+              <rect width="152" height="140" rx="12" fill="var(--navy)" stroke="var(--border-dark)" stroke-width="1" />
+              <text x="16" y="24" font-family="Inter, sans-serif" font-size="10" font-weight="600"
+                fill="var(--text-muted)">Sprint Velocity</text>
               <!-- Gauge arc -->
               <g transform="translate(76, 86)">
-                <path d="M-40 10 A42 42 0 0 1 -36 -22" stroke="#22C55E" stroke-width="8" stroke-linecap="round" fill="none"/>
-                <path d="M-36 -22 A42 42 0 0 1 -8 -40" stroke="#FBBF24" stroke-width="8" stroke-linecap="round" fill="none"/>
-                <path d="M-8 -40 A42 42 0 0 1 30 -30" stroke="#F97316" stroke-width="8" stroke-linecap="round" fill="none"/>
-                <path d="M30 -30 A42 42 0 0 1 42 -4" stroke="#EF4444" stroke-width="8" stroke-linecap="round" fill="none"/>
+                <path d="M-40 10 A42 42 0 0 1 -36 -22" stroke="#22C55E" stroke-width="8" stroke-linecap="round"
+                  fill="none" />
+                <path d="M-36 -22 A42 42 0 0 1 -8 -40" stroke="#FBBF24" stroke-width="8" stroke-linecap="round"
+                  fill="none" />
+                <path d="M-8 -40 A42 42 0 0 1 30 -30" stroke="#F97316" stroke-width="8" stroke-linecap="round"
+                  fill="none" />
+                <path d="M30 -30 A42 42 0 0 1 42 -4" stroke="#EF4444" stroke-width="8" stroke-linecap="round"
+                  fill="none" />
                 <!-- Needle -->
-                <line x1="0" y1="0" x2="-20" y2="-32" stroke="var(--text-white)" stroke-width="2.5" stroke-linecap="round" class="gauge-needle"/>
-                <circle r="5" fill="var(--accent)"/>
+                <line x1="0" y1="0" x2="-20" y2="-32" stroke="var(--text-white)" stroke-width="2.5"
+                  stroke-linecap="round" class="gauge-needle" />
+                <circle r="5" fill="var(--accent)" />
               </g>
-              <text x="76" y="126" text-anchor="middle" font-family="Inter, sans-serif" font-size="20" font-weight="700" fill="var(--text-white)">72</text>
+              <text x="76" y="126" text-anchor="middle" font-family="Inter, sans-serif" font-size="20" font-weight="700"
+                fill="var(--text-white)">72</text>
             </g>
 
             <!-- === BAR CHART (top-right) === -->
             <g transform="translate(208, 80)">
-              <rect width="152" height="140" rx="12" fill="var(--navy)" stroke="var(--border-dark)" stroke-width="1"/>
-              <text x="16" y="24" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="var(--text-muted)">Issues by Status</text>
+              <rect width="152" height="140" rx="12" fill="var(--navy)" stroke="var(--border-dark)" stroke-width="1" />
+              <text x="16" y="24" font-family="Inter, sans-serif" font-size="10" font-weight="600"
+                fill="var(--text-muted)">Issues by Status</text>
               <!-- Bars -->
-              <rect x="20" y="96" width="18" height="28" rx="4" fill="#22C55E" class="bar-grow bar-1"/>
-              <rect x="44" y="58" width="18" height="66" rx="4" fill="#3B82F6" class="bar-grow bar-2"/>
-              <rect x="68" y="76" width="18" height="48" rx="4" fill="#A855F7" class="bar-grow bar-3"/>
-              <rect x="92" y="88" width="18" height="36" rx="4" fill="#FBBF24" class="bar-grow bar-4"/>
-              <rect x="116" y="44" width="18" height="80" rx="4" fill="#F97316" class="bar-grow bar-5"/>
+              <rect x="20" y="96" width="18" height="28" rx="4" fill="#22C55E" class="bar-grow bar-1" />
+              <rect x="44" y="58" width="18" height="66" rx="4" fill="#3B82F6" class="bar-grow bar-2" />
+              <rect x="68" y="76" width="18" height="48" rx="4" fill="#A855F7" class="bar-grow bar-3" />
+              <rect x="92" y="88" width="18" height="36" rx="4" fill="#FBBF24" class="bar-grow bar-4" />
+              <rect x="116" y="44" width="18" height="80" rx="4" fill="#F97316" class="bar-grow bar-5" />
             </g>
 
             <!-- === PROGRESS BARS (bottom-left) === -->
             <g transform="translate(44, 232)">
-              <rect width="152" height="140" rx="12" fill="var(--navy)" stroke="var(--border-dark)" stroke-width="1"/>
-              <text x="16" y="24" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="var(--text-muted)">Release Progress</text>
+              <rect width="152" height="140" rx="12" fill="var(--navy)" stroke="var(--border-dark)" stroke-width="1" />
+              <text x="16" y="24" font-family="Inter, sans-serif" font-size="10" font-weight="600"
+                fill="var(--text-muted)">Release Progress</text>
               <!-- Progress bar 1 -->
               <text x="16" y="48" font-family="Inter, sans-serif" font-size="9" fill="var(--text-gray)">Backend</text>
-              <rect x="16" y="54" width="110" height="8" rx="4" fill="var(--navy-mid)"/>
-              <rect x="16" y="54" width="85" height="8" rx="4" fill="#22C55E" class="progress-fill p-1"/>
-              <text x="130" y="62" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#22C55E">80%</text>
+              <rect x="16" y="54" width="110" height="8" rx="4" fill="var(--navy-mid)" />
+              <rect x="16" y="54" width="85" height="8" rx="4" fill="#22C55E" class="progress-fill p-1" />
+              <text x="130" y="62" font-family="Inter, sans-serif" font-size="9" font-weight="600"
+                fill="#22C55E">80%</text>
               <!-- Progress bar 2 -->
               <text x="16" y="80" font-family="Inter, sans-serif" font-size="9" fill="var(--text-gray)">Frontend</text>
-              <rect x="16" y="86" width="110" height="8" rx="4" fill="var(--navy-mid)"/>
-              <rect x="16" y="86" width="66" height="8" rx="4" fill="#3B82F6" class="progress-fill p-2"/>
-              <text x="130" y="94" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#3B82F6">55%</text>
+              <rect x="16" y="86" width="110" height="8" rx="4" fill="var(--navy-mid)" />
+              <rect x="16" y="86" width="66" height="8" rx="4" fill="#3B82F6" class="progress-fill p-2" />
+              <text x="130" y="94" font-family="Inter, sans-serif" font-size="9" font-weight="600"
+                fill="#3B82F6">55%</text>
               <!-- Progress bar 3 -->
               <text x="16" y="112" font-family="Inter, sans-serif" font-size="9" fill="var(--text-gray)">Testing</text>
-              <rect x="16" y="118" width="110" height="8" rx="4" fill="var(--navy-mid)"/>
-              <rect x="16" y="118" width="36" height="8" rx="4" fill="#F97316" class="progress-fill p-3"/>
-              <text x="130" y="126" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#F97316">30%</text>
+              <rect x="16" y="118" width="110" height="8" rx="4" fill="var(--navy-mid)" />
+              <rect x="16" y="118" width="36" height="8" rx="4" fill="#F97316" class="progress-fill p-3" />
+              <text x="130" y="126" font-family="Inter, sans-serif" font-size="9" font-weight="600"
+                fill="#F97316">30%</text>
             </g>
 
             <!-- === COUNTER WIDGET (bottom-right) === -->
             <g transform="translate(208, 232)">
-              <rect width="152" height="140" rx="12" fill="var(--navy)" stroke="var(--border-dark)" stroke-width="1"/>
-              <text x="16" y="24" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="var(--text-muted)">Open Issues</text>
-              <text x="76" y="82" text-anchor="middle" font-family="Inter, sans-serif" font-size="42" font-weight="800" fill="var(--accent)" class="counter-num">148</text>
+              <rect width="152" height="140" rx="12" fill="var(--navy)" stroke="var(--border-dark)" stroke-width="1" />
+              <text x="16" y="24" font-family="Inter, sans-serif" font-size="10" font-weight="600"
+                fill="var(--text-muted)">Open Issues</text>
+              <text x="76" y="82" text-anchor="middle" font-family="Inter, sans-serif" font-size="42" font-weight="800"
+                fill="var(--accent)" class="counter-num">148</text>
               <g transform="translate(50, 100)">
-                <rect width="52" height="20" rx="10" fill="#22C55E" opacity="0.15"/>
-                <text x="26" y="14" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#22C55E">-12%</text>
+                <rect width="52" height="20" rx="10" fill="#22C55E" opacity="0.15" />
+                <text x="26" y="14" text-anchor="middle" font-family="Inter, sans-serif" font-size="10"
+                  font-weight="600" fill="#22C55E">-12%</text>
               </g>
-              <text x="76" y="132" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="var(--text-muted)">vs. last sprint</text>
+              <text x="76" y="132" text-anchor="middle" font-family="Inter, sans-serif" font-size="9"
+                fill="var(--text-muted)">vs. last sprint</text>
             </g>
           </svg>
 
@@ -126,7 +152,10 @@
           <div class="hero-float-card">
             <div class="float-card-row">
               <div class="float-card-icon">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
               </div>
               <div>
                 <div class="float-card-label">Sprint Health</div>
@@ -153,21 +182,33 @@
       <div class="features-grid">
         <div class="feature-card">
           <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="4 17 10 11 4 5" />
+              <line x1="12" y1="19" x2="20" y2="19" />
+            </svg>
           </div>
           <h3>Native integration</h3>
-          <p>Works directly within Atlassian products using standard APIs. No external dependencies or third-party services.</p>
+          <p>Works directly within Atlassian products using standard APIs. No external dependencies or third-party
+            services.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
           </div>
           <h3>Zero configuration overhead</h3>
           <p>Install from the Marketplace and add to any dashboard. Configure with the same tools you already use.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
           </div>
           <h3>No data leaves your instance</h3>
           <p>We don't collect, store, or transmit any data. Everything stays within your Atlassian instance. Period.</p>
@@ -192,12 +233,18 @@
           <div>
             <h3>Gauge, Counter &amp; Progress Bar for Jira Dashboard</h3>
             <p class="product-platform">Atlassian Cloud</p>
-            <p>Visual dashboard gadgets for tracking metrics at a glance. Display JQL results as gauges, counters, or progress bars on any dashboard.</p>
+            <p>Visual dashboard gadgets for tracking metrics at a glance. Display JQL results as gauges, counters, or
+              progress bars on any dashboard.</p>
           </div>
         </div>
         <div class="product-card" style="opacity: 0.5;">
           <div class="product-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="none"><rect width="48" height="48" rx="10" fill="#1A2540"/><rect x="14" y="16" width="20" height="2" rx="1" fill="#334155"/><rect x="14" y="22" width="14" height="2" rx="1" fill="#334155"/><rect x="14" y="28" width="17" height="2" rx="1" fill="#334155"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="none">
+              <rect width="48" height="48" rx="10" fill="#1A2540" />
+              <rect x="14" y="16" width="20" height="2" rx="1" fill="#334155" />
+              <rect x="14" y="22" width="14" height="2" rx="1" fill="#334155" />
+              <rect x="14" y="28" width="17" height="2" rx="1" fill="#334155" />
+            </svg>
           </div>
           <div>
             <h3>More coming soon</h3>
@@ -220,21 +267,31 @@
       <div class="trust-grid">
         <div class="trust-item">
           <div class="trust-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
           </div>
           <h3>Marketplace compliant</h3>
           <p>Reviewed and distributed through the official Atlassian Marketplace.</p>
         </div>
         <div class="trust-item">
           <div class="trust-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            </svg>
           </div>
           <h3>Zero data collection</h3>
           <p>No analytics, no tracking, no external calls. Your data never leaves your Atlassian instance.</p>
         </div>
         <div class="trust-item">
           <div class="trust-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
           </div>
           <h3>GDPR friendly</h3>
           <p>No personal data is processed, stored, or transmitted by our plugins.</p>
@@ -256,4 +313,5 @@
   </footer>
 
 </body>
+
 </html>
