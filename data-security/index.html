@@ -4,21 +4,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Data Security Statement - Plugio</title>
-  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/css/style.css">
+  <title>Data Security - Plugio</title>
+  <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body class="page-policy">
-  <header class="header-light">
+  <header class="header-dark">
     <div class="header-inner">
-      <a href="/" class="logo"><img src="/img/plugio-text-dark.svg" alt="Plugio" height="28"></a>
+      <a href="../" class="logo"><img src="../img/plugio-text-light.svg" alt="Plugio" height="30"></a>
       <nav>
-        <a href="/docs">Documentation</a>
-        <a href="/privacy-policy">Privacy</a>
-        <a href="/terms-of-service">Terms</a>
-        <a href="/data-security">Security</a>
-        <a href="/eula">EULA</a>
+        <div class="nav-dropdown">
+          <a href="../docs/gauge.html" class="dropdown-trigger">
+            Documentation
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="../docs/gauge.html" class="dropdown-item">
+              <div class="dropdown-icon"><img src="../img/gauge.png" alt="Gauge"></div>
+              <div class="dropdown-info">
+                <span class="dropdown-title">Gauge & Counter</span>
+                <span class="dropdown-desc">Visualization gadgets for Jira</span>
+              </div>
+            </a>
+            <a href="../docs/pivot.html" class="dropdown-item">
+              <div class="dropdown-icon"><img src="../img/pivot.png" alt="Pivot"></div>
+              <div class="dropdown-info">
+                <span class="dropdown-title">Pivot Table</span>
+                <span class="dropdown-desc">Multi-dimensional reporting</span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <a href="../privacy-policy">Privacy</a>
+        <a href="../terms-of-service">Terms</a>
+        <a href="../data-security" class="active">Security</a>
+        <a href="../eula">EULA</a>
       </nav>
     </div>
   </header>
@@ -88,13 +112,13 @@
     <p><strong>Email:</strong> support@plugio.io</p>
   </main>
 
-  <footer class="footer-light">
+  <footer class="footer-dark">
     <div class="footer-inner">
       <nav>
-        <a href="/privacy-policy">Privacy Policy</a>
-        <a href="/terms-of-service">Terms of Service</a>
-        <a href="/data-security">Data Security</a>
-        <a href="/eula">EULA</a>
+        <a href="../privacy-policy">Privacy Policy</a>
+        <a href="../terms-of-service">Terms of Service</a>
+        <a href="../data-security">Data Security</a>
+        <a href="../eula">EULA</a>
       </nav>
       <span class="footer-copy">&copy; 2026 Plugio. All rights reserved.</span>
     </div>

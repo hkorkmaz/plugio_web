@@ -7,21 +7,45 @@
   <title>Plugio - Simple Atlassian Plugins That Just Work</title>
   <meta name="description"
     content="Plugio builds reliable visualization gadgets for Atlassian products. Gauge, counter, and progress bar widgets for your dashboards.">
-  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body class="page-landing">
 
   <header class="header-dark">
     <div class="header-inner">
-      <a href="/" class="logo"><img src="/img/plugio-text-light.svg" alt="Plugio" height="30"></a>
+      <a href="./" class="logo"><img src="img/plugio-text-light.svg" alt="Plugio" height="30"></a>
       <nav>
-        <a href="/docs">Documentation</a>
-        <a href="/privacy-policy">Privacy</a>
-        <a href="/terms-of-service">Terms</a>
-        <a href="/data-security">Security</a>
-        <a href="/eula">EULA</a>
+        <div class="nav-dropdown">
+          <a href="docs/gauge.html" class="dropdown-trigger">
+            Documentation
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="docs/gauge.html" class="dropdown-item">
+              <div class="dropdown-icon"><img src="img/gauge.png" alt="Gauge"></div>
+              <div class="dropdown-info">
+                <span class="dropdown-title">Gauge & Counter</span>
+                <span class="dropdown-desc">Visualization gadgets for Jira</span>
+              </div>
+            </a>
+            <a href="docs/pivot.html" class="dropdown-item">
+              <div class="dropdown-icon"><img src="img/pivot.png" alt="Pivot"></div>
+              <div class="dropdown-info">
+                <span class="dropdown-title">Pivot Table</span>
+                <span class="dropdown-desc">Multi-dimensional reporting</span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <a href="privacy-policy">Privacy</a>
+        <a href="terms-of-service">Terms</a>
+        <a href="data-security">Security</a>
+        <a href="eula">EULA</a>
       </nav>
     </div>
   </header>
@@ -235,6 +259,35 @@
             <p class="product-platform">Atlassian Cloud</p>
             <p>Visual dashboard gadgets for tracking metrics at a glance. Display JQL results as gauges, counters, or
               progress bars on any dashboard.</p>
+            <a href="/docs/gauge.html" class="product-link"
+              style="display: inline-flex; align-items: center; gap: 4px; margin-top: 12px; font-size: 13px; font-weight: 600;">
+              Documentation
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-icon">
+            <img src="/img/pivot.png" alt="Multi-Dimensional Pivot Table for Jira">
+          </div>
+          <div>
+            <h3>Multi-Dimensional Pivot Table for Jira</h3>
+            <p class="product-platform">Atlassian Cloud</p>
+            <p>Advanced data visualization for Jira. Create interactive, multi-dimensional pivot tables with live JQL
+              support and deep drill-down capabilities.</p>
+            <a href="/docs/pivot.html" class="product-link"
+              style="display: inline-flex; align-items: center; gap: 4px; margin-top: 12px; font-size: 13px; font-weight: 600;">
+              Documentation
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 5"></polyline>
+              </svg>
+            </a>
           </div>
         </div>
         <div class="product-card" style="opacity: 0.5;">
@@ -303,10 +356,10 @@
   <footer class="footer-dark">
     <div class="footer-inner">
       <nav>
-        <a href="/privacy-policy">Privacy Policy</a>
-        <a href="/terms-of-service">Terms of Service</a>
-        <a href="/data-security">Data Security</a>
-        <a href="/eula">EULA</a>
+        <a href="privacy-policy">Privacy Policy</a>
+        <a href="terms-of-service">Terms of Service</a>
+        <a href="data-security">Data Security</a>
+        <a href="eula">EULA</a>
       </nav>
       <span class="footer-copy">&copy; 2026 Plugio. All rights reserved.</span>
     </div>

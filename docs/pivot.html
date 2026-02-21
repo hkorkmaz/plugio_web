@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gauge Documentation - Plugio</title>
+    <title>Pivot Documentation - Plugio</title>
     <meta name="description"
-        content="Documentation and setup guide for Plugio Gauge, Counter & Progress Bar for Jira Dashboard.">
+        content="Documentation and setup guide for Plugio Multi-Dimensional Pivot Table for Jira Dashboard.">
     <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="../css/style.css">
     <style>
@@ -135,7 +135,7 @@
             <a href="../" class="logo"><img src="../img/plugio-text-light.svg" alt="Plugio" height="30"></a>
             <nav>
                 <div class="nav-dropdown">
-                    <a href="../docs/gauge.html" class="dropdown-trigger active">
+                    <a href="../docs/pivot.html" class="dropdown-trigger active">
                         Documentation
                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -171,9 +171,9 @@
         <aside class="docs-nav">
             <ul>
                 <li><a href="#getting-started" class="active">Getting Started</a></li>
-                <li><a href="#visualization-types">Visualization Types</a></li>
-                <li><a href="#data-sources">Data Sources</a></li>
-                <li><a href="#advanced-features">Advanced Features</a></li>
+                <li><a href="#pivot-structure">Pivot Structure</a></li>
+                <li><a href="#data-connection">Data Connection</a></li>
+                <li><a href="#features">Features</a></li>
                 <li><a href="#faq">FAQ</a></li>
                 <li><a href="#support">Support</a></li>
             </ul>
@@ -181,98 +181,95 @@
 
         <main class="docs-content">
             <section id="getting-started">
-                <h1>Gauge & Counter Documentation</h1>
-                <p>Welcome to the Plugio Gauge documentation. This guide will help you set up and customize your Jira
-                    Dashboard gadgets to visualize your data effectively.</p>
+                <h1>Plugio Pivot Documentation</h1>
+                <p>Welcome to the Plugio Pivot documentation. This guide will help you create powerful,
+                    multi-dimensional reports directly on your Jira Dashboards.</p>
 
                 <h2>Getting Started</h2>
-                <p>Follow these simple steps to add your first gadget to a Jira Dashboard:</p>
+                <p>Follow these steps to add a Multi-Dimensional Pivot Table to your dashboard:</p>
                 <ol>
                     <li><span class="step-number">1</span> Open any Jira Dashboard and click <strong>Add
                             Gadget</strong>.</li>
-                    <li><span class="step-number">2</span> Search for <strong>"Plugio Gauge"</strong> and click Add.
-                    </li>
+                    <li><span class="step-number">2</span> Search for <strong>"Multi-Dimensional Pivot Table"</strong>
+                        and click Add.</li>
                     <li><span class="step-number">3</span> On the gadget, click the <strong>three dots (...)</strong>
                         and select <strong>Configure</strong>.</li>
-                    <li><span class="step-number">4</span> Use the live preview editor to choose your visualization type
-                        and connect your data.</li>
+                    <li><span class="step-number">4</span> Use the live editor to drag and drop your dimensions and see
+                        your report update in real-time.</li>
                 </ol>
             </section>
 
-            <section id="visualization-types">
-                <h2>Visualization Types</h2>
-                <p>Plugio Gauge offers three professional-grade visualization components:</p>
+            <section id="pivot-structure">
+                <h2>Pivot Structure</h2>
+                <p>Plugio Pivot allows you to create complex, hierarchical reports by combining rows and columns.</p>
 
-                <h3>1. Radial Gauge</h3>
-                <p>Perfect for tracking KPIs against ranges. Ideal for Sprint Velocity, SLA compliance, or health
-                    metrics.</p>
+                <h3>1. Row Dimensions</h3>
+                <p>Drag fields into the Rows area to create vertical groupings. You can nest multiple levels (e.g.,
+                    Project > Issue Type > Status) to create hierarchical drill-downs.</p>
 
-                <h3>2. Progress Bar</h3>
-                <p>Best for visualizing completion status. You can add multiple series and target lines to track
-                    milestones like "Backend Completion" vs. "Frontend Completion".</p>
+                <h3>2. Column Dimensions</h3>
+                <p>Drag fields into the Columns area to spread data horizontally. Like rows, columns can also be
+                    multi-level (e.g., Priority > Resolution).</p>
 
-                <h3>3. Numeric Counter</h3>
-                <p>Designed for high-impact numbers. Use this to highlight critical metrics like "Open Critical Bugs" or
-                    "Total Story Points in Backlog".</p>
+                <h3>3. Metrics & Summation</h3>
+                <p>Choose what data to display in the cells. You can count issues or sum up numeric fields like Story
+                    Points, Time Spent, or any custom numeric field.</p>
             </section>
 
-            <section id="data-sources">
-                <h2>Data Sources & JQL</h2>
-                <p>Your gadgets are powered by real-time Jira data. You have two ways to connect your data:</p>
+            <section id="data-connection">
+                <h2>Data Connection & JQL</h2>
+                <p>Your reports are powered by real-time Jira data through JQL (Jira Query Language).</p>
 
-                <h3>Standard JQL</h3>
-                <p>Enter any valid Jira Query Language (JQL) string. The gadget will automatically count the results or
-                    sum the fields you specify.</p>
+                <h3>Custom JQL Queries</h3>
+                <p>Enter any valid JQL to define the scope of your data. The pivot table will automatically process all
+                    issues returned by your query.</p>
                 <div class="code-block">
-                    project = "MYPROJ" AND status = "In Progress"
+                    project = "PROJ" AND issuetype = "Story" AND status != "Done"
                 </div>
 
-                <h3>Saved Filters</h3>
-                <p>Select any filter you have already saved in Jira. This makes it easy to reuse complex logic across
-                    multiple dashboards.</p>
-
-                <h3>Metrics & Measures</h3>
-                <ul>
-                    <li><strong>Issue Count:</strong> Displays the total number of issues returned by the query.</li>
-                    <li><strong>Numeric Sum:</strong> Sums up values in a specific field (e.g., Story Points, Time
-                        Spent, or any custom numeric field).</li>
-                    <li><strong>Percentage Mode:</strong> Compare a numerator query against a denominator query to show
-                        a percentage (e.g., Resolved Issues vs. Total Issues).</li>
-                </ul>
+                <h3>Live Preview</h3>
+                <p>The configuration panel shows a live preview of your data as you change your JQL or dimensions,
+                    allowing for rapid report building.</p>
             </section>
 
-            <section id="advanced-features">
-                <h2>Advanced Features</h2>
+            <section id="features">
+                <h2>Key Features</h2>
 
-                <h3>Dynamic Thresholds</h3>
-                <p>Define custom color ranges (Green, Yellow, Red) for your Gauges. This provides immediate visual
-                    context for your metrics (e.g., Red if bugs > 20).</p>
+                <h3>Multi-Level Drill Down</h3>
+                <p>Click the <strong>+ / -</strong> buttons on the table headers to expand or collapse specific
+                    dimensions. This allows you to explore data from a high-level summary down to granular details
+                    without leaving the dashboard.</p>
 
-                <h3>Target Lines</h3>
-                <p>Add vertical markers to your Progress Bars to show goals, budgets, or historical averages. Perfect
-                    for tracking "Current Progress" vs. "Sprint Target".</p>
+                <h3>Automatic Totals</h3>
+                <p>The table automatically calculates sub-totals for every level of your hierarchy and a grand total for
+                    the entire data set.</p>
 
-                <h3>Styling & Color Palettes</h3>
-                <p>Choose from curated color templates or define your own. The gadgets support both Jira Light and Dark
-                    modes automatically.</p>
+                <h3>Modern Themes</h3>
+                <p>Choose from several curated themes (Ocean Blue, Midnight Slate, Royal Purple) that look great in both
+                    Jira Light and Dark modes.</p>
             </section>
 
             <section id="faq">
                 <h2>FAQ</h2>
-                <h3>Does my data leave Jira?</h3>
-                <p>No. Plugio is a Forge-based app. All data fetching and processing happens entirely within your own
-                    Atlassian Cloud instance. We never store or transmit your Jira data.</p>
+                <h3>Is there a limit to the number of levels?</h3>
+                <p>While technically you can add many levels, we recommend up to 4 dimensions per axis for the best
+                    readability and performance on your dashboard.</p>
 
-                <h3>Can I use custom fields?</h3>
-                <p>Yes. Any standard or custom numeric field (number, currency, time spent) can be used for summation
-                    metrics.</p>
+                <h3>Does my data leave Atlassian Cloud?</h3>
+                <p>No. Plugio Pivot is built on the Atlassian Forge platform. All data processing happens within the
+                    Atlassian secure infrastructure. Your Jira data is never transmitted to or stored on external
+                    servers.</p>
+
+                <h3>Can I add this to multiple dashboards?</h3>
+                <p>Absolutely! You can add and configure as many pivot tables as you need across different dashboards.
+                </p>
             </section>
 
             <section id="support">
                 <h2>Support</h2>
-                <p>Need help or have a feature request? We're here to help you get the most out of your Jira dashboards.
-                </p>
+                <p>Need help with a complex query or have a feature request? Our team is ready to help.</p>
                 <p>Email: <a href="mailto:support@plugio.io">support@plugio.io</a></p>
+                <p>Visit our website: <a href="https://plugio.io">plugio.io</a></p>
             </section>
         </main>
     </div>
