@@ -1,0 +1,31 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Rounded White Container -->
+  <rect x="10" y="10" width="492" height="492" rx="90" fill="white" stroke="#F4F5F7" stroke-width="4"/>
+  
+  <g transform="translate(80, 80)">
+    <!-- Main Grouping Blocks -->
+    
+    <!-- Large Vertical Block (Left) - BLUE -->
+    <rect x="0" y="0" width="140" height="352" rx="20" fill="#0052CC"/>
+    <!-- Subtle Nesting inside the big blue block -->
+    <rect x="15" y="15" width="110" height="150" rx="10" fill="white" fill-opacity="0.15"/>
+    <rect x="15" y="180" width="50" height="157" rx="8" fill="white" fill-opacity="0.1"/>
+    <rect x="75" y="180" width="50" height="157" rx="8" fill="white" fill-opacity="0.1"/>
+
+    <!-- Top Right Block - GREEN -->
+    <rect x="155" y="0" width="197" height="160" rx="20" fill="#36B37E"/>
+    <!-- Hierarchical split inside green -->
+    <rect x="170" y="15" width="167" height="60" rx="10" fill="white" fill-opacity="0.15"/>
+    <rect x="170" y="90" width="80" height="55" rx="8" fill="white" fill-opacity="0.15"/>
+    <rect x="257" y="90" width="80" height="55" rx="8" fill="white" fill-opacity="0.15"/>
+
+    <!-- Bottom Right Area - Distributed Colors -->
+    <!-- Middle Right - PURPLE -->
+    <rect x="155" y="175" width="110" height="177" rx="20" fill="#998DD9"/>
+    
+    <!-- Far Right - ORANGE and BLUE segments -->
+    <rect x="280" y="175" width="72" height="90" rx="15" fill="#FF8B00"/>
+    <rect x="280" y="280" width="72" height="72" rx="15" fill="#0052CC" fill-opacity="0.7"/>
+    
+  </g>
+</svg>

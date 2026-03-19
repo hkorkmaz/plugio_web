@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treemap Documentation - Plugio</title>
+    <meta name="description"
+        content="Documentation and setup guide for Plugio Treemap, Sunburst & Pie Chart for Jira Dashboard.">
+    <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* Documentation specific overrides to match existing theme */
+        .docs-nav {
+            position: sticky;
+            top: 100px;
+            padding-right: 20px;
+        }
+
+        .docs-nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .docs-nav li {
+            margin-bottom: 12px;
+        }
+
+        .docs-nav a {
+            color: var(--text-muted);
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .docs-nav a:hover,
+        .docs-nav a.active {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .docs-grid {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 60px;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+
+        .docs-content h1 {
+            font-size: 42px;
+            color: var(--text-white);
+            margin-bottom: 16px;
+        }
+
+        .docs-content h2 {
+            font-size: 24px;
+            color: var(--text-white);
+            margin-top: 60px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-dark);
+        }
+
+        .docs-content h3 {
+            font-size: 18px;
+            color: var(--text-white);
+            margin-top: 32px;
+        }
+
+        .docs-content p,
+        .docs-content li {
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text-gray);
+        }
+
+        .docs-content ul {
+            padding-left: 20px;
+            margin-bottom: 24px;
+        }
+
+        .docs-content ol {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 24px;
+        }
+
+        .docs-content li {
+            margin-bottom: 12px;
+        }
+
+        .code-block {
+            background: var(--navy-mid);
+            border: 1px solid var(--border-dark);
+            border-radius: 8px;
+            padding: 16px;
+            font-family: 'Monaco', 'Consolas', monospace;
+            font-size: 14px;
+            color: var(--accent);
+            margin: 16px 0;
+            overflow-x: auto;
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            font-size: 14px;
+            font-weight: 700;
+            margin-right: 12px;
+        }
+
+        @media (max-width: 900px) {
+            .docs-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .docs-nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body class="page-landing">
+
+    <header class="header-dark">
+        <div class="header-inner">
+            <a href="../" class="logo"><img src="../img/plugio-text-light.svg" alt="Plugio" height="30"></a>
+            <nav>
+                <div class="nav-dropdown">
+                    <a href="../docs/treemap.html" class="dropdown-trigger active">
+                        Documentation
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="../docs/gauge.html" class="dropdown-item">
+                            <div class="dropdown-icon"><img src="../img/gauge.png" alt="Gauge"></div>
+                            <div class="dropdown-info">
+                                <span class="dropdown-title">Gauge & Counter</span>
+                                <span class="dropdown-desc">Visualization gadgets for Jira</span>
+                            </div>
+                        </a>
+                        <a href="../docs/pivot.html" class="dropdown-item">
+                            <div class="dropdown-icon"><img src="../img/pivot.png" alt="Pivot"></div>
+                            <div class="dropdown-info">
+                                <span class="dropdown-title">Pivot Table</span>
+                                <span class="dropdown-desc">Multi-dimensional reporting</span>
+                            </div>
+                        </a>
+                        <a href="../docs/treemap.html" class="dropdown-item">
+                            <div class="dropdown-icon"><img src="../img/treemap.svg" alt="Treemap"></div>
+                            <div class="dropdown-info">
+                                <span class="dropdown-title">Treemap & Sunburst</span>
+                                <span class="dropdown-desc">Hierarchical data visualization</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <a href="../privacy-policy">Privacy</a>
+                <a href="../terms-of-service">Terms</a>
+                <a href="../data-security">Security</a>
+                <a href="../eula">EULA</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="docs-grid">
+        <aside class="docs-nav">
+            <ul>
+                <li><a href="#getting-started" class="active">Getting Started</a></li>
+                <li><a href="#visualization-types">Visualization Types</a></li>
+                <li><a href="#data-sources">Data Sources</a></li>
+                <li><a href="#drill-down">Drill-Down Depth</a></li>
+                <li><a href="#support">Support</a></li>
+            </ul>
+        </aside>
+
+        <main class="docs-content">
+            <section id="getting-started">
+                <h1>Treemap & Sunburst Documentation</h1>
+                <p>Plugio Treemap helps you visualize complex Jira issue hierarchies using powerful space-filling charts. 
+                   Identify bottlenecks and distribution patterns at a glance.</p>
+
+                <h2>Getting Started</h2>
+                <p>Add the gadget to your Jira Dashboard in 4 steps:</p>
+                <ol>
+                    <li><span class="step-number">1</span> On your Jira Dashboard, click <strong>Add Gadget</strong>.</li>
+                    <li><span class="step-number">2</span> Find <strong>"Treemap - Sunburst - Pie Chart"</strong> and click Add.</li>
+                    <li><span class="step-number">3</span> Click <strong>Configure</strong> on the gadget to open the editor.</li>
+                    <li><span class="step-number">4</span> Select your JQL query, choose drill-down fields, and pick a color mode.</li>
+                </ol>
+            </section>
+
+            <section id="visualization-types">
+                <h2>Visualization Types</h2>
+                <p>Choose the best way to represent your data hierarchy:</p>
+
+                <h3>1. Treemap Chart</h3>
+                <p>Perfect for space-efficient visualization of large datasets. Each rectangle's area represents the volume of issues, while colors can represent a second metric like "Story Points" or "Priority".</p>
+
+                <h3>2. Sunburst Chart</h3>
+                <p>Ideal for showing multi-level relationships. The concentric rings show the hierarchy from the center (root) outwards. Interactive segments allow you to zoom into specific categories.</p>
+
+                <h3>3. Drill-Down Pie</h3>
+                <p>A familiar interface enhanced with hiyerarchical support. Click on any slice to see its sub-components, with live total counts displayed in the center.</p>
+            </section>
+
+            <section id="data-sources">
+                <h2>Data & Colors</h2>
+                <p>Connect your data using any JQL query or saved filter. You can then refine the visual representation:</p>
+
+                <h3>Categorical Colors</h3>
+                <p>Each group receives a unique color from your selected palette. Great for quickly distinguishing between Projects or Statuses.</p>
+
+                <h3>Heatmap Mode</h3>
+                <p>Colors are calculated based on a numeric intensity. For example, highlight areas with high "Time Spent" or "High Priority" counts using a color gradient.</p>
+            </section>
+
+            <section id="drill-down">
+                <h2>Drill-Down Depth</h2>
+                <p>Support for unlimited levels of hierarchy. Define your drill-down path in the editor (e.g., Project > Issue Type > Assignee) and explore the data interactively on your dashboard.</p>
+                <p>The breadcrumb navigation at the top of the chart shows your current path and the total issue count at each level.</p>
+            </section>
+
+            <section id="support">
+                <h2>Support</h2>
+                <p>Need assistance or have feedback? We're here to help.</p>
+                <p>Email: <a href="mailto:support@plugio.io">support@plugio.io</a></p>
+            </section>
+        </main>
+    </div>
+
+    <footer class="footer-dark">
+        <div class="footer-inner">
+            <nav>
+                <a href="../privacy-policy">Privacy Policy</a>
+                <a href="../terms-of-service">Terms of Service</a>
+                <a href="../data-security">Data Security</a>
+                <a href="../eula">EULA</a>
+            </nav>
+            <span class="footer-copy">&copy; 2026 Plugio. All rights reserved.</span>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.docs-content section');
+            const navLinks = document.querySelectorAll('.docs-nav a');
+
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 120) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
