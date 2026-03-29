@@ -12,9 +12,9 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Plugio - Simple Atlassian Plugins That Just Work</title>
+  <title>Plugio - Simple Plugins That Just Work</title>
   <meta name="description"
-    content="Plugio builds reliable visualization gadgets for Atlassian products. Gauge, counter, and progress bar widgets for your dashboards.">
+    content="Plugio builds reliable visualization plugins for Atlassian and Monday.com. Gauge, counter, and progress bar widgets for your dashboards.">
   <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -34,6 +34,7 @@
             </svg>
           </a>
           <div class="dropdown-menu">
+            <span class="dropdown-label">Jira</span>
             <a href="docs/gauge.html" class="dropdown-item">
               <div class="dropdown-icon"><img src="img/gauge.png" alt="Gauge"></div>
               <div class="dropdown-info">
@@ -55,6 +56,15 @@
                 <span class="dropdown-desc">Hierarchical data visualization</span>
               </div>
             </a>
+            <div class="dropdown-divider"></div>
+            <span class="dropdown-label">Monday.com</span>
+            <a href="docs/monday-gauge.html" class="dropdown-item">
+              <div class="dropdown-icon"><img src="img/gauge.png" alt="Gauge"></div>
+              <div class="dropdown-info">
+                <span class="dropdown-title">Gauge & Counter</span>
+                <span class="dropdown-desc">Visualization widgets for Monday.com</span>
+              </div>
+            </a>
           </div>
         </div>
         <a href="privacy-policy">Privacy</a>
@@ -73,11 +83,11 @@
       <div class="hero-content">
         <span class="hero-badge">
           <span class="pulse-dot"></span>
-          Atlassian Marketplace Partner
+          Available on Atlassian &amp; Monday.com
         </span>
-        <h1>Simple Atlassian plugins that <span class="accent">just work</span>.</h1>
-        <p class="hero-sub">Lightweight, focused plugins designed to extend Atlassian products without complexity. Built
-          for developers and product teams who value stability and speed.</p>
+        <h1>Simple plugins that <span class="accent">just work</span>.</h1>
+        <p class="hero-sub">Lightweight, focused plugins designed to extend your favorite platforms without complexity.
+          Built for developers and product teams who value stability and speed.</p>
         <div class="hero-buttons">
           <a href="#products" class="hero-cta">
             View plugins
@@ -216,7 +226,7 @@
       <div class="section-header">
         <p class="label">Why Plugio</p>
         <h2>Built for simplicity</h2>
-        <p>No complex setup. No data collection. Just useful gadgets that integrate cleanly with Atlassian products.</p>
+        <p>No complex setup. No data collection. Just useful plugins that integrate cleanly with your platform.</p>
       </div>
       <div class="features-grid">
         <div class="feature-card">
@@ -228,7 +238,7 @@
             </svg>
           </div>
           <h3>Native integration</h3>
-          <p>Works directly within Atlassian products using standard APIs. No external dependencies or third-party
+          <p>Works natively within your platform using standard APIs. No external dependencies or third-party
             services.</p>
         </div>
         <div class="feature-card">
@@ -240,7 +250,7 @@
             </svg>
           </div>
           <h3>Zero configuration overhead</h3>
-          <p>Install from the Marketplace and add to any dashboard. Configure with the same tools you already use.</p>
+          <p>Install from the marketplace and add to any dashboard. Configure with the same tools you already use.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">
@@ -250,7 +260,7 @@
             </svg>
           </div>
           <h3>No data leaves your instance</h3>
-          <p>We don't collect, store, or transmit any data. Everything stays within your Atlassian instance. Period.</p>
+          <p>We don't collect, store, or transmit any data. Everything stays within your platform instance. Period.</p>
         </div>
       </div>
     </div>
@@ -265,6 +275,7 @@
         <p>Focused tools that do one thing well.</p>
       </div>
       <div class="products-grid">
+        <div class="products-platform-label">Jira</div>
         <div class="product-card">
           <div class="product-icon">
             <img src="/img/gauge.png" alt="Gauge plugin">
@@ -300,7 +311,7 @@
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                 stroke-linecap="round" stroke-linejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 5"></polyline>
+                <polyline points="12 5 19 12 12 19"></polyline>
               </svg>
             </a>
           </div>
@@ -314,6 +325,28 @@
             <p class="product-platform">Atlassian Cloud</p>
             <p>Advanced hierarchical visualization. Explore your Jira data through interactive treemaps and sunbursts with full drill-down support.</p>
             <a href="docs/treemap.html" class="product-link"
+              style="display: inline-flex; align-items: center; gap: 4px; margin-top: 12px; font-size: 13px; font-weight: 600;">
+              Documentation
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="products-platform-label">Monday.com</div>
+        <div class="product-card product-card--soon">
+          <div class="product-icon">
+            <img src="img/gauge.png" alt="Gauge & Counter for Monday.com">
+          </div>
+          <div>
+            <span class="product-coming-soon">Coming soon</span>
+            <h3>Gauge, Counter &amp; Progress Bar for Monday.com</h3>
+            <p class="product-platform">Monday.com</p>
+            <p>Visual dashboard widgets for tracking board metrics at a glance. Display aggregated column values as
+              gauges, counters, or progress bars on any Monday.com dashboard.</p>
+            <a href="docs/monday-gauge.html" class="product-link"
               style="display: inline-flex; align-items: center; gap: 4px; margin-top: 12px; font-size: 13px; font-weight: 600;">
               Documentation
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
@@ -345,7 +378,7 @@
             </svg>
           </div>
           <h3>Marketplace compliant</h3>
-          <p>Reviewed and distributed through the official Atlassian Marketplace.</p>
+          <p>Reviewed and distributed through official platform marketplaces.</p>
         </div>
         <div class="trust-item">
           <div class="trust-icon">
@@ -356,7 +389,7 @@
             </svg>
           </div>
           <h3>Zero data collection</h3>
-          <p>No analytics, no tracking, no external calls. Your data never leaves your Atlassian instance.</p>
+          <p>No analytics, no tracking, no external calls. Your data never leaves your platform instance.</p>
         </div>
         <div class="trust-item">
           <div class="trust-icon">
