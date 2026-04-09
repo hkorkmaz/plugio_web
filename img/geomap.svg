@@ -12,9 +12,9 @@
     <!-- Globe -->
     <circle cx="0" cy="0" r="230" stroke="#998DD9" stroke-width="30" fill="#F8FAFC"/>
     <!-- Grid lines -->
-    <ellipse cx="0" cy="0" rx="230" ry="50" stroke="#998DD9" stroke-opacity="0.3" stroke-width="3" fill="none"/>
-    <ellipse cx="0" cy="0" rx="50" ry="230" stroke="#998DD9" stroke-opacity="0.3" stroke-width="3" fill="none"/>
-    <ellipse cx="0" cy="0" rx="138" ry="230" stroke="#998DD9" stroke-opacity="0.3" stroke-width="3" fill="none"/>
+    <ellipse cx="0" cy="0" rx="230" ry="50" stroke="#998DD9" stroke-opacity="0.9" stroke-width="4" fill="none"/>
+    <ellipse cx="0" cy="0" rx="50" ry="230" stroke="#998DD9" stroke-opacity="0.9" stroke-width="4" fill="none"/>
+    <ellipse cx="0" cy="0" rx="138" ry="230" stroke="#998DD9" stroke-opacity="0.9" stroke-width="4" fill="none"/>
 
     <!-- Pin 1 - left - Green -->
     <g transform="translate(-95, -85)">
