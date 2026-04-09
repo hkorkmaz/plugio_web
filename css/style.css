@@ -760,6 +760,18 @@ img {
   margin-bottom: 6px;
 }
 
+.product-card h3 a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.product-card h3 a:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+
 .product-card .product-platform {
   font-size: 12px;
   font-weight: 500;
@@ -776,16 +788,38 @@ img {
   margin: 0;
 }
 
+.product-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin-top: 20px;
+}
+
 .product-link {
-  color: var(--accent);
-  text-decoration: none;
-  transition: opacity 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-gray);
+  transition: all 0.2s;
 }
 
 .product-link:hover {
-  opacity: 0.8;
+  color: var(--text-white);
   text-decoration: none;
 }
+
+.product-link-market {
+  color: var(--accent);
+}
+
+.product-link-market:hover {
+  opacity: 0.8;
+  color: var(--accent);
+}
+
 
 .product-card.product-card--soon {
   position: relative;
