@@ -12,9 +12,9 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pivot Documentation - Plugio</title>
+    <title>Sprint Progress & Health Monitor Documentation - Plugio</title>
     <meta name="description"
-        content="Documentation and setup guide for Plugio Multi-Dimensional Pivot Table for Jira Dashboard.">
+        content="Documentation and setup guide for Plugio Sprint Progress & Health Monitor for Jira Dashboard.">
     <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="../css/style.css">
     <style>
@@ -124,6 +124,14 @@
             margin-right: 12px;
         }
 
+        .feature-highlight {
+            border-left: 4px solid var(--accent);
+            padding: 2px 20px;
+            background: var(--navy-mid-alt);
+            margin: 24px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
         @media (max-width: 900px) {
             .docs-grid {
                 grid-template-columns: 1fr;
@@ -143,7 +151,7 @@
             <a href="../" class="logo"><img src="/img/plugio-text-light.svg" alt="Plugio" height="30"></a>
             <nav>
                 <div class="nav-dropdown">
-                    <a href="/docs/pivot.html" class="dropdown-trigger active">
+                    <a href="/docs/battery.html" class="dropdown-trigger active">
                         Documentation
                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -152,6 +160,7 @@
                     </a>
                     <div class="dropdown-menu">
                         <span class="dropdown-label">Jira</span>
+
                         <a href="/docs/gauge.html" class="dropdown-item">
                             <div class="dropdown-icon"><img src="/img/gauge.png" alt="Gauge"></div>
                             <div class="dropdown-info">
@@ -203,105 +212,78 @@
         <aside class="docs-nav">
             <ul>
                 <li><a href="#getting-started" class="active">Getting Started</a></li>
-                <li><a href="#pivot-structure">Pivot Structure</a></li>
-                <li><a href="#data-connection">Data Connection</a></li>
-                <li><a href="#features">Features</a></li>
+                <li><a href="#battery-logic">Battery Logic</a></li>
+                <li><a href="#pacing-and-health">Pacing & Health</a></li>
+                <li><a href="#scope-creep">Scope Creep</a></li>
+                <li><a href="#team-breakdown">Team Breakdown</a></li>
                 <li><a href="#faq">FAQ</a></li>
-                <li><a href="#support">Support</a></li>
             </ul>
         </aside>
 
         <main class="docs-content">
             <section id="getting-started">
-                <h1>Plugio Pivot Documentation</h1>
-                <p>Welcome to the Plugio Pivot documentation. This guide will help you create powerful,
-                    multi-dimensional reports directly on your Jira Dashboards.</p>
+                <h1>Sprint Progress & Health Monitor Documentation</h1>
+                <p>Monitor your Agile team's pulse with an intuitive battery-style visualization. Track real-time progress, pacing, and scope creep on any Jira Dashboard.</p>
 
                 <h2>Getting Started</h2>
-                <p>Follow these steps to add a Multi-Dimensional Pivot Table to your dashboard:</p>
+                <p>Follow these simple steps to add the monitor to your dashboard:</p>
                 <ol>
-                    <li><span class="step-number">1</span> Open any Jira Dashboard and click <strong>Add
-                            Gadget</strong>.</li>
-                    <li><span class="step-number">2</span> Search for <strong>"Multi-Dimensional Pivot Table"</strong>
-                        and click Add.</li>
-                    <li><span class="step-number">3</span> On the gadget, click the <strong>three dots (...)</strong>
-                        and select <strong>Configure</strong>.</li>
-                    <li><span class="step-number">4</span> Use the live editor to drag and drop your dimensions and see
-                        your report update in real-time.</li>
+                    <li><span class="step-number">1</span> Open any Jira Dashboard and click <strong>Add Gadget</strong>.</li>
+                    <li><span class="step-number">2</span> Search for <strong>"Sprint Progress & Health"</strong> and click Add.</li>
+                    <li><span class="step-number">3</span> On the gadget, click <strong>Configure</strong> (or use the Edit mode).</li>
+                    <li><span class="step-number">4</span> Select your <strong>Board</strong> and <strong>Sprint</strong> to start monitoring.</li>
                 </ol>
             </section>
 
-            <section id="pivot-structure">
-                <h2>Pivot Structure</h2>
-                <p>Plugio Pivot allows you to create complex, hierarchical reports by combining rows and columns.</p>
-
-                <h3>1. Row Dimensions</h3>
-                <p>Drag fields into the Rows area to create vertical groupings. You can nest multiple levels (e.g.,
-                    Project > Issue Type > Status) to create hierarchical drill-downs.</p>
-
-                <h3>2. Column Dimensions</h3>
-                <p>Drag fields into the Columns area to spread data horizontally. Like rows, columns can also be
-                    multi-level (e.g., Priority > Resolution).</p>
-
-                <h3>3. Metrics & Summation</h3>
-                <p>Choose what data to display in the cells. You can count issues or sum up numeric fields like Story
-                    Points, Time Spent, or any custom numeric field.</p>
-            </section>
-
-            <section id="data-connection">
-                <h2>Data Connection & JQL</h2>
-                <p>Your reports are powered by real-time Jira data through JQL (Jira Query Language).</p>
-
-                <h3>Custom JQL Queries</h3>
-                <p>Enter any valid JQL to define the scope of your data. The pivot table will automatically process all
-                    issues returned by your query.</p>
-                <div class="code-block">
-                    project = "PROJ" AND issuetype = "Story" AND status != "Done"
+            <section id="battery-logic">
+                <h2>The Battery Visualization</h2>
+                <p>The core of the gadget is a multi-segment battery that represents your sprint's capacity and status:</p>
+                <ul>
+                    <li><strong>Solid Colors:</strong> Represent work that was in the sprint at the start.</li>
+                    <li><strong>Patterned/Stripe Segments:</strong> Represent <strong>Scope Creep</strong> (issues added after the sprint started).</li>
+                    <li><strong>Empty Slots:</strong> Represent remaining capacity or work yet to be started.</li>
+                </ul>
+                <div class="feature-highlight">
+                    <p><strong>Pro Tip:</strong> Click on any segment of the battery to see the exact list of issues in a detailed Forge modal.</p>
                 </div>
-
-                <h3>Live Preview</h3>
-                <p>The configuration panel shows a live preview of your data as you change your JQL or dimensions,
-                    allowing for rapid report building.</p>
             </section>
 
-            <section id="features">
-                <h2>Key Features</h2>
+            <section id="pacing-and-health">
+                <h2>Pacing & Health Line</h2>
+                <p>The vertical "Pacing Line" inside the battery is a real-time indicator of where you <em>should</em> be based on the elapsed time of the sprint.</p>
+                <ul>
+                    <li><strong>On Track:</strong> If your "Done" colors reach or exceed the pacing line, your sprint health is considered Green.</li>
+                    <li><strong>Behind Schedule:</strong> If you are significantly below the pacing line, the health indicator will warn you with a Yellow or Red state.</li>
+                </ul>
+            </section>
 
-                <h3>Multi-Level Drill Down</h3>
-                <p>Click the <strong>+ / -</strong> buttons on the table headers to expand or collapse specific
-                    dimensions. This allows you to explore data from a high-level summary down to granular details
-                    without leaving the dashboard.</p>
+            <section id="scope-creep">
+                <h2>Scope Creep Tracking</h2>
+                <p>Transparently monitor how much work was added after the sprint began. The gadget automatically identifies "Creep" by comparing issue creation/addition dates with the sprint start date.</p>
+                <p>Creep is displayed using a distinct diagonal stripe pattern, allowing you to see at a glance if your sprint is becoming overloaded.</p>
+            </section>
 
-                <h3>Automatic Totals</h3>
-                <p>The table automatically calculates sub-totals for every level of your hierarchy and a grand total for
-                    the entire data set.</p>
-
-                <h3>Modern Themes</h3>
-                <p>Choose from several curated themes (Ocean Blue, Midnight Slate, Royal Purple) that look great in both
-                    Jira Light and Dark modes.</p>
+            <section id="team-breakdown">
+                <h2>Team & Work Breakdown</h2>
+                <p>Enable "Breakdown Batteries" in the configuration to see your sprint health divided by specific dimensions:</p>
+                <ul>
+                    <li><strong>Assignee:</strong> See how work is distributed across team members.</li>
+                    <li><strong>Issue Type:</strong> Monitor the balance between Stories, Bugs, and Tasks.</li>
+                    <li><strong>Priority:</strong> Ensure high-priority work is being completed first.</li>
+                    <li><strong>Epic:</strong> Track progress toward your larger strategic goals.</li>
+                </ul>
             </section>
 
             <section id="faq">
                 <h2>FAQ</h2>
-                <h3>Is there a limit to the number of levels?</h3>
-                <p>While technically you can add many levels, we recommend up to 4 dimensions per axis for the best
-                    readability and performance on your dashboard.</p>
+                <h3>How is health calculated?</h3>
+                <p>Health is calculated by comparing your current completion ratio against the ideal pacing ratio (linear completion over the sprint duration).</p>
 
-                <h3>Does my data leave Atlassian Cloud?</h3>
-                <p>No. Plugio Pivot is built on the Atlassian Forge platform. All data processing happens within the
-                    Atlassian secure infrastructure. Your Jira data is never transmitted to or stored on external
-                    servers.</p>
-
-                <h3>Can I add this to multiple dashboards?</h3>
-                <p>Absolutely! You can add and configure as many pivot tables as you need across different dashboards.
-                </p>
-            </section>
-
-            <section id="support">
-                <h2>Support</h2>
-                <p>Need help with a complex query or have a feature request? Our team is ready to help.</p>
-                <p>Email: <a href="mailto:support@plugio.io">support@plugio.io</a></p>
-                <p>Visit our website: <a href="https://plugio.io">plugio.io</a></p>
+                <h3>Does it support Story Points?</h3>
+                <p>Yes. You can choose between "Issue Count" or any "Numeric Field" (like Story Points) in the gadget configuration.</p>
+                
+                <h3>What happens to closed sprints?</h3>
+                <p>For closed sprints, the pacing line disappears, and the gadget shows the final completion state of the sprint.</p>
             </section>
         </main>
     </div>
