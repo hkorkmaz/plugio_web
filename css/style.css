@@ -211,7 +211,6 @@ img {
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
   color: var(--text-muted);
   padding: 8px 12px 4px;
 }
