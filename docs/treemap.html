@@ -5,10 +5,10 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TL2DNWBYHW"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-TL2DNWBYHW');
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-TL2DNWBYHW');
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -151,7 +151,7 @@
                         </svg>
                     </a>
                     <div class="dropdown-menu">
-                        <span class="dropdown-label">Jira</span>
+                        <span class="dropdown-label">Atlassian Cloud</span>
                         <a href="/docs/gauge.html" class="dropdown-item">
                             <div class="dropdown-icon"><img src="/img/gauge.png" alt="Gauge"></div>
                             <div class="dropdown-info">
@@ -213,16 +213,21 @@
         <main class="docs-content">
             <section id="getting-started">
                 <h1>Issue Distribution & Drilldown Charts Documentation</h1>
-                <p>Plugio Issue Distribution & Drilldown Charts helps you visualize complex Jira issue hierarchies using powerful space-filling charts. 
-                   Identify bottlenecks and distribution patterns at a glance.</p>
+                <p>Plugio Issue Distribution & Drilldown Charts helps you visualize complex Jira issue hierarchies using
+                    powerful space-filling charts.
+                    Identify bottlenecks and distribution patterns at a glance.</p>
 
                 <h2>Getting Started</h2>
                 <p>Add the gadget to your Jira Dashboard in 4 steps:</p>
                 <ol>
-                    <li><span class="step-number">1</span> On your Jira Dashboard, click <strong>Add Gadget</strong>.</li>
-                    <li><span class="step-number">2</span> Find <strong>"Issue Distribution & Drilldown Charts"</strong> and click Add.</li>
-                    <li><span class="step-number">3</span> Click <strong>Configure</strong> on the gadget to open the editor.</li>
-                    <li><span class="step-number">4</span> Select your JQL query, choose drill-down fields, and pick a color mode.</li>
+                    <li><span class="step-number">1</span> On your Jira Dashboard, click <strong>Add Gadget</strong>.
+                    </li>
+                    <li><span class="step-number">2</span> Find <strong>"Issue Distribution & Drilldown Charts"</strong>
+                        and click Add.</li>
+                    <li><span class="step-number">3</span> Click <strong>Configure</strong> on the gadget to open the
+                        editor.</li>
+                    <li><span class="step-number">4</span> Select your JQL query, choose drill-down fields, and pick a
+                        color mode.</li>
                 </ol>
             </section>
 
@@ -231,30 +236,38 @@
                 <p>Choose the best way to represent your data hierarchy:</p>
 
                 <h3>1. Treemap Chart</h3>
-                <p>Perfect for space-efficient visualization of large datasets. Each rectangle's area represents the volume of issues, while colors can represent a second metric like "Story Points" or "Priority".</p>
+                <p>Perfect for space-efficient visualization of large datasets. Each rectangle's area represents the
+                    volume of issues, while colors can represent a second metric like "Story Points" or "Priority".</p>
 
                 <h3>2. Sunburst Chart</h3>
-                <p>Ideal for showing multi-level relationships. The concentric rings show the hierarchy from the center (root) outwards. Interactive segments allow you to zoom into specific categories.</p>
+                <p>Ideal for showing multi-level relationships. The concentric rings show the hierarchy from the center
+                    (root) outwards. Interactive segments allow you to zoom into specific categories.</p>
 
                 <h3>3. Drill-Down Pie</h3>
-                <p>A familiar interface enhanced with hiyerarchical support. Click on any slice to see its sub-components, with live total counts displayed in the center.</p>
+                <p>A familiar interface enhanced with hiyerarchical support. Click on any slice to see its
+                    sub-components, with live total counts displayed in the center.</p>
             </section>
 
             <section id="data-sources">
                 <h2>Data & Colors</h2>
-                <p>Connect your data using any JQL query or saved filter. You can then refine the visual representation:</p>
+                <p>Connect your data using any JQL query or saved filter. You can then refine the visual representation:
+                </p>
 
                 <h3>Categorical Colors</h3>
-                <p>Each group receives a unique color from your selected palette. Great for quickly distinguishing between Projects or Statuses.</p>
+                <p>Each group receives a unique color from your selected palette. Great for quickly distinguishing
+                    between Projects or Statuses.</p>
 
                 <h3>Heatmap Mode</h3>
-                <p>Colors are calculated based on a numeric intensity. For example, highlight areas with high "Time Spent" or "High Priority" counts using a color gradient.</p>
+                <p>Colors are calculated based on a numeric intensity. For example, highlight areas with high "Time
+                    Spent" or "High Priority" counts using a color gradient.</p>
             </section>
 
             <section id="drill-down">
                 <h2>Drill-Down Depth</h2>
-                <p>Support for unlimited levels of hierarchy. Define your drill-down path in the editor (e.g., Project > Issue Type > Assignee) and explore the data interactively on your dashboard.</p>
-                <p>The breadcrumb navigation at the top of the chart shows your current path and the total issue count at each level.</p>
+                <p>Support for unlimited levels of hierarchy. Define your drill-down path in the editor (e.g., Project >
+                    Issue Type > Assignee) and explore the data interactively on your dashboard.</p>
+                <p>The breadcrumb navigation at the top of the chart shows your current path and the total issue count
+                    at each level.</p>
             </section>
 
             <section id="support">

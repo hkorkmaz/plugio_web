@@ -5,10 +5,10 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TL2DNWBYHW"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-TL2DNWBYHW');
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-TL2DNWBYHW');
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -183,7 +183,7 @@
                         </svg>
                     </a>
                     <div class="dropdown-menu">
-                        <span class="dropdown-label">Jira</span>
+                        <span class="dropdown-label">Atlassian Cloud</span>
                         <a href="/docs/gauge.html" class="dropdown-item">
                             <div class="dropdown-icon"><img src="/img/gauge.png" alt="Gauge"></div>
                             <div class="dropdown-info">
@@ -257,38 +257,55 @@
             <section id="getting-started">
                 <div class="platform-badge">monday.com</div>
                 <h1>World Map — Country & Region Analytics</h1>
-                <p>Plugio World Map lets you visualize monday.com board data on an interactive map — colored by country or region. See where your customers, deals, or projects are concentrated at a glance, with three chart types, 10 built-in map regions, timeline filtering, and dynamic conditional coloring.</p>
+                <p>Plugio World Map lets you visualize monday.com board data on an interactive map — colored by country
+                    or region. See where your customers, deals, or projects are concentrated at a glance, with three
+                    chart types, 10 built-in map regions, timeline filtering, and dynamic conditional coloring.</p>
 
                 <h2>Getting Started</h2>
                 <p>Follow these steps to add the widget to a monday.com dashboard:</p>
                 <ol>
-                    <li><span class="step-number">1</span> Open any monday.com dashboard and click <strong>Add Widget</strong>.</li>
-                    <li><span class="step-number">2</span> Search for <strong>"Plugio World Map"</strong> and add it to your dashboard.</li>
-                    <li><span class="step-number">3</span> Click <strong>Settings</strong> on the widget to open the configuration panel.</li>
-                    <li><span class="step-number">4</span> In the <strong>Data</strong> tab, select your board and the column that contains location or country information.</li>
-                    <li><span class="step-number">5</span> Choose your operation (Count, Sum, Average, etc.) and optionally select a numeric column to aggregate.</li>
+                    <li><span class="step-number">1</span> Open any monday.com dashboard and click <strong>Add
+                            Widget</strong>.</li>
+                    <li><span class="step-number">2</span> Search for <strong>"Plugio World Map"</strong> and add it to
+                        your dashboard.</li>
+                    <li><span class="step-number">3</span> Click <strong>Settings</strong> on the widget to open the
+                        configuration panel.</li>
+                    <li><span class="step-number">4</span> In the <strong>Data</strong> tab, select your board and the
+                        column that contains location or country information.</li>
+                    <li><span class="step-number">5</span> Choose your operation (Count, Sum, Average, etc.) and
+                        optionally select a numeric column to aggregate.</li>
                     <li><span class="step-number">6</span> Click <strong>Save</strong> to apply your configuration.</li>
                 </ol>
             </section>
 
             <section id="visualization-modes">
                 <h2>Visualization Modes</h2>
-                <p>Switch between three visualization modes in the <strong>Map Style</strong> tab without changing your data setup.</p>
+                <p>Switch between three visualization modes in the <strong>Map Style</strong> tab without changing your
+                    data setup.</p>
 
                 <h3>Choropleth</h3>
-                <p>Countries or regions are filled with a color gradient based on their value — darker means higher, lighter means lower. This is the default mode and works best for showing distribution across a large number of regions.</p>
+                <p>Countries or regions are filled with a color gradient based on their value — darker means higher,
+                    lighter means lower. This is the default mode and works best for showing distribution across a large
+                    number of regions.</p>
 
                 <h3>Bubble</h3>
-                <p>A circle is drawn at the center of each region, sized proportionally to its value. Larger bubbles immediately draw attention to the highest-value regions. Works well when you want to compare magnitudes rather than distributions.</p>
+                <p>A circle is drawn at the center of each region, sized proportionally to its value. Larger bubbles
+                    immediately draw attention to the highest-value regions. Works well when you want to compare
+                    magnitudes rather than distributions.</p>
 
                 <h3>Pie Chart</h3>
-                <p>A mini pie chart is rendered on each region, breaking down the data by a <strong>Grouping Column</strong> you select (such as a Status or Dropdown column). Each slice represents a category. Use this mode to show composition alongside geographic distribution.</p>
-                <p>To use Pie Chart mode, select a Status or Dropdown column as the Grouping Column in the Map Style tab.</p>
+                <p>A mini pie chart is rendered on each region, breaking down the data by a <strong>Grouping
+                        Column</strong> you select (such as a Status or Dropdown column). Each slice represents a
+                    category. Use this mode to show composition alongside geographic distribution.</p>
+                <p>To use Pie Chart mode, select a Status or Dropdown column as the Grouping Column in the Map Style
+                    tab.</p>
             </section>
 
             <section id="map-regions">
                 <h2>Map Regions</h2>
-                <p>The widget includes 10 built-in maps. Select the region in the <strong>Map Style</strong> tab under <strong>Region</strong>.</p>
+                <p>The widget includes 10 built-in maps. Select the region in the <strong>Map Style</strong> tab under
+                    <strong>Region</strong>.
+                </p>
 
                 <div class="region-grid">
                     <div class="region-item">
@@ -363,7 +380,9 @@
                     </div>
                 </div>
 
-                <p>For country-level maps (US, UK, Germany, etc.), you will need to select a <strong>Region Column</strong> — a column in your board that contains state, province, or region names for that country. The widget supports full names, common abbreviations, and alternative spellings.</p>
+                <p>For country-level maps (US, UK, Germany, etc.), you will need to select a <strong>Region
+                        Column</strong> — a column in your board that contains state, province, or region names for that
+                    country. The widget supports full names, common abbreviations, and alternative spellings.</p>
             </section>
 
             <section id="data-configuration">
@@ -375,7 +394,8 @@
                 <ul>
                     <li><strong>Location column:</strong> Automatically extracts the country from the address.</li>
                     <li><strong>Country column:</strong> Uses the built-in monday.com country picker.</li>
-                    <li><strong>Text or Dropdown column:</strong> Accepts country names (e.g. "Germany"), ISO-2 codes (e.g. "DE"), or common abbreviations.</li>
+                    <li><strong>Text or Dropdown column:</strong> Accepts country names (e.g. "Germany"), ISO-2 codes
+                        (e.g. "DE"), or common abbreviations.</li>
                 </ul>
 
                 <h3>Operation</h3>
@@ -384,80 +404,110 @@
                     <li><strong>Count:</strong> Number of items per region. No numeric column needed.</li>
                     <li><strong>Sum:</strong> Total of a numeric column per region.</li>
                     <li><strong>Average:</strong> Mean value of a numeric column per region.</li>
-                    <li><strong>Minimum / Maximum:</strong> The lowest or highest value in a numeric column per region.</li>
+                    <li><strong>Minimum / Maximum:</strong> The lowest or highest value in a numeric column per region.
+                    </li>
                 </ul>
 
                 <h3>Measure Column</h3>
-                <p>When using Sum, Average, Min, or Max, select the numeric column to aggregate. Supports Numbers and Formula column types.</p>
+                <p>When using Sum, Average, Min, or Max, select the numeric column to aggregate. Supports Numbers and
+                    Formula column types.</p>
             </section>
 
             <section id="conditional-coloring">
                 <h2>Conditional Coloring</h2>
-                <p>By default, the map uses a single-color gradient scaled to your data range. You can switch to <strong>Conditional</strong> mode in the <strong>Coloring</strong> tab to define custom color ranges based on specific thresholds.</p>
+                <p>By default, the map uses a single-color gradient scaled to your data range. You can switch to
+                    <strong>Conditional</strong> mode in the <strong>Coloring</strong> tab to define custom color ranges
+                    based on specific thresholds.
+                </p>
 
                 <h3>Setting Up Color Ranges</h3>
-                <p>Each color range has a start value, an end value, and a color. Ranges chain automatically — the end of one range becomes the start of the next. Click <strong>Add Range</strong> to add more.</p>
+                <p>Each color range has a start value, an end value, and a color. Ranges chain automatically — the end
+                    of one range becomes the start of the next. Click <strong>Add Range</strong> to add more.</p>
 
                 <h3>Dynamic Thresholds with Variables</h3>
-                <p>Threshold values can be static numbers or dynamic values pulled from your board using <strong>Variables</strong>. For example, set the upper threshold to a variable that calculates the average deal value across all items — the color ranges will automatically adjust as your data changes.</p>
-                <p>Type <strong>@</strong> in any threshold field to reference a variable, or click the variable icon to create a new one.</p>
+                <p>Threshold values can be static numbers or dynamic values pulled from your board using
+                    <strong>Variables</strong>. For example, set the upper threshold to a variable that calculates the
+                    average deal value across all items — the color ranges will automatically adjust as your data
+                    changes.
+                </p>
+                <p>Type <strong>@</strong> in any threshold field to reference a variable, or click the variable icon to
+                    create a new one.</p>
             </section>
 
             <section id="timeline">
                 <h2>Timeline & Playback</h2>
-                <p>The <strong>Timeline</strong> tab lets you connect a Date column to the map, enabling time-based filtering and animation.</p>
+                <p>The <strong>Timeline</strong> tab lets you connect a Date column to the map, enabling time-based
+                    filtering and animation.</p>
 
                 <h3>Date Filter</h3>
-                <p>Adds an interactive date range slider below the map. Drag the handles to filter which items are included in the map based on their date column value. Useful for exploring how your geographic data looked during a specific period.</p>
+                <p>Adds an interactive date range slider below the map. Drag the handles to filter which items are
+                    included in the map based on their date column value. Useful for exploring how your geographic data
+                    looked during a specific period.</p>
 
                 <h3>Playback</h3>
-                <p>Animates the map through time automatically. Configure the <strong>Period</strong> to control the step size:</p>
+                <p>Animates the map through time automatically. Configure the <strong>Period</strong> to control the
+                    step size:</p>
                 <ul>
                     <li>Daily, Weekly, Monthly, Quarterly, Yearly</li>
                     <li>Month of Year — compare the same month across all years</li>
                     <li>Day of Week — compare activity by weekday</li>
                     <li>Hour of Day — for time-stamped data</li>
                 </ul>
-                <p>Enable <strong>Cumulative</strong> to show all data up to the current playback position, rather than only the data within the current period.</p>
+                <p>Enable <strong>Cumulative</strong> to show all data up to the current playback position, rather than
+                    only the data within the current period.</p>
             </section>
 
             <section id="variables">
                 <h2>Variables</h2>
-                <p>Variables are reusable data queries that resolve to a single number from your board. They can be used as dynamic threshold values in Conditional Coloring.</p>
+                <p>Variables are reusable data queries that resolve to a single number from your board. They can be used
+                    as dynamic threshold values in Conditional Coloring.</p>
 
                 <h3>Creating a Variable</h3>
-                <p>Open the <strong>Variables</strong> manager from the Coloring tab, or type <strong>@</strong> in any threshold field and select <strong>Create variable</strong>.</p>
+                <p>Open the <strong>Variables</strong> manager from the Coloring tab, or type <strong>@</strong> in any
+                    threshold field and select <strong>Create variable</strong>.</p>
 
                 <h3>Variable Types</h3>
                 <ul>
-                    <li><strong>Board Query:</strong> Select a board, a column, and an aggregation (Sum, Average, Count, Min, Max) with optional filters. The variable resolves to that computed value in real time.</li>
-                    <li><strong>Formula:</strong> Combine multiple variables using a mathematical expression, for example <code>(revenue / target) * 100</code>.</li>
+                    <li><strong>Board Query:</strong> Select a board, a column, and an aggregation (Sum, Average, Count,
+                        Min, Max) with optional filters. The variable resolves to that computed value in real time.</li>
+                    <li><strong>Formula:</strong> Combine multiple variables using a mathematical expression, for
+                        example <code>(revenue / target) * 100</code>.</li>
                 </ul>
 
                 <h3>Filters</h3>
-                <p>Each board query variable supports column-level filters — limit the query to specific groups, statuses, assignees, or any other column type. This lets you define precise thresholds such as "average deal value for Won deals only."</p>
+                <p>Each board query variable supports column-level filters — limit the query to specific groups,
+                    statuses, assignees, or any other column type. This lets you define precise thresholds such as
+                    "average deal value for Won deals only."</p>
             </section>
 
             <section id="faq">
                 <h2>FAQ</h2>
 
                 <h3>Does my data leave monday.com?</h3>
-                <p>No. The widget operates entirely within the monday.com platform using the monday.com Apps SDK. All data fetching and processing happens within your monday.com instance. We never store or transmit your board data.</p>
+                <p>No. The widget operates entirely within the monday.com platform using the monday.com Apps SDK. All
+                    data fetching and processing happens within your monday.com instance. We never store or transmit
+                    your board data.</p>
 
                 <h3>Which column types are supported for location?</h3>
-                <p>Location, Country, Text, Long Text, Dropdown, Status, and Name columns are all supported. The widget normalizes country names and common abbreviations automatically.</p>
+                <p>Location, Country, Text, Long Text, Dropdown, Status, and Name columns are all supported. The widget
+                    normalizes country names and common abbreviations automatically.</p>
 
                 <h3>My country isn't being matched on the map. What should I check?</h3>
-                <p>Ensure the column values match either a country name in English (e.g. "Germany"), an ISO-2 code (e.g. "DE"), or a common alias. If using a Location column, make sure the location resolves to a valid country in monday.com.</p>
+                <p>Ensure the column values match either a country name in English (e.g. "Germany"), an ISO-2 code (e.g.
+                    "DE"), or a common alias. If using a Location column, make sure the location resolves to a valid
+                    country in monday.com.</p>
 
                 <h3>Can I use data from a board that isn't connected to the dashboard?</h3>
-                <p>The widget loads all boards available to your account. You can select any board regardless of whether it is connected to the current dashboard.</p>
+                <p>The widget loads all boards available to your account. You can select any board regardless of whether
+                    it is connected to the current dashboard.</p>
 
                 <h3>How many items can the widget handle?</h3>
-                <p>The widget uses cursor-based pagination and fetches all items from the selected board, regardless of size. Performance may vary for very large boards (10,000+ items).</p>
+                <p>The widget uses cursor-based pagination and fetches all items from the selected board, regardless of
+                    size. Performance may vary for very large boards (10,000+ items).</p>
 
                 <h3>Can I use the Pie Chart mode without a numeric column?</h3>
-                <p>Yes. In Pie Chart mode, select a Grouping Column (Status or Dropdown). The widget will count items per category per region. No numeric column is required.</p>
+                <p>Yes. In Pie Chart mode, select a Grouping Column (Status or Dropdown). The widget will count items
+                    per category per region. No numeric column is required.</p>
             </section>
 
             <section id="support">
@@ -502,4 +552,5 @@
         });
     </script>
 </body>
+
 </html>

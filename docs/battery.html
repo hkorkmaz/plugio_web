@@ -5,10 +5,10 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TL2DNWBYHW"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-TL2DNWBYHW');
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-TL2DNWBYHW');
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -159,7 +159,7 @@
                         </svg>
                     </a>
                     <div class="dropdown-menu">
-                        <span class="dropdown-label">Jira</span>
+                        <span class="dropdown-label">Atlassian Cloud</span>
 
                         <a href="/docs/gauge.html" class="dropdown-item">
                             <div class="dropdown-icon"><img src="/img/gauge.png" alt="Gauge"></div>
@@ -223,49 +223,64 @@
         <main class="docs-content">
             <section id="getting-started">
                 <h1>Sprint Progress & Health Monitor Documentation</h1>
-                <p>Monitor your Agile team's pulse with an intuitive battery-style visualization. Track real-time progress, pacing, and scope creep on any Jira Dashboard.</p>
+                <p>Monitor your Agile team's pulse with an intuitive battery-style visualization. Track real-time
+                    progress, pacing, and scope creep on any Jira Dashboard.</p>
 
                 <h2>Getting Started</h2>
                 <p>Follow these simple steps to add the monitor to your dashboard:</p>
                 <ol>
-                    <li><span class="step-number">1</span> Open any Jira Dashboard and click <strong>Add Gadget</strong>.</li>
-                    <li><span class="step-number">2</span> Search for <strong>"Sprint Progress & Health"</strong> and click Add.</li>
-                    <li><span class="step-number">3</span> On the gadget, click <strong>Configure</strong> (or use the Edit mode).</li>
-                    <li><span class="step-number">4</span> Select your <strong>Board</strong> and <strong>Sprint</strong> to start monitoring.</li>
+                    <li><span class="step-number">1</span> Open any Jira Dashboard and click <strong>Add
+                            Gadget</strong>.</li>
+                    <li><span class="step-number">2</span> Search for <strong>"Sprint Progress & Health"</strong> and
+                        click Add.</li>
+                    <li><span class="step-number">3</span> On the gadget, click <strong>Configure</strong> (or use the
+                        Edit mode).</li>
+                    <li><span class="step-number">4</span> Select your <strong>Board</strong> and
+                        <strong>Sprint</strong> to start monitoring.
+                    </li>
                 </ol>
             </section>
 
             <section id="battery-logic">
                 <h2>The Battery Visualization</h2>
-                <p>The core of the gadget is a multi-segment battery that represents your sprint's capacity and status:</p>
+                <p>The core of the gadget is a multi-segment battery that represents your sprint's capacity and status:
+                </p>
                 <ul>
                     <li><strong>Solid Colors:</strong> Represent work that was in the sprint at the start.</li>
-                    <li><strong>Patterned/Stripe Segments:</strong> Represent <strong>Scope Creep</strong> (issues added after the sprint started).</li>
+                    <li><strong>Patterned/Stripe Segments:</strong> Represent <strong>Scope Creep</strong> (issues added
+                        after the sprint started).</li>
                     <li><strong>Empty Slots:</strong> Represent remaining capacity or work yet to be started.</li>
                 </ul>
                 <div class="feature-highlight">
-                    <p><strong>Pro Tip:</strong> Click on any segment of the battery to see the exact list of issues in a detailed Forge modal.</p>
+                    <p><strong>Pro Tip:</strong> Click on any segment of the battery to see the exact list of issues in
+                        a detailed Forge modal.</p>
                 </div>
             </section>
 
             <section id="pacing-and-health">
                 <h2>Pacing & Health Line</h2>
-                <p>The vertical "Pacing Line" inside the battery is a real-time indicator of where you <em>should</em> be based on the elapsed time of the sprint.</p>
+                <p>The vertical "Pacing Line" inside the battery is a real-time indicator of where you <em>should</em>
+                    be based on the elapsed time of the sprint.</p>
                 <ul>
-                    <li><strong>On Track:</strong> If your "Done" colors reach or exceed the pacing line, your sprint health is considered Green.</li>
-                    <li><strong>Behind Schedule:</strong> If you are significantly below the pacing line, the health indicator will warn you with a Yellow or Red state.</li>
+                    <li><strong>On Track:</strong> If your "Done" colors reach or exceed the pacing line, your sprint
+                        health is considered Green.</li>
+                    <li><strong>Behind Schedule:</strong> If you are significantly below the pacing line, the health
+                        indicator will warn you with a Yellow or Red state.</li>
                 </ul>
             </section>
 
             <section id="scope-creep">
                 <h2>Scope Creep Tracking</h2>
-                <p>Transparently monitor how much work was added after the sprint began. The gadget automatically identifies "Creep" by comparing issue creation/addition dates with the sprint start date.</p>
-                <p>Creep is displayed using a distinct diagonal stripe pattern, allowing you to see at a glance if your sprint is becoming overloaded.</p>
+                <p>Transparently monitor how much work was added after the sprint began. The gadget automatically
+                    identifies "Creep" by comparing issue creation/addition dates with the sprint start date.</p>
+                <p>Creep is displayed using a distinct diagonal stripe pattern, allowing you to see at a glance if your
+                    sprint is becoming overloaded.</p>
             </section>
 
             <section id="team-breakdown">
                 <h2>Team & Work Breakdown</h2>
-                <p>Enable "Breakdown Batteries" in the configuration to see your sprint health divided by specific dimensions:</p>
+                <p>Enable "Breakdown Batteries" in the configuration to see your sprint health divided by specific
+                    dimensions:</p>
                 <ul>
                     <li><strong>Assignee:</strong> See how work is distributed across team members.</li>
                     <li><strong>Issue Type:</strong> Monitor the balance between Stories, Bugs, and Tasks.</li>
@@ -277,13 +292,16 @@
             <section id="faq">
                 <h2>FAQ</h2>
                 <h3>How is health calculated?</h3>
-                <p>Health is calculated by comparing your current completion ratio against the ideal pacing ratio (linear completion over the sprint duration).</p>
+                <p>Health is calculated by comparing your current completion ratio against the ideal pacing ratio
+                    (linear completion over the sprint duration).</p>
 
                 <h3>Does it support Story Points?</h3>
-                <p>Yes. You can choose between "Issue Count" or any "Numeric Field" (like Story Points) in the gadget configuration.</p>
-                
+                <p>Yes. You can choose between "Issue Count" or any "Numeric Field" (like Story Points) in the gadget
+                    configuration.</p>
+
                 <h3>What happens to closed sprints?</h3>
-                <p>For closed sprints, the pacing line disappears, and the gadget shows the final completion state of the sprint.</p>
+                <p>For closed sprints, the pacing line disappears, and the gadget shows the final completion state of
+                    the sprint.</p>
             </section>
         </main>
     </div>
