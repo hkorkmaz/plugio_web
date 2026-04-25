@@ -1,0 +1,52 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- White Background -->
+  <rect x="10" y="10" width="492" height="492" rx="90" fill="none" stroke="none" stroke-width="4"/>
+
+  <!-- 2x2 grid: padding=55, card=190x190, gap=22 -->
+
+  <!-- Card 1: Top-left — Blue — Basic metric value -->
+  <rect x="55" y="55" width="190" height="190" rx="24" fill="#0052CC"/>
+  <!-- Big value bar (represents a number) -->
+  <rect x="78" y="86" width="144" height="52" rx="14" fill="white" fill-opacity="0.92"/>
+  <!-- Sub-label bar -->
+  <rect x="78" y="150" width="90" height="14" rx="7" fill="white" fill-opacity="0.4"/>
+  <!-- Up arrow triangle -->
+  <path d="M193 205 L207 182 L221 205 Z" fill="#36B37E"/>
+  <!-- Small change label bar -->
+  <rect x="78" y="190" width="96" height="14" rx="7" fill="white" fill-opacity="0.25"/>
+
+  <!-- Card 2: Top-right — Green — Trend sparkline -->
+  <rect x="267" y="55" width="190" height="190" rx="24" fill="#36B37E"/>
+  <!-- Small label bar at top -->
+  <rect x="290" y="86" width="96" height="14" rx="7" fill="white" fill-opacity="0.45"/>
+  <!-- Area fill under sparkline -->
+  <path d="M290,216 L315,196 L340,207 L364,170 L388,178 L413,143 L432,122 L432,230 L290,230 Z"
+    fill="white" fill-opacity="0.12"/>
+  <!-- Sparkline -->
+  <polyline points="290,216 315,196 340,207 364,170 388,178 413,143 432,122"
+    stroke="white" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.92"/>
+  <!-- Dot at peak -->
+  <circle cx="432" cy="122" r="9" fill="white"/>
+
+  <!-- Card 3: Bottom-left — Purple — Progress -->
+  <rect x="55" y="267" width="190" height="190" rx="24" fill="#998DD9"/>
+  <!-- Label bar -->
+  <rect x="78" y="300" width="108" height="14" rx="7" fill="white" fill-opacity="0.45"/>
+  <!-- Value block (big percentage) -->
+  <rect x="78" y="324" width="70" height="40" rx="10" fill="white" fill-opacity="0.9"/>
+  <!-- Progress track -->
+  <rect x="78" y="380" width="144" height="18" rx="9" fill="white" fill-opacity="0.25"/>
+  <!-- Progress fill ~72% -->
+  <rect x="78" y="380" width="104" height="18" rx="9" fill="white" fill-opacity="0.88"/>
+
+  <!-- Card 4: Bottom-right — Orange — List / Distribution -->
+  <rect x="267" y="267" width="190" height="190" rx="24" fill="#FF8B00"/>
+  <!-- 3 descending horizontal bars -->
+  <rect x="290" y="304" width="140" height="20" rx="10" fill="white" fill-opacity="0.88"/>
+  <rect x="290" y="336" width="102" height="20" rx="10" fill="white" fill-opacity="0.7"/>
+  <rect x="290" y="368" width="68"  height="20" rx="10" fill="white" fill-opacity="0.52"/>
+  <!-- Rank dots -->
+  <circle cx="283" cy="314" r="5" fill="white" fill-opacity="0.85"/>
+  <circle cx="283" cy="346" r="5" fill="white" fill-opacity="0.68"/>
+  <circle cx="283" cy="378" r="5" fill="white" fill-opacity="0.5"/>
+</svg>

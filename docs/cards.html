@@ -12,13 +12,12 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pivot Documentation - Plugio</title>
+    <title>Metric Cards & KPI Dashboard Documentation - Plugio</title>
     <meta name="description"
-        content="Documentation and setup guide for Plugio Multi-Dimensional Pivot Table for Jira Dashboard.">
+        content="Documentation and setup guide for Metric Cards & KPI Dashboard for Jira Dashboard.">
     <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="../css/style.css">
     <style>
-        /* Documentation specific overrides to match existing theme */
         .docs-nav {
             position: sticky;
             top: 100px;
@@ -98,18 +97,6 @@
             margin-bottom: 12px;
         }
 
-        .code-block {
-            background: var(--navy-mid);
-            border: 1px solid var(--border-dark);
-            border-radius: 8px;
-            padding: 16px;
-            font-family: 'Monaco', 'Consolas', monospace;
-            font-size: 14px;
-            color: var(--accent);
-            margin: 16px 0;
-            overflow-x: auto;
-        }
-
         .step-number {
             display: inline-flex;
             align-items: center;
@@ -143,7 +130,7 @@
             <a href="../" class="logo"><img src="/img/plugio-text-light.svg" alt="Plugio" height="30"></a>
             <nav>
                 <div class="nav-dropdown">
-                    <a href="/docs/pivot.html" class="dropdown-trigger active">
+                    <a href="/docs/cards.html" class="dropdown-trigger active">
                         Documentation
                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -217,105 +204,91 @@
         <aside class="docs-nav">
             <ul>
                 <li><a href="#getting-started" class="active">Getting Started</a></li>
-                <li><a href="#pivot-structure">Pivot Structure</a></li>
-                <li><a href="#data-connection">Data Connection</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#card-types">Card Types</a></li>
+                <li><a href="#data-sources">Data &amp; Periods</a></li>
+                <li><a href="#layout">Layout &amp; Theming</a></li>
                 <li><a href="#support">Support</a></li>
             </ul>
         </aside>
 
         <main class="docs-content">
             <section id="getting-started">
-                <h1>Plugio Pivot Documentation</h1>
-                <p>Welcome to the Plugio Pivot documentation. This guide will help you create powerful,
-                    multi-dimensional reports directly on your Jira Dashboards.</p>
+                <h1>Metric Cards &amp; KPI Dashboard Documentation</h1>
+                <p>Plugio Metric Cards lets you build a dashboard of focused KPI tiles backed by JQL. Combine multiple
+                    card types in a single gadget to surface counts, progress against targets, trends, ratios, top
+                    issues, and breakdowns — all on one Jira dashboard.</p>
 
                 <h2>Getting Started</h2>
-                <p>Follow these steps to add a Multi-Dimensional Pivot Table to your dashboard:</p>
+                <p>Add the gadget to your Jira Dashboard in 4 steps:</p>
                 <ol>
-                    <li><span class="step-number">1</span> Open any Jira Dashboard and click <strong>Add
-                            Gadget</strong>.</li>
-                    <li><span class="step-number">2</span> Search for <strong>"Multi-Dimensional Pivot Table"</strong>
-                        and click Add.</li>
-                    <li><span class="step-number">3</span> On the gadget, click the <strong>three dots (...)</strong>
-                        and select <strong>Configure</strong>.</li>
-                    <li><span class="step-number">4</span> Use the live editor to drag and drop your dimensions and see
-                        your report update in real-time.</li>
+                    <li><span class="step-number">1</span> On your Jira Dashboard, click <strong>Add Gadget</strong>.
+                    </li>
+                    <li><span class="step-number">2</span> Find <strong>"Metric Cards &amp; KPI Dashboard"</strong> and
+                        click Add.</li>
+                    <li><span class="step-number">3</span> Click <strong>Configure</strong> on the gadget to open the
+                        editor.</li>
+                    <li><span class="step-number">4</span> Add one or more metrics, pick a card type for each, and set
+                        the comparison period.</li>
                 </ol>
             </section>
 
-            <section id="pivot-structure">
-                <h2>Pivot Structure</h2>
-                <p>Plugio Pivot allows you to create complex, hierarchical reports by combining rows and columns.</p>
+            <section id="card-types">
+                <h2>Card Types</h2>
+                <p>Each card represents a single metric. Pick the card type that matches the question you want to
+                    answer:</p>
 
-                <h3>1. Row Dimensions</h3>
-                <p>Drag fields into the Rows area to create vertical groupings. You can nest multiple levels (e.g.,
-                    Project > Issue Type > Status) to create hierarchical drill-downs.</p>
+                <h3>1. Basic</h3>
+                <p>A single value with optional period-over-period delta. Use it for headline numbers like "Open Bugs"
+                    or "Resolved This Week".</p>
 
-                <h3>2. Column Dimensions</h3>
-                <p>Drag fields into the Columns area to spread data horizontally. Like rows, columns can also be
-                    multi-level (e.g., Priority > Resolution).</p>
+                <h3>2. Progress</h3>
+                <p>Current value against a target, rendered as a progress bar. Targets can be a fixed number or
+                    dynamically derived from a second JQL query (e.g. resolved vs. total in scope).</p>
 
-                <h3>3. Metrics & Summation</h3>
-                <p>Choose what data to display in the cells. You can count issues or sum up numeric fields like Story
-                    Points, Time Spent, or any custom numeric field.</p>
+                <h3>3. Trend</h3>
+                <p>A sparkline of the metric across buckets in your selected period (day / week / month / quarter).
+                    Great for spotting direction at a glance.</p>
+
+                <h3>4. Ratio</h3>
+                <p>Two JQL queries combined into a percentage or rate — e.g. bug ratio, completion rate, escaped
+                    defects.</p>
+
+                <h3>5. Distribution</h3>
+                <p>Breaks the metric down by a categorical field (status, priority, assignee, custom field) and renders
+                    it as a compact bar or pie chart inside the card.</p>
+
+                <h3>6. List</h3>
+                <p>Top-N issues from the configured JQL, ordered by your chosen field. Useful for "Top open
+                    blockers" or "Most recently updated" tiles.</p>
             </section>
 
-            <section id="data-connection">
-                <h2>Data Connection & JQL</h2>
-                <p>Your reports are powered by real-time Jira data through JQL (Jira Query Language).</p>
+            <section id="data-sources">
+                <h2>Data &amp; Periods</h2>
+                <p>Every card is backed by a project selection and an optional JQL filter. The gadget runs each query
+                    using the viewer's permissions, so users only see issues they have access to.</p>
 
-                <h3>Custom JQL Queries</h3>
-                <p>Enter any valid JQL to define the scope of your data. The pivot table will automatically process all
-                    issues returned by your query.</p>
-                <div class="code-block">
-                    project = "PROJ" AND issuetype = "Story" AND status != "Done"
-                </div>
+                <h3>Comparison Periods</h3>
+                <p>Set a single period at the gadget level — Basic, Progress, and Ratio cards will automatically
+                    compute a previous-period delta against it. Trend cards use the period to define the X axis
+                    buckets.</p>
 
-                <h3>Live Preview</h3>
-                <p>The configuration panel shows a live preview of your data as you change your JQL or dimensions,
-                    allowing for rapid report building.</p>
+                <h3>Aggregations</h3>
+                <p>For numeric fields you can aggregate as <strong>count</strong>, <strong>sum</strong>,
+                    <strong>min</strong>, or <strong>max</strong>. The default is issue count.</p>
             </section>
 
-            <section id="features">
-                <h2>Key Features</h2>
-
-                <h3>Multi-Level Drill Down</h3>
-                <p>Click the <strong>+ / -</strong> buttons on the table headers to expand or collapse specific
-                    dimensions. This allows you to explore data from a high-level summary down to granular details
-                    without leaving the dashboard.</p>
-
-                <h3>Automatic Totals</h3>
-                <p>The table automatically calculates sub-totals for every level of your hierarchy and a grand total for
-                    the entire data set.</p>
-
-                <h3>Modern Themes</h3>
-                <p>Choose from several curated themes (Ocean Blue, Midnight Slate, Royal Purple) that look great in both
-                    Jira Light and Dark modes.</p>
-            </section>
-
-            <section id="faq">
-                <h2>FAQ</h2>
-                <h3>Is there a limit to the number of levels?</h3>
-                <p>While technically you can add many levels, we recommend up to 4 dimensions per axis for the best
-                    readability and performance on your dashboard.</p>
-
-                <h3>Does my data leave Atlassian Cloud?</h3>
-                <p>No. Plugio Pivot is built on the Atlassian Forge platform. All data processing happens within the
-                    Atlassian secure infrastructure. Your Jira data is never transmitted to or stored on external
-                    servers.</p>
-
-                <h3>Can I add this to multiple dashboards?</h3>
-                <p>Absolutely! You can add and configure as many pivot tables as you need across different dashboards.
-                </p>
+            <section id="layout">
+                <h2>Layout &amp; Theming</h2>
+                <p>Cards arrange themselves into a responsive grid that fits the gadget container — drag to resize the
+                    gadget on your Jira dashboard and the cards reflow automatically.</p>
+                <p>Per-card color accents let you signal severity or category. The gadget honors Jira's light and dark
+                    themes out of the box.</p>
             </section>
 
             <section id="support">
                 <h2>Support</h2>
-                <p>Need help with a complex query or have a feature request? Our team is ready to help.</p>
+                <p>Need assistance or have feedback? We're here to help.</p>
                 <p>Email: <a href="mailto:support@plugio.io">support@plugio.io</a></p>
-                <p>Visit our website: <a href="https://plugio.io">plugio.io</a></p>
             </section>
         </main>
     </div>
@@ -333,7 +306,6 @@
     </footer>
 
     <script>
-        // Simple scroll spy for navigation highlight
         window.addEventListener('scroll', () => {
             const sections = document.querySelectorAll('.docs-content section');
             const navLinks = document.querySelectorAll('.docs-nav a');

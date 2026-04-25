@@ -1,0 +1,21 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Rounded Green Card (Matching top-right card in sample.svg) -->
+  <rect x="32" y="32" width="448" height="448" rx="48" fill="#36B37E"/>
+
+  <!-- Top Left: Label bar -->
+  <rect x="72" y="75" width="120" height="20" rx="10" fill="white" fill-opacity="0.45"/>
+
+  <!-- Big Bold White Number (Added as requested) -->
+  <text x="72" y="260" font-family="'Arial Black', sans-serif" font-weight="900" font-size="200" fill="white" letter-spacing="-10">42</text>
+
+  <!-- White Sparkline (Matching sample.svg style but bold for visibility) -->
+  <path d="M72,420 L132,374 L192,400 L252,314 L312,333 L372,252 L440,204 L440,448 L72,448 Z" 
+    fill="white" fill-opacity="0.12"/>
+  
+  <polyline points="72,420 132,374 192,400 252,314 312,333 372,252 440,204" 
+    stroke="white" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.95"/>
+  
+  <circle cx="440" cy="204" r="18" fill="white"/>
+  <circle cx="440" cy="204" r="8" fill="#36B37E"/>
+
+</svg>
