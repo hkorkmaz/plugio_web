@@ -2,7 +2,94 @@
 <html lang="en">
 
 <head>
-  <!-- Google tag (gtag.js) -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plugio - Simple Plugins That Just Work</title>
+  <meta name="description"
+    content="Plugio builds reliable visualization plugins for Atlassian and monday.com. Gauge, KPI, Pivot, Treemap and Map widgets for your dashboards.">
+  <link rel="canonical" href="https://plugio.io/">
+  <meta name="theme-color" content="#0B1120">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Plugio">
+  <meta property="og:title" content="Plugio - Simple Plugins That Just Work">
+  <meta property="og:description"
+    content="Reliable visualization plugins for Atlassian and monday.com. Gauge, KPI, Pivot, Treemap and Map widgets.">
+  <meta property="og:url" content="https://plugio.io/">
+  <meta property="og:image" content="https://plugio.io/img/plugio-192.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Plugio - Simple Plugins That Just Work">
+  <meta name="twitter:description"
+    content="Reliable visualization plugins for Atlassian and monday.com.">
+  <meta name="twitter:image" content="https://plugio.io/img/plugio-192.png">
+
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/img/plugio-192.png">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "Plugio",
+        "url": "https://plugio.io/",
+        "logo": "https://plugio.io/img/plugio-192.png",
+        "sameAs": [
+          "https://marketplace.atlassian.com/vendors/1224901/plugio",
+          "https://monday.com/marketplace/partner/100000204/Plugio"
+        ]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Gauge & KPI Widgets for Jira Dashboard",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Atlassian Cloud",
+        "url": "https://marketplace.atlassian.com/apps/176485135/gauge-kpi-widgets-for-jira-dashboards",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Multi-Dimensional Pivot Table for Jira",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Atlassian Cloud",
+        "url": "https://marketplace.atlassian.com/apps/3693964024/multi-dimensional-pivot-table-for-jira-dashboard",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Issue Distribution & Drilldown Charts for Jira Dashboard",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Atlassian Cloud",
+        "url": "https://marketplace.atlassian.com/apps/863764855/issue-distribution-drilldown-charts-for-jira-dashboard",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Sprint Progress & Health Monitor for Jira Dashboard",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Atlassian Cloud",
+        "url": "https://marketplace.atlassian.com/apps/2969894539/sprint-progress-health-monitor-for-jira-dashboard",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "World Map & Region Analytics for monday.com",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "monday.com",
+        "url": "https://monday.com/marketplace/listing/10001146/world-map--region-analytics",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Google tag (gtag.js) - deferred -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TL2DNWBYHW"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -10,13 +97,6 @@
     gtag('js', new Date());
     gtag('config', 'G-TL2DNWBYHW');
   </script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Plugio - Simple Plugins That Just Work</title>
-  <meta name="description"
-    content="Plugio builds reliable visualization plugins for Atlassian and monday.com. Gauge & KPI Widgets for your dashboards.">
-  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body class="page-landing">
@@ -104,19 +184,22 @@
       <div class="hero-content">
         <span class="hero-badge">
           <span class="pulse-dot"></span>
-          Available on Atlassian &amp; monday.com
+          Free on Atlassian &amp; monday.com
         </span>
-        <h1>Simple plugins that <span class="accent">just work</span>.</h1>
-        <p class="hero-sub">Lightweight, focused plugins designed to extend your favorite platforms without complexity.
-          Built for developers and product teams who value stability and speed.</p>
+        <h1>Dashboard widgets with the <span class="accent">depth</span> your team actually needs.</h1>
+        <p class="hero-sub">Most marketplace widgets stop at "show a number." Plugio doesn't. Conditional formatting,
+          variables, multi-threshold logic, and live JQL — built in from v1, not roadmap promises.</p>
         <div class="hero-buttons">
-          <a href="#products" class="hero-cta">
-            View plugins
+          <a href="https://marketplace.atlassian.com/vendors/1224901/plugio" target="_blank" rel="noopener" class="hero-cta">
+            Browse on Atlassian
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
               stroke-linecap="round" stroke-linejoin="round">
               <line x1="5" y1="12" x2="19" y2="12" />
               <polyline points="12 5 19 12 12 19" />
             </svg>
+          </a>
+          <a href="#products" class="hero-cta-secondary">
+            View all plugins
           </a>
         </div>
       </div>
@@ -241,15 +324,48 @@
     </div>
   </section>
 
+  <!-- Social proof strip -->
+  <section class="social-proof-strip">
+    <div class="social-proof-inner">
+      <div class="social-proof-item">
+        <strong>5</strong><span>plugins live</span>
+      </div>
+      <div class="social-proof-divider"></div>
+      <div class="social-proof-item">
+        <strong>2</strong><span>official marketplaces</span>
+      </div>
+      <div class="social-proof-divider"></div>
+      <div class="social-proof-item">
+        <strong>30+</strong><span>active installs</span>
+      </div>
+      <div class="social-proof-divider"></div>
+      <div class="social-proof-item">
+        <strong>0</strong><span>data collected</span>
+      </div>
+    </div>
+  </section>
+
   <!-- Features -->
   <section class="section">
     <div class="section-inner">
       <div class="section-header">
         <p class="label">Why Plugio</p>
-        <h2>Built for simplicity</h2>
-        <p>No complex setup. No data collection. Just useful plugins that integrate cleanly with your platform.</p>
+        <h2>Powerful, not bloated</h2>
+        <p>The configuration depth of an enterprise tool, in widgets that load in milliseconds.</p>
       </div>
       <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 20h9"></path>
+              <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+            </svg>
+          </div>
+          <h3>Deeply configurable</h3>
+          <p>Conditional formatting, variables, custom thresholds, color rules, drill-downs. The settings rivals leave
+            for "v2" — Plugio ships with from day one.</p>
+        </div>
         <div class="feature-card">
           <div class="feature-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -259,19 +375,8 @@
             </svg>
           </div>
           <h3>Native integration</h3>
-          <p>Works natively within your platform using standard APIs. No external dependencies or third-party
-            services.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10" />
-              <polyline points="12 6 12 12 16 14" />
-            </svg>
-          </div>
-          <h3>Zero configuration overhead</h3>
-          <p>Install from the marketplace and add to any dashboard. Configure with the same tools you already use.</p>
+          <p>Works natively within your platform using standard APIs. Live JQL, native column types, real dashboard
+            filters — no external services or middleware.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">
@@ -280,8 +385,9 @@
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
             </svg>
           </div>
-          <h3>No data leaves your instance</h3>
-          <p>We don't collect, store, or transmit any data. Everything stays within your platform instance. Period.</p>
+          <h3>Your data never leaves</h3>
+          <p>No collection, no analytics, no external calls. Everything runs inside your platform instance. GDPR-friendly
+            by design.</p>
         </div>
       </div>
     </div>
@@ -302,21 +408,21 @@
             <img src="/img/gauge.png" alt="Gauge plugin">
           </div>
           <div>
-            <h3><a
-                href="https://marketplace.atlassian.com/apps/176485135/gauge-kpi-widgets-for-jira-dashboards?hosting=cloud&tab=overview"
-                target="_blank">Gauge & KPI Widgets for Jira Dashboard</a></h3>
-            <p class="product-platform">Atlassian Cloud</p>
+            <h3>Gauge &amp; KPI Widgets for Jira Dashboard</h3>
+            <p class="product-platform">Atlassian Cloud · Free</p>
             <p>Visual dashboard gadgets for tracking metrics at a glance. Display JQL results as gauges, counters, or
               progress bars on any dashboard.</p>
             <div class="product-links">
-              <a href="/docs/gauge.html" class="product-link">
-                Documentation
+              <a href="https://marketplace.atlassian.com/apps/176485135/gauge-kpi-widgets-for-jira-dashboards?hosting=cloud&tab=overview"
+                target="_blank" rel="noopener" class="product-cta">
+                Install free
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                   stroke-linecap="round" stroke-linejoin="round">
                   <line x1="5" y1="12" x2="19" y2="12"></line>
                   <polyline points="12 5 19 12 12 19"></polyline>
                 </svg>
               </a>
+              <a href="/docs/gauge.html" class="product-link">Documentation</a>
             </div>
           </div>
         </div>
@@ -325,21 +431,21 @@
             <img src="/img/pivot.png" alt="Multi-Dimensional Pivot Table for Jira">
           </div>
           <div>
-            <h3><a
-                href="https://marketplace.atlassian.com/apps/3693964024/multi-dimensional-pivot-table-for-jira-dashboard?hosting=cloud&tab=overview"
-                target="_blank">Multi-Dimensional Pivot Table for Jira</a></h3>
-            <p class="product-platform">Atlassian Cloud</p>
+            <h3>Multi-Dimensional Pivot Table for Jira</h3>
+            <p class="product-platform">Atlassian Cloud · Free</p>
             <p>Advanced data visualization for Jira. Create interactive, multi-dimensional pivot tables with live JQL
               support and deep drill-down capabilities.</p>
             <div class="product-links">
-              <a href="/docs/pivot.html" class="product-link">
-                Documentation
+              <a href="https://marketplace.atlassian.com/apps/3693964024/multi-dimensional-pivot-table-for-jira-dashboard?hosting=cloud&tab=overview"
+                target="_blank" rel="noopener" class="product-cta">
+                Install free
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                   stroke-linecap="round" stroke-linejoin="round">
                   <line x1="5" y1="12" x2="19" y2="12"></line>
                   <polyline points="12 5 19 12 12 19"></polyline>
                 </svg>
               </a>
+              <a href="/docs/pivot.html" class="product-link">Documentation</a>
             </div>
           </div>
         </div>
@@ -348,21 +454,21 @@
             <img src="/img/treemap.png" alt="Issue Distribution & Drilldown Charts for Jira">
           </div>
           <div>
-            <h3><a
-                href="https://marketplace.atlassian.com/apps/863764855/issue-distribution-drilldown-charts-for-jira-dashboard?hosting=cloud&tab=overview"
-                target="_blank">Issue Distribution &amp; Drilldown Charts for Jira Dashboard</a></h3>
-            <p class="product-platform">Atlassian Cloud</p>
+            <h3>Issue Distribution &amp; Drilldown Charts for Jira Dashboard</h3>
+            <p class="product-platform">Atlassian Cloud · Free</p>
             <p>Advanced hierarchical visualization. Explore your Jira data through interactive treemaps and sunbursts
               with full drill-down support.</p>
             <div class="product-links">
-              <a href="/docs/treemap.html" class="product-link">
-                Documentation
+              <a href="https://marketplace.atlassian.com/apps/863764855/issue-distribution-drilldown-charts-for-jira-dashboard?hosting=cloud&tab=overview"
+                target="_blank" rel="noopener" class="product-cta">
+                Install free
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                   stroke-linecap="round" stroke-linejoin="round">
                   <line x1="5" y1="12" x2="19" y2="12"></line>
                   <polyline points="12 5 19 12 12 19"></polyline>
                 </svg>
               </a>
+              <a href="/docs/treemap.html" class="product-link">Documentation</a>
             </div>
           </div>
         </div>
@@ -371,21 +477,21 @@
             <img src="/img/battery.png" alt="Sprint Progress & Health Monitor">
           </div>
           <div>
-            <h3><a
-                href="https://marketplace.atlassian.com/apps/2969894539/sprint-progress-health-monitor-for-jira-dashboard"
-                target="_blank">Sprint Progress &amp; Health Monitor for Jira Dashboard</a></h3>
-            <p class="product-platform">Atlassian Cloud</p>
+            <h3>Sprint Progress &amp; Health Monitor for Jira Dashboard</h3>
+            <p class="product-platform">Atlassian Cloud · Free</p>
             <p>Visualise your sprint health, pacing, and scope creep at a glance. A high-performance battery-style gauge
               designed for modern agile dashboards.</p>
             <div class="product-links">
-              <a href="/docs/battery.html" class="product-link">
-                Documentation
+              <a href="https://marketplace.atlassian.com/apps/2969894539/sprint-progress-health-monitor-for-jira-dashboard"
+                target="_blank" rel="noopener" class="product-cta">
+                Install free
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                   stroke-linecap="round" stroke-linejoin="round">
                   <line x1="5" y1="12" x2="19" y2="12"></line>
                   <polyline points="12 5 19 12 12 19"></polyline>
                 </svg>
               </a>
+              <a href="/docs/battery.html" class="product-link">Documentation</a>
             </div>
           </div>
         </div>
@@ -394,66 +500,52 @@
             <img src="/img/cards.png" alt="Metric Cards & KPI Dashboard for Jira">
           </div>
           <div>
-            <span class="product-coming-soon">Coming soon</span>
+            <span class="product-coming-soon">In review</span>
             <h3>Metric Cards &amp; KPI Dashboard for Jira</h3>
-            <p class="product-platform">Atlassian Cloud</p>
+            <p class="product-platform">Atlassian Cloud · Free</p>
             <p>Display multiple configurable metric cards on your Jira dashboard. Choose from Basic, Progress, Trend,
               Ratio, Distribution, and List card types to track your team's key metrics at a glance.</p>
             <div class="product-links">
-              <a href="/docs/cards.html" class="product-link">
-                Documentation
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </a>
+              <a href="/docs/cards.html" class="product-link">Documentation</a>
             </div>
           </div>
         </div>
         <div class="products-platform-label">monday.com</div>
-        <div class="product-card product-card--soon">
-          <div class="product-icon">
-            <img src="/img/gauge.png" alt="Gauge & Counter for monday.com">
-          </div>
-          <div>
-            <span class="product-coming-soon">Coming soon</span>
-            <h3>Gauge & KPI Widgets</h3>
-            <p class="product-platform">monday.com</p>
-            <p>Visual dashboard widgets for tracking board metrics at a glance. Display aggregated column values as
-              gauges, counters, or progress bars on any monday.com dashboard.</p>
-            <div class="product-links">
-              <a href="/docs/monday-gauge.html" class="product-link">
-                Documentation
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
         <div class="product-card">
           <div class="product-icon">
             <img src="/img/geomap.png" alt="World Map for monday.com">
           </div>
           <div>
-            <h3><a
-                href="https://monday.com/marketplace/listing/10001146/world-map--region-analytics"
-                target="_blank">World Map &amp; Region Analytics</a></h3>
-            <p class="product-platform">monday.com</p>
+            <h3>World Map &amp; Region Analytics</h3>
+            <p class="product-platform">monday.com · Free</p>
             <p>Visualize board data on an interactive world map. Color countries by value, display bubbles or pie charts
               per region, and animate changes over time with timeline playback.</p>
             <div class="product-links">
-              <a href="/docs/monday-geomap.html" class="product-link">
-                Documentation
+              <a href="https://monday.com/marketplace/listing/10001146/world-map--region-analytics"
+                target="_blank" rel="noopener" class="product-cta">
+                Install free
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                   stroke-linecap="round" stroke-linejoin="round">
                   <line x1="5" y1="12" x2="19" y2="12"></line>
                   <polyline points="12 5 19 12 12 19"></polyline>
                 </svg>
               </a>
+              <a href="/docs/monday-geomap.html" class="product-link">Documentation</a>
+            </div>
+          </div>
+        </div>
+        <div class="product-card product-card--soon">
+          <div class="product-icon">
+            <img src="/img/gauge.png" alt="Gauge & Counter for monday.com">
+          </div>
+          <div>
+            <span class="product-coming-soon">In review</span>
+            <h3>Gauge &amp; KPI Widgets</h3>
+            <p class="product-platform">monday.com · Free</p>
+            <p>Visual dashboard widgets for tracking board metrics at a glance. Display aggregated column values as
+              gauges, counters, or progress bars on any monday.com dashboard.</p>
+            <div class="product-links">
+              <a href="/docs/monday-gauge.html" class="product-link">Documentation</a>
             </div>
           </div>
         </div>
@@ -512,6 +604,7 @@
         <a href="terms-of-service">Terms of Service</a>
         <a href="data-security">Data Security</a>
         <a href="eula">EULA</a>
+        <a href="mailto:support@plugio.io">Contact</a>
       </nav>
       <span class="footer-copy">&copy; 2026 Plugio. All rights reserved.</span>
     </div>
