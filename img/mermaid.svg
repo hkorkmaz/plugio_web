@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <!--
+    Plugio Icon — v5 (transparent background)
+    ==========================================
+    No background rect — fully transparent.
+    Palette:
+      Blue   #1565C0  — top circle
+      Purple #9575CD  — bottom-left circle
+      Orange #FB8C00  — bottom-right square (rx=2)
+      Green  #43A047  — connector lines
+  -->
+
+  <!-- ── Background ── -->
+  <rect width="120" height="120" fill="#ffffff"/>
+
+  <!-- ══ LINES ══ -->
+
+  <!-- Stem: top circle → crossbar -->
+  <line x1="60" y1="46" x2="60" y2="62"
+        stroke="#43A047" stroke-width="4.5" stroke-linecap="round"/>
+
+  <!-- Horizontal crossbar -->
+  <line x1="30" y1="62" x2="90" y2="62"
+        stroke="#43A047" stroke-width="4.5" stroke-linecap="round"/>
+
+  <!-- Down to left circle -->
+  <line x1="30" y1="62" x2="30" y2="78"
+        stroke="#43A047" stroke-width="4.5" stroke-linecap="round"/>
+
+  <!-- Down to right square -->
+  <line x1="90" y1="62" x2="90" y2="76"
+        stroke="#43A047" stroke-width="4.5" stroke-linecap="round"/>
+
+  <!-- ══ NODES ══ -->
+
+  <!-- Top circle — Plugio Blue -->
+  <circle cx="60" cy="26" r="20" fill="#1565C0"/>
+
+  <!-- Bottom-left circle — Plugio Purple -->
+  <circle cx="30" cy="96" r="18" fill="#9575CD"/>
+
+  <!-- Bottom-right square — Plugio Orange, rx=2 (barely rounded) -->
+  <rect x="72" y="76" width="36" height="36" rx="2" fill="#FB8C00"/>
+
+</svg>
