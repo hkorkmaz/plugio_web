@@ -249,6 +249,8 @@
                 <li><a href="#pacing-and-health">Pacing & Health</a></li>
                 <li><a href="#scope-creep">Scope Creep</a></li>
                 <li><a href="#team-breakdown">Team Breakdown</a></li>
+                <li><a href="#comparison-mode">Comparison Mode</a></li>
+                <li><a href="#display-options">Display Options</a></li>
                 <li><a href="#faq">FAQ</a></li>
             </ul>
         </aside>
@@ -257,20 +259,21 @@
             <section id="getting-started">
                 <h1>Sprint Health & Capacity Tracker Documentation</h1>
                 <p>Monitor your Agile team's pulse with an intuitive battery-style visualization. Track real-time
-                    progress, pacing, and scope creep on any Jira Dashboard.</p>
+                    progress, pacing, and scope creep on any Jira Dashboard — in single-board or multi-board comparison mode.</p>
 
                 <h2>Getting Started</h2>
-                <p>Follow these simple steps to add the monitor to your dashboard:</p>
+                <p>Follow these simple steps to add the gadget to your dashboard:</p>
                 <ol>
                     <li><span class="step-number">1</span> Open any Jira Dashboard and click <strong>Add
                             Gadget</strong>.</li>
                     <li><span class="step-number">2</span> Search for <strong>"Sprint Health & Capacity Tracker"</strong> and
                         click Add.</li>
-                    <li><span class="step-number">3</span> On the gadget, click <strong>Configure</strong> (or use the
-                        Edit mode).</li>
-                    <li><span class="step-number">4</span> Select your <strong>Board</strong> and
-                        <strong>Sprint</strong> to start monitoring.
-                    </li>
+                    <li><span class="step-number">3</span> On the gadget, click <strong>Configure</strong> to open the
+                        settings panel.</li>
+                    <li><span class="step-number">4</span> Choose a <strong>Layout</strong>: <em>Single</em> for one
+                        board, or <em>Comparison</em> to monitor up to 4 boards side by side.</li>
+                    <li><span class="step-number">5</span> Select your <strong>Board</strong> and configure any
+                        additional options to start monitoring.</li>
                 </ol>
             </section>
 
@@ -292,13 +295,17 @@
 
             <section id="pacing-and-health">
                 <h2>Pacing & Health Line</h2>
-                <p>The vertical "Pacing Line" inside the battery is a real-time indicator of where you <em>should</em>
-                    be based on the elapsed time of the sprint.</p>
+                <p>The <strong>Pace Line</strong> is a real-time indicator of where completion <em>should</em> be based
+                    on elapsed sprint time. The <strong>Goal Line</strong> marks your target completion threshold.</p>
                 <ul>
-                    <li><strong>On Track:</strong> If your "Done" colors reach or exceed the pacing line, your sprint
-                        health is considered Green.</li>
-                    <li><strong>Behind Schedule:</strong> If you are significantly below the pacing line, the health
-                        indicator will warn you with a Yellow or Red state.</li>
+                    <li><strong>On Track:</strong> When "Done" work reaches or exceeds the pace line, the battery shows
+                        green health.</li>
+                    <li><strong>Behind Schedule:</strong> Falling significantly behind the pace line triggers yellow or
+                        red warnings.</li>
+                    <li><strong>Goal Line:</strong> A horizontal marker at your configured completion target (default
+                        80%). The battery turns green when you cross it. You can set this per-battery or globally.</li>
+                    <li><strong>Closed Sprints:</strong> The pace line disappears for closed sprints, showing only the
+                        final completion state.</li>
                 </ul>
             </section>
 
@@ -322,19 +329,76 @@
                 </ul>
             </section>
 
+            <section id="comparison-mode">
+                <h2>Comparison Mode</h2>
+                <p>Comparison Mode lets you monitor up to 4 boards simultaneously in a single gadget — perfect for
+                    team leads, programme managers, or anyone tracking multiple squads at once.</p>
+
+                <h3>Setting Up Comparison Mode</h3>
+                <ol>
+                    <li><span class="step-number">1</span> Open the gadget settings and switch the <strong>Layout</strong>
+                        to <em>Comparison</em>.</li>
+                    <li><span class="step-number">2</span> Click <strong>Configure</strong> on any of the 4 battery
+                        slots to assign a board.</li>
+                    <li><span class="step-number">3</span> Optionally set a <strong>Sprint Offset</strong> and
+                        <strong>Goal Line</strong> per slot.</li>
+                </ol>
+
+                <h3>Sprint Offset</h3>
+                <p>Each slot has an independent sprint offset so you can compare different points in time across
+                    teams:</p>
+                <ul>
+                    <li><strong>Current sprint</strong> — always shows the active sprint (default).</li>
+                    <li><strong>Previous sprint</strong> — shows the sprint that just ended.</li>
+                    <li><strong>2–5 sprints ago</strong> — for retrospective comparisons.</li>
+                </ul>
+                <div class="feature-highlight">
+                    <p>Offsets are resolved dynamically at load time — as sprints roll over, each battery automatically
+                        advances to the correct sprint without any reconfiguration.</p>
+                </div>
+
+                <h3>Per-Slot Goal Line</h3>
+                <p>Each comparison slot can have its own Goal Line threshold, independent of the global setting. This is
+                    useful when different teams have different completion targets.</p>
+            </section>
+
+            <section id="display-options">
+                <h2>Display Options</h2>
+                <p>The <strong>Appearance</strong> tab in the settings panel lets you control how the battery is
+                    rendered:</p>
+                <ul>
+                    <li><strong>Orientation:</strong> Switch between <em>Vertical</em> (tall battery, default) and
+                        <em>Horizontal</em> (wide battery) to fit your dashboard layout.</li>
+                    <li><strong>Show Goal Line:</strong> Toggle the goal line marker on or off. On by default.</li>
+                    <li><strong>Show Pace Line:</strong> Toggle the real-time pacing indicator on or off. On by default.
+                        Disabling it is useful when reviewing a closed sprint's final state without the distraction of
+                        the pace marker.</li>
+                </ul>
+            </section>
+
             <section id="faq">
                 <h2>FAQ</h2>
                 <h3>How is health calculated?</h3>
                 <p>Health is calculated by comparing your current completion ratio against the ideal pacing ratio
-                    (linear completion over the sprint duration).</p>
+                    (linear completion over the sprint duration). The Goal Line sets the threshold at which the battery
+                    turns green.</p>
 
                 <h3>Does it support Story Points?</h3>
-                <p>Yes. You can choose between "Issue Count" or any "Numeric Field" (like Story Points) in the gadget
-                    configuration.</p>
+                <p>Yes. You can choose between "Issue Count" or any numeric field (like Story Points) in the gadget
+                    configuration. In Comparison Mode, each slot can use a different metric.</p>
 
                 <h3>What happens to closed sprints?</h3>
-                <p>For closed sprints, the pacing line disappears, and the gadget shows the final completion state of
-                    the sprint.</p>
+                <p>For closed sprints, the pace line disappears and the gadget shows the final completion state. In
+                    Comparison Mode you can use sprint offsets to review past sprints from any slot.</p>
+
+                <h3>How many boards can I compare?</h3>
+                <p>Up to 4 boards at once in Comparison Mode. Each slot is independently configured with its own board,
+                    metric, sprint offset, and goal line.</p>
+
+                <h3>Do comparison batteries update automatically?</h3>
+                <p>Yes. Sprint offsets are resolved at load time against the live sprint list. When a new sprint
+                    becomes active, all batteries automatically track the correct sprint on the next page load — no
+                    reconfiguration needed.</p>
             </section>
         </main>
     </div>
