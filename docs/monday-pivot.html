@@ -12,10 +12,10 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Metric Cards & KPI Dashboard for monday.com - Plugio</title>
+    <title>Multi-Dimensional Pivot Table for monday.com - Plugio</title>
     <meta name="description"
-        content="Documentation and setup guide for Plugio Metric Cards & KPI Dashboard for monday.com. 6 card types, drag & drop grid, period comparison, filters and more.">
-    <link rel="canonical" href="https://plugio.io/docs/monday-cards.html">
+        content="Documentation and setup guide for Plugio Multi-Dimensional Pivot Table for monday.com. Drag-and-drop dimensions, custom metrics, formulas, cell coloring, drill-down, and Excel export.">
+    <link rel="canonical" href="https://plugio.io/docs/monday-pivot.html">
     <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="../css/style.css">
     <style>
@@ -194,6 +194,16 @@
             border-bottom: none;
         }
 
+        code {
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid var(--border-dark);
+            border-radius: 4px;
+            padding: 2px 7px;
+            font-size: 14px;
+            font-family: monospace;
+            color: var(--text-white);
+        }
+
         @media (max-width: 900px) {
             .docs-grid {
                 grid-template-columns: 1fr;
@@ -213,7 +223,7 @@
             <a href="../" class="logo"><img src="/img/plugio-text-light.svg" alt="Plugio" height="30"></a>
             <nav>
                 <div class="nav-dropdown">
-                    <a href="/docs/monday-cards.html" class="dropdown-trigger active">
+                    <a href="/docs/monday-pivot.html" class="dropdown-trigger active">
                         Documentation
                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -278,7 +288,7 @@
                     <span class="dropdown-desc">Visualization widgets for monday.com</span>
                   </div>
                 </a>
-                <a href="/docs/monday-pivot.html" class="dropdown-item">
+                <a href="/docs/monday-pivot.html" class="dropdown-item active">
                   <div class="dropdown-icon"><img src="/img/pivot.png" alt="Pivot Table"></div>
                   <div class="dropdown-info">
                     <span class="dropdown-title">Multi-Dimensional Pivot Table</span>
@@ -314,10 +324,11 @@
         <aside class="docs-nav">
             <ul>
                 <li><a href="#getting-started" class="active">Getting Started</a></li>
-                <li><a href="#card-types">Card Types</a></li>
-                <li><a href="#data-sources">Data &amp; Filters</a></li>
-                <li><a href="#periods">Period Comparison</a></li>
-                <li><a href="#layout">Layout &amp; Appearance</a></li>
+                <li><a href="#dimensions">Rows &amp; Columns</a></li>
+                <li><a href="#metrics">Metrics &amp; Formulas</a></li>
+                <li><a href="#coloring">Cell Coloring</a></li>
+                <li><a href="#appearance">Appearance</a></li>
+                <li><a href="#export">Excel Export</a></li>
                 <li><a href="#faq">FAQ</a></li>
                 <li><a href="#support">Support</a></li>
             </ul>
@@ -326,92 +337,68 @@
         <main class="docs-content">
             <section id="getting-started">
                 <div class="platform-badge">monday.com</div>
-                <h1>Metric Cards &amp; KPI Dashboard</h1>
-                <p>Plugio Metric Cards lets you build a customizable KPI dashboard inside monday.com. Add multiple
-                    metric cards — each backed by a board query — and arrange them in a drag-and-drop grid. 6 card
-                    types let you answer different questions at a glance: totals, trends, ratios, progress, distributions,
-                    and item lists.</p>
+                <h1>Multi-Dimensional Pivot Table</h1>
+                <p>Plugio Pivot Table transforms your monday.com board data into interactive, multi-dimensional pivot
+                    tables. Drag any column to rows or columns, define custom metrics and formulas, color cells by
+                    value, and drill down into the items behind any number — all without leaving your dashboard.</p>
 
                 <h2>Getting Started</h2>
                 <p>Add the widget to your monday.com dashboard in 5 steps:</p>
                 <ol>
                     <li><span class="step-number">1</span> Open any monday.com dashboard and click <strong>Add
                             Widget</strong>.</li>
-                    <li><span class="step-number">2</span> Search for <strong>"Plugio Metric Cards"</strong> and add
-                        it to your dashboard.</li>
+                    <li><span class="step-number">2</span> Search for <strong>"Plugio Pivot Table"</strong> and add it
+                        to your dashboard.</li>
                     <li><span class="step-number">3</span> Click <strong>Configure</strong> on the widget to open the
                         editor.</li>
-                    <li><span class="step-number">4</span> In the <strong>Cards</strong> tab, click <strong>+ Add
-                            Card</strong>, choose a card type and connect it to a board.</li>
-                    <li><span class="step-number">5</span> Click <strong>Save</strong> — your dashboard updates
-                        instantly.</li>
+                    <li><span class="step-number">4</span> In the <strong>Pivot</strong> tab, select a board and drag
+                        columns into the <strong>Rows</strong> and <strong>Columns</strong> zones.</li>
+                    <li><span class="step-number">5</span> Switch to the <strong>Measures</strong> tab to add metrics,
+                        then click <strong>Save</strong>.</li>
                 </ol>
             </section>
 
-            <section id="card-types">
-                <h2>Card Types</h2>
-                <p>Each card represents one metric. Pick the type that best matches what you want to communicate:</p>
+            <section id="dimensions">
+                <h2>Rows &amp; Columns</h2>
+                <p>The <strong>Pivot</strong> tab contains the dimension builder. Drag any board column into the
+                    <strong>Rows</strong> or <strong>Columns</strong> drop zone to group your data along that axis. You
+                    can add multiple dimensions to each axis to build nested hierarchies.</p>
 
-                <div class="card-type-grid">
-                    <div class="card-type-item">
-                        <span class="card-type-label">Trend</span>
-                        <h4>Trend Card</h4>
-                        <p>Displays a metric with a sparkline chart and automatic period-over-period delta (▲ 23%). Best
-                            for spotting direction at a glance.</p>
-                    </div>
-                    <div class="card-type-item">
-                        <span class="card-type-label">Basic</span>
-                        <h4>Basic Card</h4>
-                        <p>A single large number — no frills. Ideal for headline KPIs like "Total Customers" or "Active
-                            Projects" where the count itself is the story.</p>
-                    </div>
-                    <div class="card-type-item">
-                        <span class="card-type-label">Progress</span>
-                        <h4>Progress Card</h4>
-                        <p>Current value vs. a target, rendered as a progress bar with a percentage badge. Target can
-                            be a fixed number or dynamically pulled from another board column.</p>
-                    </div>
-                    <div class="card-type-item">
-                        <span class="card-type-label">Ratio</span>
-                        <h4>Ratio Card</h4>
-                        <p>Two metrics side by side — "A vs B" — with a tug-of-war bar showing their relative share.
-                            Great for comparing completed vs. pending, or any two filtered counts.</p>
-                    </div>
-                    <div class="card-type-item">
-                        <span class="card-type-label">Distribution</span>
-                        <h4>Distribution Card</h4>
-                        <p>Breaks a metric down by a categorical column (Status, Dropdown, etc.) and visualizes the
-                            breakdown as a donut chart with a color-coded legend.</p>
-                    </div>
-                    <div class="card-type-item">
-                        <span class="card-type-label">List</span>
-                        <h4>List Card</h4>
-                        <p>A filtered, sorted list of items from your board. Click any row to open the item directly in
-                            monday.com. Supports 6 row layout presets with Visual, Detail, and Badge slots.</p>
-                    </div>
-                </div>
-
-                <h3>List Card Row Layouts</h3>
-                <p>The List Card supports 6 preset row layouts that can display combinations of the following data slots:</p>
+                <h3>Supported Column Types</h3>
+                <p>The following column types can be used as grouping dimensions:</p>
                 <ul>
-                    <li><strong>Primary:</strong> The item name or any text/numeric column.</li>
-                    <li><strong>Visual:</strong> A Status color dot or People avatar initials.</li>
-                    <li><strong>Detail:</strong> A secondary line of text below the primary value.</li>
-                    <li><strong>Badge:</strong> A compact tag shown at the end of the row.</li>
+                    <li><strong>Status, Dropdown</strong> — groups by label value</li>
+                    <li><strong>Date</strong> — groups by a selectable granularity (see below)</li>
+                    <li><strong>Checkbox</strong> — groups into checked / unchecked</li>
+                    <li><strong>Text, Long Text</strong> — groups by exact text value</li>
+                    <li><strong>People, Multiple Person</strong> — groups by team member</li>
+                    <li><strong>Group</strong> — groups by the item's board group</li>
+                    <li><strong>Item Name</strong> — lists individual items as leaf rows</li>
                 </ul>
+
+                <h3>Date Granularity</h3>
+                <p>When you add a Date column as a dimension, the widget automatically offers granularity options:
+                    <strong>Year, Quarter, Month, Week,</strong> and <strong>Day</strong>. Select the granularity from
+                    the dimension chip in the builder. This lets you group, for example, all items created in the same
+                    month without any manual formula work.</p>
+
+                <h3>Sorting</h3>
+                <p>Each dimension chip has a sort toggle. Click it to cycle between <strong>Ascending</strong>,
+                    <strong>Descending</strong>, and <strong>Unsorted</strong> (original board order). Sorting applies
+                    independently per dimension.</p>
+
+                <h3>Expand &amp; Collapse</h3>
+                <p>In the pivot table view, click <strong>+</strong> or <strong>−</strong> next to any group header to
+                    expand or collapse that node. Expansion state is preserved while the configuration stays the same.
+                    Leaf rows are always visible regardless of whether parent nodes are collapsed.</p>
             </section>
 
-            <section id="data-sources">
-                <h2>Data &amp; Filters</h2>
-                <p>Every card is powered by real-time data from the monday.com boards connected to your dashboard. No
-                    external calls — data is fetched directly within your monday.com instance.</p>
-
-                <h3>Connecting a Board</h3>
-                <p>In the <strong>Card Config</strong> tab, select a board from the list of boards connected to your
-                    dashboard. The widget automatically loads all available columns for that board.</p>
+            <section id="metrics">
+                <h2>Metrics &amp; Formulas</h2>
+                <p>The <strong>Measures</strong> tab manages what is calculated in each cell of the pivot table. Add
+                    one or more metrics, or build custom formulas that reference them.</p>
 
                 <h3>Metric Operations</h3>
-                <p>Choose how the widget aggregates your board data:</p>
                 <table class="ops-table">
                     <thead>
                         <tr>
@@ -429,99 +416,120 @@
                         <tr>
                             <td><strong>Sum</strong></td>
                             <td>Total of a numeric column</td>
-                            <td>Numbers, Rating, Time Tracking</td>
+                            <td>Numbers, Rating</td>
                         </tr>
                         <tr>
                             <td><strong>Average</strong></td>
                             <td>Mean value of a numeric column</td>
-                            <td>Numbers, Rating, Time Tracking</td>
+                            <td>Numbers, Rating</td>
                         </tr>
                         <tr>
                             <td><strong>Min</strong></td>
                             <td>Smallest value in the column</td>
-                            <td>Numbers, Rating, Time Tracking</td>
+                            <td>Numbers, Rating</td>
                         </tr>
                         <tr>
                             <td><strong>Max</strong></td>
                             <td>Largest value in the column</td>
-                            <td>Numbers, Rating, Time Tracking</td>
+                            <td>Numbers, Rating</td>
                         </tr>
                     </tbody>
                 </table>
 
-                <h3>Filters</h3>
-                <p>Each card supports fine-grained item filtering. Filters can target any of the following column types:</p>
+                <h3>Formulas</h3>
+                <p>Create a formula metric to compute a derived value from other metrics. Reference any existing metric
+                    by its label in curly braces: <code>{Revenue} / {Deals}</code>. Supported operators are
+                    <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, and parentheses for grouping.</p>
+                <p>The widget detects circular dependencies automatically and displays a <strong>#CIRC!</strong> error
+                    in affected cells. Formulas that reference deleted metrics are flagged with a warning icon.</p>
+
+                <h3>Number Formatting</h3>
+                <p>Each metric can be formatted independently:</p>
                 <ul>
-                    <li><strong>Status / Dropdown:</strong> Filter by specific label values (any of / not any of).</li>
-                    <li><strong>Numbers:</strong> Range filters — between, greater than, less than.</li>
-                    <li><strong>Date / Timeline:</strong> Date range filtering.</li>
-                    <li><strong>Text / Long Text:</strong> Contains or does not contain a string.</li>
-                    <li><strong>People / Multiple Person:</strong> Filter by team member.</li>
-                    <li><strong>Checkbox, Rating, Email, Phone, Link, Time Tracking</strong></li>
-                    <li><strong>Group:</strong> Restrict the card to specific board groups.</li>
+                    <li><strong>Compact</strong> — abbreviates large numbers (14.3K, 2.1M)</li>
+                    <li><strong>Full</strong> — shows the complete number (14,312)</li>
+                    <li><strong>Decimal precision</strong> — set between 0 and 8 decimal places</li>
                 </ul>
-                <p>Multiple filters can be combined with <strong>AND</strong> or <strong>OR</strong> logic.</p>
+
+                <h3>Hiding Metrics</h3>
+                <p>Toggle a metric's visibility to hide it from the table without deleting it. Hidden metrics remain
+                    available as references inside formulas.</p>
+            </section>
+
+            <section id="coloring">
+                <h2>Cell Coloring</h2>
+                <p>Each metric can have an independent coloring rule applied to its cells, making it easy to spot
+                    patterns and outliers at a glance. Coloring is configured in the metric's edit modal.</p>
+
+                <div class="card-type-grid">
+                    <div class="card-type-item">
+                        <span class="card-type-label">Dynamic</span>
+                        <h4>Gradient</h4>
+                        <p>Pick a base color. The widget computes a luminance-based gradient from the minimum to the
+                            maximum value visible in the table. The text color adjusts automatically for contrast.</p>
+                    </div>
+                    <div class="card-type-item">
+                        <span class="card-type-label">Static</span>
+                        <h4>Color Ranges</h4>
+                        <p>Define explicit value ranges, each with its own color. Cells that fall within a range get
+                            that color; cells outside all defined ranges are left uncolored.</p>
+                    </div>
+                </div>
+
+                <p>Coloring is applied only to data cells — header and total cells are not colored.</p>
+            </section>
+
+            <section id="appearance">
+                <h2>Appearance</h2>
+
+                <h3>Themes</h3>
+                <p>Choose from 6 built-in themes in the <strong>Appearance</strong> tab:</p>
+                <ul>
+                    <li><strong>Monday (Adaptive)</strong> — follows your monday.com dashboard theme automatically</li>
+                    <li><strong>Slate, Cobalt, Dark, Violet, Forest</strong> — fixed color palettes</li>
+                </ul>
+
+                <h3>Totals</h3>
+                <p>Row totals, column totals, and the grand total can each be toggled independently. Totals aggregate
+                    across the opposite axis — row totals sum across all column groups for each row, and vice versa.</p>
+
+                <h3>Freeze Headers</h3>
+                <p>Enable <strong>Freeze Row Headers</strong> or <strong>Freeze Column Headers</strong> independently
+                    to keep axis labels visible while scrolling through large pivot tables.</p>
 
                 <h3>Dashboard Filter Integration</h3>
-                <p>Metric Cards automatically responds to monday.com's native dashboard filters. When a viewer applies
-                    a filter at the dashboard level, all cards update to reflect only the matching items — no extra
-                    configuration needed.</p>
-
-                <h3>Group Filter</h3>
-                <p>In the Card Config, you can optionally restrict a card to one or more specific board groups,
-                    allowing multiple cards to show data from different groups of the same board side by side.</p>
+                <p>The widget automatically respects monday.com's native dashboard filters. When a viewer applies a
+                    filter at the dashboard level, the pivot table recalculates using only the matching items.</p>
             </section>
 
-            <section id="periods">
-                <h2>Period Comparison</h2>
-                <p>A global <strong>Period Picker</strong> at the top of the widget controls the time window for all
-                    cards. Trend cards use it to define their X-axis buckets; other card types use it to filter
-                    items by a date column and compute a previous-period delta.</p>
+            <section id="export">
+                <h2>Excel Export</h2>
+                <p>Click the <strong>Export</strong> button in the pivot table toolbar to download a styled Excel
+                    workbook. Three formats are available:</p>
 
-                <h3>Period Presets</h3>
-                <ul>
-                    <li>This Week / Last Week</li>
-                    <li>This Month / Last Month</li>
-                    <li>This Quarter / Last Quarter</li>
-                    <li>This Year / Last Year</li>
-                    <li>Last 7 / 30 / 90 / 365 days</li>
-                    <li>Custom date range</li>
-                </ul>
+                <div class="card-type-grid">
+                    <div class="card-type-item">
+                        <span class="card-type-label">Normalized</span>
+                        <h4>Normalized</h4>
+                        <p>One row per row-leaf × column-leaf combination. Each metric gets its own column. Flat
+                            structure — ideal for importing into BI tools or further analysis in Excel.</p>
+                    </div>
+                    <div class="card-type-item">
+                        <span class="card-type-label">Drilldown</span>
+                        <h4>Drilldown</h4>
+                        <p>Hierarchical rows with native Excel outline groups. Click <strong>+</strong> and
+                            <strong>−</strong> directly in Excel to expand and collapse dimension levels.</p>
+                    </div>
+                    <div class="card-type-item">
+                        <span class="card-type-label">Report</span>
+                        <h4>Report</h4>
+                        <p>Merged header cells for the column hierarchy, merged row cells for grouped rows, bold
+                            totals, and formatted borders. Ready to paste into a presentation or share as-is.</p>
+                    </div>
+                </div>
 
-                <h3>Trend Granularity</h3>
-                <p>Trend cards can bucket data by <strong>Day, Week, Month, Quarter, or Year</strong>. The sparkline
-                    reflects the chosen granularity, and the previous period is automatically calculated and shown as
-                    a comparison value below the current total.</p>
-            </section>
-
-            <section id="layout">
-                <h2>Layout &amp; Appearance</h2>
-
-                <h3>Drag &amp; Drop Grid</h3>
-                <p>Cards are arranged on a fixed N×M grid (configurable in the <strong>Appearance</strong> tab). In
-                    edit mode, drag any card to a different grid position. The widget prevents overlapping placements
-                    automatically.</p>
-
-                <h3>Card Sizes</h3>
-                <p>Most card types occupy a single grid cell. <strong>List</strong> and <strong>Distribution</strong>
-                    cards default to 2 columns wide; <strong>List</strong> cards are also 2 rows tall to accommodate
-                    multiple items.</p>
-
-                <h3>Card Height</h3>
-                <p>Choose between <strong>Normal</strong> (compact) and <strong>Large</strong> card heights from the
-                    Appearance tab — applied globally to all cards in the widget.</p>
-
-                <h3>Card Colors</h3>
-                <p>Each card has an individually assignable color that appears as a left border accent. Colors also
-                    tint certain elements within the card (progress bars, ratio fills, etc.).</p>
-
-                <h3>Number Format</h3>
-                <p>Switch between <strong>Compact</strong> (14.3K, 2.1M) and <strong>Full</strong> (14,312) number
-                    display globally across all cards.</p>
-
-                <h3>Theme Support</h3>
-                <p>The widget adapts automatically to your monday.com dashboard theme — Light, Dark, Black, and
-                    Hacker themes are all fully supported.</p>
+                <p>All formats respect the current show/hide totals settings. Bold styling is applied to total rows
+                    and columns in all formats.</p>
             </section>
 
             <section id="faq">
@@ -532,30 +540,33 @@
                     data fetching and processing happens inside your monday.com instance. We never store, collect, or
                     transmit your board data.</p>
 
-                <h3>Which column types can be used as a metric?</h3>
-                <p>Count works on any board without selecting a column. Sum, Average, Min, and Max require a
-                    <strong>Numbers</strong>, <strong>Rating</strong>, or <strong>Time Tracking</strong> column.</p>
+                <h3>Which column types can be used as dimensions?</h3>
+                <p>Status, Dropdown, Date, Checkbox, Text, Long Text, People, Multiple Person, Group, and Item Name
+                    can all be used as row or column dimensions. Numeric columns (Numbers, Rating) are used for
+                    metrics, not dimensions.</p>
 
-                <h3>Can I show data from multiple boards?</h3>
-                <p>Yes — each card can connect to a different board independently. All boards connected to your
-                    dashboard are available in the board selector.</p>
+                <h3>Can I use data from multiple boards?</h3>
+                <p>Each widget instance connects to one board at a time. On multi-board dashboards, a board selector
+                    appears at the top of the configuration panel.</p>
 
-                <h3>What happens when dashboard filters are applied?</h3>
-                <p>All cards automatically update to reflect only the items matching the active dashboard filter.
-                    This works seamlessly with monday.com's native filter widgets.</p>
+                <h3>What does clicking a cell do?</h3>
+                <p>Clicking any data cell opens a drill-down modal showing the exact monday.com items that contribute
+                    to that cell's value. Items are filtered by the row path and column path of the clicked cell.</p>
 
-                <h3>Can view-only users see the widget?</h3>
-                <p>Yes. View-only users see the configured cards without the Configure button. The data is fetched
-                    using their permissions, so they only see boards they have access to.</p>
+                <h3>How do formulas work?</h3>
+                <p>Formulas reference other metrics by label: <code>{Revenue} / {Count}</code>. They support
+                    <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, and parentheses. Circular
+                    references are detected and shown as <strong>#CIRC!</strong>. A metric referenced in a formula
+                    can be hidden from the table without breaking the formula.</p>
 
-                <h3>How many cards can I add?</h3>
-                <p>There is no hard limit — you can add as many cards as fit in your grid. The default grid is 4×4
-                    (16 slots), which you can expand up to any size in the Appearance tab.</p>
+                <h3>Why are some cells empty?</h3>
+                <p>A cell is empty (shown as —) when no items match the intersection of that row group and column
+                    group. This is expected behavior for sparse data.</p>
             </section>
 
             <section id="support">
                 <h2>Support</h2>
-                <p>Need help configuring a card or have a feature request? We'd love to hear from you.</p>
+                <p>Need help configuring the pivot table or have a feature request? We'd love to hear from you.</p>
                 <p>Email: <a href="mailto:support@plugio.io">support@plugio.io</a></p>
             </section>
         </main>

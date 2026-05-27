@@ -1,11 +1,8 @@
 <svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
   <!-- Softened White Background Container -->
-  <rect x="10" y="10" width="492" height="492" rx="90" fill="white" stroke="#F4F5F7" stroke-width="4"/>
   
   <g transform="translate(80, 80)">
-    <!-- Main Table Container (Soft Background) -->
-    <rect width="352" height="352" rx="40" fill="#F4F5F7" fill-opacity="0.5"/>
-    
+    <!-- Main Table Container (Soft Background) -->    
     <!-- COLUMNS (Header Row) - Soft Purple -->
     <rect x="110" y="5" width="116" height="70" rx="20" fill="#998DD9"/>
     <rect x="231" y="5" width="116" height="70" rx="20" fill="#998DD9" fill-opacity="0.8"/>
