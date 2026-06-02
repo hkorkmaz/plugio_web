@@ -1,26 +1,26 @@
 <svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
   <!-- Top-Left: Blue, number 42 -->
-  <rect x="35" y="35" width="210" height="210" rx="32" fill="#0052CC"/>
-  <text x="140" y="183" font-family="Arial Black, Impact, sans-serif" font-size="125" font-weight="900"
-    fill="white" stroke="white" stroke-width="1.5" paint-order="stroke" text-anchor="middle" letter-spacing="-5">42</text>
+  <rect x="8" y="8" width="238" height="238" rx="36" fill="#0052CC"/>
+  <text x="127" y="176" font-family="Arial Black, Impact, sans-serif" font-size="142" font-weight="900"
+    fill="white" stroke="white" stroke-width="1.7" paint-order="stroke" text-anchor="middle" letter-spacing="-6">42</text>
 
   <!-- Top-Right: Green, bars -->
-  <rect x="267" y="35" width="210" height="210" rx="32" fill="#36B37E"/>
-  <rect x="297" y="88" width="150" height="20" rx="6" fill="white" fill-opacity="0.45"/>
-  <rect x="297" y="125" width="100" height="20" rx="6" fill="white" fill-opacity="0.35"/>
-  <rect x="297" y="162" width="130" height="20" rx="6" fill="white" fill-opacity="0.4"/>
+  <rect x="266" y="8" width="238" height="238" rx="36" fill="#36B37E"/>
+  <rect x="300" y="68" width="170" height="23" rx="7" fill="white" fill-opacity="0.45"/>
+  <rect x="300" y="110" width="113" height="23" rx="7" fill="white" fill-opacity="0.35"/>
+  <rect x="300" y="152" width="147" height="23" rx="7" fill="white" fill-opacity="0.4"/>
 
   <!-- Bottom-Left: Purple, donut -->
-  <rect x="35" y="267" width="210" height="210" rx="32" fill="#998DD9"/>
-  <circle cx="140" cy="372" r="65" fill="none" stroke="white" stroke-width="22" stroke-opacity="0.3"/>
-  <circle cx="140" cy="372" r="65" fill="none" stroke="white" stroke-width="22"
-    stroke-dasharray="285 408" stroke-dashoffset="102" transform="rotate(-90 140 372)" stroke-linecap="round"/>
+  <rect x="8" y="266" width="238" height="238" rx="36" fill="#998DD9"/>
+  <circle cx="127" cy="385" r="74" fill="none" stroke="white" stroke-width="25" stroke-opacity="0.3"/>
+  <circle cx="127" cy="385" r="74" fill="none" stroke="white" stroke-width="25"
+    stroke-dasharray="325 465" stroke-dashoffset="116" transform="rotate(-90 127 385)" stroke-linecap="round"/>
 
   <!-- Bottom-Right: Orange, sparkline with filled area -->
-  <rect x="267" y="267" width="210" height="210" rx="32" fill="#FF8B00"/>
-  <path d="M295 430 L325 395 L355 410 L385 360 L415 380 L449 320 L449 450 L295 450 Z"
+  <rect x="266" y="266" width="238" height="238" rx="36" fill="#FF8B00"/>
+  <path d="M298 451 L332 411 L366 428 L400 371 L434 394 L472 326 L472 473 L298 473 Z"
     fill="white" fill-opacity="0.25"/>
-  <path d="M295 430 L325 395 L355 410 L385 360 L415 380 L449 320"
-    stroke="white" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  <circle cx="449" cy="320" r="9" fill="white"/>
+  <path d="M298 451 L332 411 L366 428 L400 371 L434 394 L472 326"
+    stroke="white" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <circle cx="472" cy="326" r="10" fill="white"/>
 </svg>
