@@ -1,0 +1,30 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Big number card (top-left 2x2) — dark blue -->
+  <rect x="10" y="10" width="324" height="324" rx="40" fill="#0052CC"/>
+  <text x="172" y="242" font-family="Arial Black, Arial, Helvetica, sans-serif" font-size="200" font-weight="900" fill="white" text-anchor="middle" letter-spacing="-8">97</text>
+
+  <!-- right-top: trend triangle — purple -->
+  <rect x="346" y="10" width="156" height="156" rx="32" fill="#36B37E"/>
+  <path d="M424 50 L466 128 L382 128 Z" fill="white" stroke="white" stroke-width="12" stroke-linejoin="round"/>
+
+  <!-- right-mid: divide — green (dots clear of the bar) -->
+  <rect x="346" y="178" width="156" height="156" rx="32" fill="#998DD9"/>
+  <circle cx="424" cy="229" r="12" fill="white"/>
+  <rect x="386" y="245" width="76" height="22" rx="11" fill="white"/>
+  <circle cx="424" cy="283" r="12" fill="white"/>
+
+  <!-- corner: equals — orange -->
+  <rect x="346" y="346" width="156" height="156" rx="32" fill="#FF8B00"/>
+  <g fill="white">
+    <rect x="386" y="403" width="76" height="22" rx="11"/>
+    <rect x="386" y="431" width="76" height="22" rx="11"/>
+  </g>
+
+  <!-- bottom-left: plus — purple -->
+  <rect x="10" y="346" width="156" height="156" rx="32" fill="#36B37E"/>
+  <g fill="white"><rect x="76" y="386" width="24" height="76" rx="8"/><rect x="50" y="412" width="76" height="24" rx="8"/></g>
+
+  <!-- bottom-mid: multiply — green -->
+  <rect x="178" y="346" width="156" height="156" rx="32" fill="#2684FF"/>
+  <g fill="white" transform="rotate(45 256 424)"><rect x="244" y="386" width="24" height="76" rx="8"/><rect x="218" y="412" width="76" height="24" rx="8"/></g>
+</svg>

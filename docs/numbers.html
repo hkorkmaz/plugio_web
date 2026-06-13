@@ -12,8 +12,8 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Metric Cards & KPI Dashboard Documentation - Plugio</title>
-    <meta name="description" content="Documentation and setup guide for Metric Cards & KPI Dashboard for Jira">
+    <title>KPI Formula, Trend & Big Number Dashboard Documentation - Plugio</title>
+    <meta name="description" content="Documentation and setup guide for KPI Formula, Trend & Big Number Dashboard for Jira — combine JQL queries with formulas and track period-over-period trends.">
     <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="../css/style.css">
     <style>
@@ -129,7 +129,7 @@
             <a href="../" class="logo"><img src="/img/plugio-text-light.svg" alt="Plugio" height="30"></a>
             <nav>
                 <div class="nav-dropdown">
-                    <a href="/docs/cards.html" class="dropdown-trigger active">
+                    <a href="/docs/numbers.html" class="dropdown-trigger active">
                         Documentation
                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -239,8 +239,10 @@
         <aside class="docs-nav">
             <ul>
                 <li><a href="#getting-started" class="active">Getting Started</a></li>
-                <li><a href="#card-types">Card Types</a></li>
-                <li><a href="#data-sources">Data &amp; Periods</a></li>
+                <li><a href="#metrics">Metrics &amp; JQL</a></li>
+                <li><a href="#formulas">Formula Engine</a></li>
+                <li><a href="#trends">Trends &amp; Comparison</a></li>
+                <li><a href="#formatting">Number Formatting</a></li>
                 <li><a href="#layout">Layout &amp; Theming</a></li>
                 <li><a href="#support">Support</a></li>
             </ul>
@@ -248,78 +250,119 @@
 
         <main class="docs-content">
             <section id="getting-started">
-                <h1>Metric Cards &amp; KPI Dashboard Documentation</h1>
-                <p>Plugio Metric Cards & KPI Dashboard lets you build a dashboard of focused KPI tiles backed by JQL.
-                    Combine multiple
-                    card types in a single gadget to surface counts, progress against targets, trends, ratios, top
-                    issues, and breakdowns — all on one Jira dashboard.</p>
+                <h1>KPI Formula, Trend &amp; Big Number Dashboard Documentation</h1>
+                <p>Plugio KPI Formula, Trend &amp; Big Number Dashboard turns multiple JQL queries and numeric fields
+                    into a single, bold big number using your own mathematical formulas — then tracks it over time with
+                    period-over-period trend indicators. Build a dashboard of fully custom KPI cards on Jira, no two-app
+                    workarounds required.</p>
 
                 <h2>Getting Started</h2>
-                <p>Add the gadget to your Jira Dashboard in 4 steps:</p>
+                <p>Add the gadget to your Jira Dashboard in 5 steps:</p>
                 <ol>
                     <li><span class="step-number">1</span> On your Jira Dashboard, click <strong>Add Gadget</strong>.
                     </li>
-                    <li><span class="step-number">2</span> Find <strong>"Metric Cards &amp; KPI Dashboard"</strong> and
-                        click Add.</li>
+                    <li><span class="step-number">2</span> Find <strong>"KPI Formula, Trend &amp; Big Number
+                            Dashboard"</strong> and click Add.</li>
                     <li><span class="step-number">3</span> Click <strong>Configure</strong> on the gadget to open the
                         editor.</li>
-                    <li><span class="step-number">4</span> Add one or more metrics, pick a card type for each, and set
-                        the comparison period.</li>
+                    <li><span class="step-number">4</span> Add one or more <strong>metrics</strong> to the card — each
+                        is a JQL query plus an operation (count, sum, average…).</li>
+                    <li><span class="step-number">5</span> Choose what to show — a single metric or a custom formula —
+                        then pick a number format and, optionally, a comparison period.</li>
                 </ol>
             </section>
 
-            <section id="card-types">
-                <h2>Card Types</h2>
-                <p>Each card represents a single metric. Pick the card type that matches the question you want to
-                    answer:</p>
+            <section id="metrics">
+                <h2>Metrics &amp; JQL</h2>
+                <p>Every card is self-contained: you define its data inside the card as one or more
+                    <strong>metrics</strong>, labelled A, B, C… Each metric is a single number you can show on its own
+                    or combine with the others in a formula.</p>
 
-                <h3>1. Basic</h3>
-                <p>A single value with optional period-over-period delta. Use it for headline numbers like "Open Bugs"
-                    or "Resolved This Week".</p>
+                <h3>Each metric has</h3>
+                <ul>
+                    <li><strong>A JQL query</strong> that scopes the issues. It can span multiple projects, e.g.
+                        <code>project in (PROJ1, PROJ2)</code> — the gadget never forces a single-project constraint, so
+                        the scope is entirely up to your JQL.</li>
+                    <li><strong>An operation</strong>: <strong>Count</strong>, <strong>Sum</strong>,
+                        <strong>Average</strong>, <strong>Min</strong>, or <strong>Max</strong>. Count works on the issue
+                        set; the others run over a chosen numeric field (story points, custom fields, time tracking…).</li>
+                    <li><strong>A value source</strong>: a numeric field, or a <strong>derived</strong> value — Date
+                        difference (To − From), Days since a date, Days until a date, or Ratio (A ÷ B).</li>
+                </ul>
 
-                <h3>2. Progress</h3>
-                <p>Current value against a target, rendered as a progress bar. Targets can be a fixed number or
-                    dynamically derived from a second JQL query (e.g. resolved vs. total in scope).</p>
-
-                <h3>3. Trend</h3>
-                <p>A sparkline of the metric across buckets in your selected period (day / week / month / quarter).
-                    Great for spotting direction at a glance.</p>
-
-                <h3>4. Ratio</h3>
-                <p>Two JQL queries combined into a percentage or rate — e.g. bug ratio, completion rate, escaped
-                    defects.</p>
-
-                <h3>5. Distribution</h3>
-                <p>Breaks the metric down by a categorical field (status, priority, assignee, custom field) and renders
-                    it as a compact bar or pie chart inside the card.</p>
-
-                <h3>6. List</h3>
-                <p>Top-N issues from the configured JQL, ordered by your chosen field. Useful for "Top open
-                    blockers" or "Most recently updated" tiles.</p>
+                <h3>Date awareness</h3>
+                <p>Mark a metric as <strong>date-aware</strong> and choose its date field to make it respond to the
+                    dashboard period. This is what lets a metric be compared period-over-period for trends (below).</p>
             </section>
 
-            <section id="data-sources">
-                <h2>Data &amp; Periods</h2>
-                <p>Every card is backed by a project selection and an optional JQL filter. The gadget runs each query
-                    using the viewer's permissions, so users only see issues they have access to.</p>
+            <section id="formulas">
+                <h2>Formula Engine</h2>
+                <p>Under <strong>“Choose what to show”</strong> a card either shows a single metric directly or combines
+                    its metrics with a formula:</p>
+                <ul>
+                    <li><strong>Direct</strong> — display one metric as-is (<code>{A}</code>).</li>
+                    <li><strong>Custom formula</strong> — combine the card’s own metrics with math, referencing them by
+                        label in curly braces.</li>
+                </ul>
 
-                <h3>Comparison Periods</h3>
-                <p>Set a single period at the gadget level — Basic, Progress, and Ratio cards will automatically
-                    compute a previous-period delta against it. Trend cards use the period to define the X axis
-                    buckets.</p>
+                <h3>Examples</h3>
+                <ul>
+                    <li><strong>Completion %</strong> — <code>{A}/{B}*100</code></li>
+                    <li><strong>Net flow</strong> — <code>{A}-{B}</code></li>
+                    <li><strong>Points per developer</strong> — <code>{A}/{C}</code></li>
+                </ul>
+                <p>Formulas use the standard arithmetic operators (<code>+ − × ÷</code>) and parentheses, and reference
+                    only the metrics defined on the same card — keeping each card portable and easy to reason about.</p>
+            </section>
 
-                <h3>Aggregations</h3>
-                <p>For numeric fields you can aggregate as <strong>count</strong>, <strong>sum</strong>,
-                    <strong>min</strong>, or <strong>max</strong>. The default is issue count.
-                </p>
+            <section id="trends">
+                <h2>Trends &amp; Comparison</h2>
+                <p>Trends aren’t written into a formula — you switch them on per card from the
+                    <strong>Comparison</strong> dropdown. The card then compares its current value to the previous
+                    equivalent period and shows a badge:</p>
+                <ul>
+                    <li><strong>No comparison</strong> — just the number.</li>
+                    <li><strong>vs previous — % change</strong> — percentage delta, e.g. ▲14.3%.</li>
+                    <li><strong>vs previous — absolute</strong> — raw difference, e.g. +12.</li>
+                    <li><strong>vs previous — show previous</strong> — the previous period’s value alongside the current
+                        one.</li>
+                </ul>
+                <p>A <strong>“lower is better”</strong> toggle flips the badge colours, so a drop in bugs or cycle time
+                    reads as positive (green) rather than negative.</p>
+
+                <h3>Period</h3>
+                <p>The dashboard period is set on the gadget by granularity — <strong>Day, Week, Month, Quarter,
+                        Year</strong> — with presets such as Last 30 days, This month, or Last quarter. The previous
+                    window is derived from it automatically (e.g. This month → last month), and that’s what every
+                    comparison measures against.</p>
+                <p><em>Note:</em> a comparison only moves when the metrics it uses are <strong>date-aware</strong>. If a
+                    card compares against the previous period but its metrics aren’t date-filtered, the value stays flat
+                    — and the editor warns you.</p>
+            </section>
+
+            <section id="formatting">
+                <h2>Number Formatting</h2>
+                <p>Render each result the way it reads best:</p>
+                <ul>
+                    <li><strong>Format</strong> — Number, or Duration for time-tracking fields.</li>
+                    <li><strong>Decimals</strong>, plus an optional <strong>prefix</strong> and <strong>suffix</strong>
+                        (e.g. <code>$</code>, <code>%</code>, <code>pts</code>).</li>
+                    <li><strong>Compact</strong> — abbreviate large numbers (e.g. <strong>1.2k</strong>,
+                        <strong>3.4M</strong>).</li>
+                </ul>
+
+                <h3>Titles &amp; Labels</h3>
+                <p>Each card follows a consistent anatomy: a <strong>title</strong> above the number and an optional
+                    <strong>description</strong> beneath it, so a wall of metrics stays scannable. Per-card accent
+                    colours and conditional colouring rules let you signal status.</p>
             </section>
 
             <section id="layout">
                 <h2>Layout &amp; Theming</h2>
-                <p>Cards arrange themselves into a responsive grid that fits the gadget container — drag to resize the
-                    gadget on your Jira dashboard and the cards reflow automatically.</p>
-                <p>Per-card color accents let you signal severity or category. The gadget honors Jira's light and dark
-                    themes out of the box.</p>
+                <p>Cards sit in a flexible Bento-style grid — place tiles of different sizes and the layout reflows to
+                    fit the gadget container as you resize it on your Jira dashboard.</p>
+                <p>Per-card color accents and conditional formatting let you signal status, and the gadget honors Jira's
+                    light and dark themes out of the box.</p>
             </section>
 
             <section id="support">
