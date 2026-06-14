@@ -170,11 +170,22 @@
 
 <body class="page-landing">
 
-    <header class="header-dark">
-        <div class="header-inner">
-            <a href="../" class="logo"><img src="/img/plugio-text-light.svg" alt="Plugio" height="30"></a>
-        </div>
-    </header>
+  <header class="header-dark">
+    <div class="header-inner">
+      <a href="/" class="logo"><img src="/img/plugio-text-dark.svg" alt="Plugio" height="30"></a>
+
+      <button class="nav-burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="main-nav" id="main-nav">
+        <a href="/#products">Plugins</a>
+        <a href="/docs/">Documentation</a>
+        <a href="/data-security/">Security</a>
+        <a href="/#products" class="nav-cta">Browse plugins</a>
+      </nav>
+    </div>
+  </header>
 
     <div class="docs-grid">
         <aside class="docs-nav">
@@ -470,6 +481,7 @@
             });
         });
     </script>
+  <script src="/js/nav.js"></script>
 </body>
 
 </html>

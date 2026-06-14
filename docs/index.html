@@ -2,394 +2,243 @@
 <html lang="en">
 
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TL2DNWBYHW"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-TL2DNWBYHW');
-    </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gauge Documentation - Plugio</title>
-    <meta name="description" content="Documentation and setup guide for Plugio Gauge Chart, Progress Bars & Counters for Jira Dashboards.">
-    <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../css/style.css">
-    <style>
-        /* Documentation specific overrides to match existing theme */
-        .docs-nav {
-            position: sticky;
-            top: 100px;
-            padding-right: 20px;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentation - Plugio</title>
+  <meta name="description" content="Documentation for every Plugio plugin for Jira, Bitbucket and monday.com.">
+  <link rel="canonical" href="https://plugio.io/docs/">
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .doc-group + .doc-group {
+      margin-top: 48px;
+    }
 
-        .docs-nav ul {
-            list-style: none;
-            padding: 0;
-        }
+    .doc-group-head {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding-bottom: 16px;
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--border-dark);
+    }
 
-        .docs-nav li {
-            margin-bottom: 12px;
-        }
+    .doc-group-name {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--text-white);
+      letter-spacing: -0.01em;
+    }
 
-        .docs-nav a {
-            color: var(--text-muted);
-            font-size: 14px;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
+    .doc-group-name::before {
+      content: '';
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+    }
 
-        .docs-nav a:hover,
-        .docs-nav a.active {
-            color: var(--accent);
-            text-decoration: none;
-        }
+    .doc-group-name--atlassian::before { background: #2684FF; }
+    .doc-group-name--monday::before { background: #FF3D57; }
 
-        .docs-grid {
-            display: grid;
-            grid-template-columns: 240px 1fr;
-            gap: 60px;
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 60px 24px;
-        }
+    .doc-group-sub {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
 
-        .docs-content h1 {
-            font-size: 42px;
-            color: var(--text-white);
-            margin-bottom: 16px;
-        }
+    .doc-hub-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 16px;
+    }
 
-        .docs-content h2 {
-            font-size: 24px;
-            color: var(--text-white);
-            margin-top: 60px;
-            padding-bottom: 12px;
-            border-bottom: 1px solid var(--border-dark);
-        }
+    .doc-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 18px;
+      background: var(--navy);
+      border: 1px solid var(--border-dark);
+      border-radius: 12px;
+      text-decoration: none;
+      box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
 
-        .docs-content h3 {
-            font-size: 18px;
-            color: var(--text-white);
-            margin-top: 32px;
-        }
+    .doc-card:hover {
+      border-color: var(--accent-glow-border);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(15, 23, 42, 0.08);
+      text-decoration: none;
+    }
 
-        .docs-content p,
-        .docs-content li {
-            font-size: 16px;
-            line-height: 1.7;
-            color: var(--text-gray);
-        }
+    .doc-card img {
+      width: 42px;
+      height: 42px;
+      border-radius: 9px;
+      flex-shrink: 0;
+    }
 
-        .docs-content ul {
-            padding-left: 20px;
-            margin-bottom: 24px;
-        }
+    .doc-card h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-white);
+      margin: 0 0 4px;
+    }
 
-        .docs-content ol {
-            list-style: none;
-            padding-left: 0;
-            margin-bottom: 24px;
-        }
-
-        .docs-content li {
-            margin-bottom: 12px;
-        }
-
-        .code-block {
-            background: var(--navy-mid);
-            border: 1px solid var(--border-dark);
-            border-radius: 8px;
-            padding: 16px;
-            font-family: 'Monaco', 'Consolas', monospace;
-            font-size: 14px;
-            color: var(--accent);
-            margin: 16px 0;
-            overflow-x: auto;
-        }
-
-        .step-number {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 28px;
-            height: 28px;
-            background: var(--accent);
-            color: white;
-            border-radius: 50%;
-            font-size: 14px;
-            font-weight: 700;
-            margin-right: 12px;
-        }
-
-        @media (max-width: 900px) {
-            .docs-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .docs-nav {
-                display: none;
-            }
-        }
-    </style>
+    .doc-card p {
+      font-size: 13px;
+      color: var(--text-gray);
+      line-height: 1.5;
+      margin: 0;
+    }
+  </style>
 </head>
 
 <body class="page-landing">
 
-    <header class="header-dark">
-        <div class="header-inner">
-            <a href="../" class="logo"><img src="/img/plugio-text-light.svg" alt="Plugio" height="30"></a>
-            <nav>
-                <div class="nav-dropdown">
-                    <a href="/docs/gauge.html" class="dropdown-trigger active">
-                        Documentation
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                    </a>
-                    <div class="dropdown-menu">
-            <div class="dropdown-section">
-              <span class="dropdown-label">Atlassian Cloud</span>
-              <div class="dropdown-items-grid">
-                <a href="/docs/gauge.html" class="dropdown-item">
-                  <div class="dropdown-icon"><img src="/img/gauge.png" alt="Gauge"></div>
-                  <div class="dropdown-info">
-                    <span class="dropdown-title">Gauge Chart, Progress Bars &amp; Counters</span>
-                    <span class="dropdown-desc">Visualization gadgets for Jira</span>
-                  </div>
-                </a>
-                <a href="/docs/pivot.html" class="dropdown-item">
-                  <div class="dropdown-icon"><img src="/img/pivot.png" alt="Pivot"></div>
-                  <div class="dropdown-info">
-                    <span class="dropdown-title">Multi-Dimensional Pivot Table</span>
-                    <span class="dropdown-desc">Multi-dimensional reporting</span>
-                  </div>
-                </a>
-                <a href="/docs/treemap.html" class="dropdown-item">
-                  <div class="dropdown-icon"><img src="/img/treemap.png" alt="Issue Distribution"></div>
-                  <div class="dropdown-info">
-                    <span class="dropdown-title">Treemap &amp; Issue Hierarchy</span>
-                    <span class="dropdown-desc">Hierarchical data visualization</span>
-                  </div>
-                </a>
-                <a href="/docs/battery.html" class="dropdown-item">
-                  <div class="dropdown-icon"><img src="/img/battery.png" alt="Sprint Health"></div>
-                  <div class="dropdown-info">
-                    <span class="dropdown-title">Sprint Health &amp; Capacity Tracker</span>
-                    <span class="dropdown-desc">Visualise agile performance</span>
-                  </div>
-                </a>
-                <a href="/docs/cards.html" class="dropdown-item">
-                  <div class="dropdown-icon"><img src="/img/cards.png" alt="Metric Cards"></div>
-                  <div class="dropdown-info">
-                    <span class="dropdown-title">Metric Cards &amp; KPI Dashboard</span>
-                    <span class="dropdown-desc">Configurable KPI cards for Jira</span>
-                  </div>
-                </a>
-                <a href="/docs/numbers.html" class="dropdown-item">
-                  <div class="dropdown-icon"><img src="/img/numbers.png" alt="Big Numbers"></div>
-                  <div class="dropdown-info">
-                    <span class="dropdown-title">KPI Formula, Trend &amp; Big Numbers</span>
-                    <span class="dropdown-desc">Formula-driven big number cards for Jira</span>
-                  </div>
-                </a>
-                <a href="/docs/bitbucket-mermaid.html" class="dropdown-item">
-                  <div class="dropdown-icon"><img src="/img/mermaid.png" alt="Mermaid"></div>
-                  <div class="dropdown-info">
-                    <span class="dropdown-title">Mermaid Diagrams for Bitbucket</span>
-                    <span class="dropdown-desc">Diagram rendering in Bitbucket repos</span>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="dropdown-section">
-              <span class="dropdown-label">monday.com</span>
-              <div class="dropdown-items-grid">
-                <a href="/docs/monday-gauge.html" class="dropdown-item">
-                  <div class="dropdown-icon"><img src="/img/gauge.png" alt="Gauge"></div>
-                  <div class="dropdown-info">
-                    <span class="dropdown-title">Gauge &amp; KPI Widgets</span>
-                    <span class="dropdown-desc">Visualization widgets for monday.com</span>
-                  </div>
-                </a>
-                <a href="/docs/monday-pivot.html" class="dropdown-item">
-                  <div class="dropdown-icon"><img src="/img/pivot.png" alt="Pivot Table"></div>
-                  <div class="dropdown-info">
-                    <span class="dropdown-title">Multi-Dimensional Pivot Table</span>
-                    <span class="dropdown-desc">Pivot tables for monday.com boards</span>
-                  </div>
-                </a>
-                <a href="/docs/monday-geomap.html" class="dropdown-item">
-                  <div class="dropdown-icon"><img src="/img/geomap.png" alt="World Map"></div>
-                  <div class="dropdown-info">
-                    <span class="dropdown-title">World Map</span>
-                    <span class="dropdown-desc">Country &amp; region analytics</span>
-                  </div>
-                </a>
-                <a href="/docs/monday-cards.html" class="dropdown-item">
-                  <div class="dropdown-icon"><img src="/img/cards.png" alt="Metric Cards for monday.com"></div>
-                  <div class="dropdown-info">
-                    <span class="dropdown-title">Metric Cards &amp; KPI Dashboard</span>
-                    <span class="dropdown-desc">KPI cards &amp; dashboards for monday.com</span>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-                <a href="../privacy-policy">Privacy</a>
-                <a href="../terms-of-service">Terms</a>
-                <a href="../data-security">Security</a>
-                <a href="../eula">EULA</a>
-            </nav>
-        </div>
-    </header>
+  <header class="header-dark">
+    <div class="header-inner">
+      <a href="/" class="logo"><img src="/img/plugio-text-dark.svg" alt="Plugio" height="30"></a>
 
-    <div class="docs-grid">
-        <aside class="docs-nav">
-            <ul>
-                <li><a href="#getting-started" class="active">Getting Started</a></li>
-                <li><a href="#visualization-types">Visualization Types</a></li>
-                <li><a href="#data-sources">Data Sources</a></li>
-                <li><a href="#advanced-features">Advanced Features</a></li>
-                <li><a href="#faq">FAQ</a></li>
-                <li><a href="#support">Support</a></li>
-            </ul>
-        </aside>
+      <button class="nav-burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav">
+        <span></span><span></span><span></span>
+      </button>
 
-        <main class="docs-content">
-            <section id="getting-started">
-                <h1>Gauge Chart, Progress Bars & Counters Documentation</h1>
-                <p>Welcome to the Plugio Gauge documentation. This guide will help you set up and customize your Jira
-                    Dashboard gadgets to visualize your data effectively.</p>
-
-                <h2>Getting Started</h2>
-                <p>Follow these simple steps to add your first gadget to a Jira Dashboard:</p>
-                <ol>
-                    <li><span class="step-number">1</span> Open any Jira Dashboard and click <strong>Add
-                            Gadget</strong>.</li>
-                    <li><span class="step-number">2</span> Search for <strong>"Plugio Gauge"</strong> and click Add.
-                    </li>
-                    <li><span class="step-number">3</span> On the gadget, click the <strong>three dots (...)</strong>
-                        and select <strong>Configure</strong>.</li>
-                    <li><span class="step-number">4</span> Use the live preview editor to choose your visualization type
-                        and connect your data.</li>
-                </ol>
-            </section>
-
-            <section id="visualization-types">
-                <h2>Visualization Types</h2>
-                <p>Plugio Gauge offers three professional-grade visualization components:</p>
-
-                <h3>1. Radial Gauge</h3>
-                <p>Perfect for tracking KPIs against ranges. Ideal for Sprint Velocity, SLA compliance, or health
-                    metrics.</p>
-
-                <h3>2. Progress Bar</h3>
-                <p>Best for visualizing completion status. You can add multiple series and target lines to track
-                    milestones like "Backend Completion" vs. "Frontend Completion".</p>
-
-                <h3>3. Numeric Counter</h3>
-                <p>Designed for high-impact numbers. Use this to highlight critical metrics like "Open Critical Bugs" or
-                    "Total Story Points in Backlog".</p>
-            </section>
-
-            <section id="data-sources">
-                <h2>Data Sources & JQL</h2>
-                <p>Your gadgets are powered by real-time Jira data. You have two ways to connect your data:</p>
-
-                <h3>Standard JQL</h3>
-                <p>Enter any valid Jira Query Language (JQL) string. The gadget will automatically count the results or
-                    sum the fields you specify.</p>
-                <div class="code-block">
-                    project = "MYPROJ" AND status = "In Progress"
-                </div>
-
-                <h3>Saved Filters</h3>
-                <p>Select any filter you have already saved in Jira. This makes it easy to reuse complex logic across
-                    multiple dashboards.</p>
-
-                <h3>Metrics & Measures</h3>
-                <ul>
-                    <li><strong>Issue Count:</strong> Displays the total number of issues returned by the query.</li>
-                    <li><strong>Numeric Sum:</strong> Sums up values in a specific field (e.g., Story Points, Time
-                        Spent, or any custom numeric field).</li>
-                    <li><strong>Percentage Mode:</strong> Compare a numerator query against a denominator query to show
-                        a percentage (e.g., Resolved Issues vs. Total Issues).</li>
-                </ul>
-            </section>
-
-            <section id="advanced-features">
-                <h2>Advanced Features</h2>
-
-                <h3>Dynamic Thresholds</h3>
-                <p>Define custom color ranges (Green, Yellow, Red) for your Gauges. This provides immediate visual
-                    context for your metrics (e.g., Red if bugs > 20).</p>
-
-                <h3>Target Lines</h3>
-                <p>Add vertical markers to your Progress Bars to show goals, budgets, or historical averages. Perfect
-                    for tracking "Current Progress" vs. "Sprint Target".</p>
-
-                <h3>Styling & Color Palettes</h3>
-                <p>Choose from curated color templates or define your own. The gadgets support both Jira Light and Dark
-                    modes automatically.</p>
-            </section>
-
-            <section id="faq">
-                <h2>FAQ</h2>
-                <h3>Does my data leave Jira?</h3>
-                <p>No. Plugio is a Forge-based app. All data fetching and processing happens entirely within your own
-                    Atlassian Cloud instance. We never store or transmit your Jira data.</p>
-
-                <h3>Can I use custom fields?</h3>
-                <p>Yes. Any standard or custom numeric field (number, currency, time spent) can be used for summation
-                    metrics.</p>
-            </section>
-
-            <section id="support">
-                <h2>Support</h2>
-                <p>Need help or have a feature request? We're here to help you get the most out of your Jira dashboards.
-                </p>
-                <p>Email: <a href="mailto:support@plugio.io">support@plugio.io</a></p>
-            </section>
-        </main>
+      <nav class="main-nav" id="main-nav">
+        <a href="/#products">Plugins</a>
+        <a href="/docs/">Documentation</a>
+        <a href="/data-security/">Security</a>
+        <a href="/#products" class="nav-cta">Browse plugins</a>
+      </nav>
     </div>
+  </header>
 
-    <footer class="footer-dark">
-        <div class="footer-inner">
-            <nav>
-                <a href="../privacy-policy">Privacy Policy</a>
-                <a href="../terms-of-service">Terms of Service</a>
-                <a href="../data-security">Data Security</a>
-                <a href="../eula">EULA</a>
-            </nav>
-            <span class="footer-copy">&copy; 2026 Plugio. All rights reserved.</span>
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-header">
+        <p class="label">Documentation</p>
+        <h2>Plugin guides</h2>
+        <p>Setup and configuration docs for every Plugio plugin.</p>
+      </div>
+
+      <!-- Atlassian Cloud -->
+      <div class="doc-group">
+        <div class="doc-group-head">
+          <span class="doc-group-name doc-group-name--atlassian">Atlassian Cloud</span>
+          <span class="doc-group-sub">Gadgets for Jira &amp; Bitbucket dashboards</span>
         </div>
-    </footer>
+        <div class="doc-hub-grid">
+          <a class="doc-card" href="gauge.html">
+            <img src="/img/gauge.png" alt="">
+            <div>
+              <h3>Gauge Chart, Progress Bars &amp; Counters</h3>
+              <p>Gauges, counters and progress bars for Jira dashboards.</p>
+            </div>
+          </a>
+          <a class="doc-card" href="pivot.html">
+            <img src="/img/pivot.png" alt="">
+            <div>
+              <h3>Multi-Dimensional Pivot Table</h3>
+              <p>Interactive pivot tables with live JQL and drill-down.</p>
+            </div>
+          </a>
+          <a class="doc-card" href="treemap.html">
+            <img src="/img/treemap.png" alt="">
+            <div>
+              <h3>Treemap &amp; Issue Hierarchy</h3>
+              <p>Treemaps and sunbursts with heatmap coloring.</p>
+            </div>
+          </a>
+          <a class="doc-card" href="battery.html">
+            <img src="/img/battery.png" alt="">
+            <div>
+              <h3>Sprint Health &amp; Capacity Tracker</h3>
+              <p>Battery-style sprint health, pacing and scope creep.</p>
+            </div>
+          </a>
+          <a class="doc-card" href="cards.html">
+            <img src="/img/cards.png" alt="">
+            <div>
+              <h3>Metric Cards &amp; KPI Dashboard</h3>
+              <p>Six configurable KPI card types for Jira.</p>
+            </div>
+          </a>
+          <a class="doc-card" href="numbers.html">
+            <img src="/img/numbers.png" alt="">
+            <div>
+              <h3>KPI Formula, Trend &amp; Big Numbers</h3>
+              <p>Formula-driven big numbers with trend indicators.</p>
+            </div>
+          </a>
+          <a class="doc-card" href="bitbucket-mermaid.html">
+            <img src="/img/mermaid.png" alt="">
+            <div>
+              <h3>Mermaid Diagrams for Bitbucket</h3>
+              <p>Render Mermaid diagrams in the Bitbucket file viewer.</p>
+            </div>
+          </a>
+        </div>
+      </div>
 
-    <script>
-        // Simple scroll spy for navigation highlight
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('.docs-content section');
-            const navLinks = document.querySelectorAll('.docs-nav a');
+      <!-- monday.com -->
+      <div class="doc-group">
+        <div class="doc-group-head">
+          <span class="doc-group-name doc-group-name--monday">monday.com</span>
+          <span class="doc-group-sub">Widgets &amp; views for monday boards</span>
+        </div>
+        <div class="doc-hub-grid">
+          <a class="doc-card" href="monday-geomap.html">
+            <img src="/img/geomap.png" alt="">
+            <div>
+              <h3>World Map &amp; Region Analytics</h3>
+              <p>Board data on an interactive world map.</p>
+            </div>
+          </a>
+          <a class="doc-card" href="monday-gauge.html">
+            <img src="/img/gauge.png" alt="">
+            <div>
+              <h3>Gauge &amp; KPI Widgets</h3>
+              <p>Gauges, counters and progress bars for monday boards.</p>
+            </div>
+          </a>
+          <a class="doc-card" href="monday-cards.html">
+            <img src="/img/cards.png" alt="">
+            <div>
+              <h3>Metric Cards &amp; KPI Dashboard</h3>
+              <p>Drag-and-drop KPI dashboard for monday.com.</p>
+            </div>
+          </a>
+          <a class="doc-card" href="monday-pivot.html">
+            <img src="/img/pivot.png" alt="">
+            <div>
+              <h3>Multi-Dimensional Pivot Table</h3>
+              <p>Interactive pivot tables for monday boards.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (pageYOffset >= sectionTop - 120) {
-                    current = section.getAttribute('id');
-                }
-            });
+  <footer class="footer-dark">
+    <div class="footer-inner">
+      <nav>
+        <a href="../privacy-policy">Privacy Policy</a>
+        <a href="../terms-of-service">Terms of Service</a>
+        <a href="../data-security">Data Security</a>
+        <a href="../eula">EULA</a>
+        <a href="mailto:support@plugio.io">Contact</a>
+      </nav>
+      <span class="footer-copy">&copy; 2026 Plugio. All rights reserved.</span>
+    </div>
+  </footer>
 
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').includes(current)) {
-                    link.classList.add('active');
-                }
-            });
-        });
-    </script>
+  <script src="/js/nav.js"></script>
+
 </body>
 
 </html>

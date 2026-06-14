@@ -8,7 +8,7 @@
   <meta name="description"
     content="Plugio builds reliable, configurable plugins for Atlassian and monday.com. Visualization, reporting and productivity tools — built with depth from v1.">
   <link rel="canonical" href="https://plugio.io/">
-  <meta name="theme-color" content="#0B1120">
+  <meta name="theme-color" content="#FFFFFF">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
@@ -112,116 +112,280 @@
     gtag('js', new Date());
     gtag('config', 'G-TL2DNWBYHW');
   </script>
+
+  <style>
+    /* ===== Light theme override ===== */
+    :root {
+      --navy: #FFFFFF;
+      --navy-light: #F5F7FA;
+      --navy-mid: #E6EBF1;
+      --text-white: #0F172A;
+      --text-gray: #475569;
+      --text-muted: #6B7687;
+      --border-dark: #E3E8EF;
+      --accent-glow: rgba(59, 130, 246, 0.12);
+      --accent-glow-border: rgba(59, 130, 246, 0.30);
+      --icon-bg: rgba(59, 130, 246, 0.10);
+      --trust-icon-bg: rgba(34, 197, 94, 0.12);
+    }
+
+    body.page-landing {
+      background: #FFFFFF;
+      color: var(--text-gray);
+    }
+
+    .nav-burger span {
+      background: #0F172A;
+    }
+
+    .shot-icon {
+      box-shadow: 0 6px 16px rgba(15, 23, 42, 0.10);
+    }
+
+    .shot-card:hover {
+      border-color: var(--accent-glow-border);
+      box-shadow: 0 14px 34px rgba(15, 23, 42, 0.12);
+      transform: translateY(-3px);
+    }
+
+    /* Grayer section so white cards lift off the background */
+    .section-alt {
+      background: #E7ECF3;
+    }
+
+    /* ===== Prototype overrides ===== */
+
+    /* Original two-column hero (restored) */
+    .hero {
+      padding: 120px 24px 110px;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .hero-grid .hero-content {
+      max-width: 540px;
+      margin: 0;
+      text-align: left;
+    }
+
+    .hero-grid .hero-sub {
+      max-width: 480px;
+      margin: 0 0 32px;
+    }
+
+    .hero-grid .hero-buttons {
+      justify-content: flex-start;
+    }
+
+    @media (max-width: 768px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .hero-grid .hero-content {
+        text-align: center;
+        max-width: 100%;
+        margin: 0 auto;
+      }
+
+      .hero-grid .hero-sub {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-grid .hero-buttons {
+        justify-content: center;
+      }
+    }
+
+    /* ===== Platform groups (clear Jira / monday split) ===== */
+    .platform-group + .platform-group {
+      margin-top: 60px;
+    }
+
+    .platform-head {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      flex-wrap: wrap;
+      padding-bottom: 18px;
+      margin-bottom: 28px;
+      border-bottom: 1px solid var(--border-dark);
+    }
+
+    .platform-name {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-white);
+      letter-spacing: -0.01em;
+    }
+
+    .platform-name::before {
+      content: '';
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+
+    .platform-name--atlassian::before {
+      background: #2684FF;
+    }
+
+    .platform-name--monday::before {
+      background: #FF3D57;
+    }
+
+    .platform-sub {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* ===== Showcase cards ===== */
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 20px;
+    }
+
+    .shot-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--navy);
+      border: 1px solid var(--border-dark);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 24px rgba(15, 23, 42, 0.08);
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+
+    .shot-card:hover {
+      border-color: var(--accent-glow-border);
+      transform: translateY(-3px);
+    }
+
+    .shot-img {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      background: #ffffff;
+      border-bottom: 1px solid var(--border-dark);
+      overflow: hidden;
+    }
+
+    .shot-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+
+    .shot-soon {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(245, 158, 11, 0.95);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 100px;
+    }
+
+    .shot-body {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      padding: 0 22px 22px;
+      background: #EDF1F7;
+    }
+
+    .shot-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 13px;
+      background: #FFFFFF;
+      border: 1px solid var(--border-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: -27px;
+      margin-bottom: 14px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+    }
+
+    .shot-icon img {
+      width: 36px;
+      height: 36px;
+      border-radius: 7px;
+      display: block;
+    }
+
+    .shot-name {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-white);
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+
+    .shot-desc {
+      font-size: 13.5px;
+      color: var(--text-gray);
+      line-height: 1.55;
+      margin: 0 0 18px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .shot-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: auto;
+    }
+
+    @media (max-width: 480px) {
+      .shot-actions {
+        flex-wrap: wrap;
+      }
+    }
+  </style>
 </head>
 
 <body class="page-landing">
 
   <header class="header-dark">
     <div class="header-inner">
-      <a href="./" class="logo"><img src="/img/plugio-text-light.svg" alt="Plugio" height="30"></a>
-      <nav>
-        <div class="nav-dropdown">
-          <a href="/docs/gauge.html" class="dropdown-trigger">
-            Documentation
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </a>
-          <div class="dropdown-menu">
-            <div class="dropdown-section">
-              <span class="dropdown-label">Atlassian Cloud</span>
-              <div class="dropdown-items-grid">
-                <a href="/docs/gauge.html" class="dropdown-item">
-                  <div class="dropdown-icon"><img src="/img/gauge.png" alt="Gauge"></div>
-                  <div class="dropdown-info">
-                    <span class="dropdown-title">Gauge Chart, Progress Bars &amp; Counters</span>
-                    <span class="dropdown-desc">Visualization gadgets for Jira</span>
-                  </div>
-                </a>
-                <a href="/docs/pivot.html" class="dropdown-item">
-                  <div class="dropdown-icon"><img src="/img/pivot.png" alt="Pivot"></div>
-                  <div class="dropdown-info">
-                    <span class="dropdown-title">Multi-Dimensional Pivot Table</span>
-                    <span class="dropdown-desc">Multi-dimensional reporting</span>
-                  </div>
-                </a>
-                <a href="/docs/treemap.html" class="dropdown-item">
-                  <div class="dropdown-icon"><img src="/img/treemap.png" alt="Issue Distribution"></div>
-                  <div class="dropdown-info">
-                    <span class="dropdown-title">Treemap &amp; Issue Hierarchy</span>
-                    <span class="dropdown-desc">Hierarchical data visualization</span>
-                  </div>
-                </a>
-                <a href="/docs/battery.html" class="dropdown-item">
-                  <div class="dropdown-icon"><img src="/img/battery.png" alt="Sprint Health"></div>
-                  <div class="dropdown-info">
-                    <span class="dropdown-title">Sprint Health &amp; Capacity Tracker</span>
-                    <span class="dropdown-desc">Visualise agile performance</span>
-                  </div>
-                </a>
-                <a href="/docs/cards.html" class="dropdown-item">
-                  <div class="dropdown-icon"><img src="/img/cards.png" alt="Metric Cards"></div>
-                  <div class="dropdown-info">
-                    <span class="dropdown-title">Metric Cards &amp; KPI Dashboard</span>
-                    <span class="dropdown-desc">Configurable KPI cards for Jira</span>
-                  </div>
-                </a>
-                <a href="/docs/numbers.html" class="dropdown-item">
-                  <div class="dropdown-icon"><img src="/img/numbers.png" alt="Big Numbers"></div>
-                  <div class="dropdown-info">
-                    <span class="dropdown-title">KPI Formula, Trend &amp; Big Numbers</span>
-                    <span class="dropdown-desc">Formula-driven big number cards for Jira</span>
-                  </div>
-                </a>
-                <a href="/docs/bitbucket-mermaid.html" class="dropdown-item">
-                  <div class="dropdown-icon"><img src="/img/mermaid.png" alt="Mermaid"></div>
-                  <div class="dropdown-info">
-                    <span class="dropdown-title">Mermaid Diagrams for Bitbucket</span>
-                    <span class="dropdown-desc">Diagram rendering in Bitbucket repos</span>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="dropdown-section">
-              <span class="dropdown-label">monday.com</span>
-              <div class="dropdown-items-grid">
-                <a href="/docs/monday-gauge.html" class="dropdown-item">
-                  <div class="dropdown-icon"><img src="/img/gauge.png" alt="Gauge"></div>
-                  <div class="dropdown-info">
-                    <span class="dropdown-title">Gauge &amp; KPI Widgets</span>
-                    <span class="dropdown-desc">Visualization widgets for monday.com</span>
-                  </div>
-                </a>
-                <a href="/docs/monday-pivot.html" class="dropdown-item">
-                  <div class="dropdown-icon"><img src="/img/pivot.png" alt="Pivot Table"></div>
-                  <div class="dropdown-info">
-                    <span class="dropdown-title">Multi-Dimensional Pivot Table</span>
-                    <span class="dropdown-desc">Pivot tables for monday.com boards</span>
-                  </div>
-                </a>
-                <a href="/docs/monday-geomap.html" class="dropdown-item">
-                  <div class="dropdown-icon"><img src="/img/geomap.png" alt="World Map"></div>
-                  <div class="dropdown-info">
-                    <span class="dropdown-title">World Map</span>
-                    <span class="dropdown-desc">Country &amp; region analytics</span>
-                  </div>
-                </a>
-                <a href="/docs/monday-cards.html" class="dropdown-item">
-                  <div class="dropdown-icon"><img src="/img/cards.png" alt="Metric Cards for monday.com"></div>
-                  <div class="dropdown-info">
-                    <span class="dropdown-title">Metric Cards &amp; KPI Dashboard</span>
-                    <span class="dropdown-desc">KPI cards &amp; dashboards for monday.com</span>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <a href="privacy-policy">Privacy</a>
-        <a href="terms-of-service">Terms</a>
+      <a href="./" class="logo"><img src="/img/plugio-text-dark.svg" alt="Plugio" height="30"></a>
+
+      <button class="nav-burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="main-nav" id="main-nav">
+        <a href="#products">Plugins</a>
+        <a href="/docs/">Documentation</a>
         <a href="data-security">Security</a>
-        <a href="eula">EULA</a>
+        <a href="#products" class="nav-cta">Browse plugins</a>
       </nav>
     </div>
   </header>
@@ -394,306 +558,174 @@
     </div>
   </section>
 
-  <!-- Features -->
-  <section class="section">
-    <div class="section-inner">
-      <div class="section-header">
-        <p class="label">Why Plugio</p>
-        <h2>Powerful, not bloated</h2>
-        <p>The configuration depth of an enterprise tool, in plugins that load in milliseconds.</p>
-      </div>
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 20h9"></path>
-              <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
-            </svg>
-          </div>
-          <h3>Deeply configurable</h3>
-          <p>Conditional formatting, variables, custom thresholds, color rules, drill-downs. The settings rivals leave
-            for "v2" — Plugio ships with from day one.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="4 17 10 11 4 5" />
-              <line x1="12" y1="19" x2="20" y2="19" />
-            </svg>
-          </div>
-          <h3>Native integration</h3>
-          <p>Works natively within your platform using standard APIs. Live JQL, native column types, real dashboard
-            filters — no external services or middleware.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-            </svg>
-          </div>
-          <h3>Your data never leaves</h3>
-          <p>No collection, no analytics, no external calls. Everything runs inside your platform instance.
-            GDPR-friendly
-            by design.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Products -->
+  <!-- Products showcase -->
   <section id="products" class="section section-alt">
     <div class="section-inner">
       <div class="section-header">
-        <p class="label">Products</p>
         <h2>Our plugins</h2>
-        <p>Focused tools that do one thing well.</p>
+        <p>Focused tools that do one thing well — grouped by platform.</p>
       </div>
-      <div class="products-grid">
-        <div class="products-platform-label">Atlassian Cloud</div>
-        <div class="product-card">
-          <div class="product-icon">
-            <img src="/img/gauge.png" alt="Gauge plugin">
-          </div>
-          <div>
-            <h3>Gauge Chart, Progress Bars &amp; Counters for Jira Dashboards</h3>
-            <p class="product-platform">Atlassian Cloud</p>
-            <p>Visual dashboard gadgets for tracking metrics at a glance. Display JQL results as gauges, counters, or
-              progress bars on any dashboard.</p>
-            <div class="product-links">
-              <a href="https://marketplace.atlassian.com/apps/176485135/gauge-kpi-widgets-for-jira-dashboards?hosting=cloud&tab=overview"
-                target="_blank" rel="noopener" class="product-cta">
-                Install
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </a>
-              <a href="/docs/gauge.html" class="product-link">Documentation</a>
-            </div>
-          </div>
-        </div>
-        <div class="product-card">
-          <div class="product-icon">
-            <img src="/img/pivot.png" alt="Multi-Dimensional Pivot Table for Jira Dashboards">
-          </div>
-          <div>
-            <h3>Multi-Dimensional Pivot Table for Jira Dashboards</h3>
-            <p class="product-platform">Atlassian Cloud</p>
-            <p>Advanced data visualization for Jira. Create interactive, multi-dimensional pivot tables with live JQL
-              support and deep drill-down capabilities.</p>
-            <div class="product-links">
-              <a href="https://marketplace.atlassian.com/apps/3693964024/multi-dimensional-pivot-table-for-jira-dashboard?hosting=cloud&tab=overview"
-                target="_blank" rel="noopener" class="product-cta">
-                Install
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </a>
-              <a href="/docs/pivot.html" class="product-link">Documentation</a>
-            </div>
-          </div>
-        </div>
-        <div class="product-card">
-          <div class="product-icon">
-            <img src="/img/treemap.png" alt="Treemap & Issue Hierarchy Charts for Jira">
-          </div>
-          <div>
-            <h3>Treemap &amp; Issue Hierarchy Charts for Jira Dashboards</h3>
-            <p class="product-platform">Atlassian Cloud</p>
-            <p>Advanced hierarchical visualization. Explore your Jira data through interactive treemaps and sunbursts
-              with full drill-down support.</p>
-            <div class="product-links">
-              <a href="https://marketplace.atlassian.com/apps/863764855/issue-distribution-drilldown-charts-for-jira-dashboard?hosting=cloud&tab=overview"
-                target="_blank" rel="noopener" class="product-cta">
-                Install
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </a>
-              <a href="/docs/treemap.html" class="product-link">Documentation</a>
-            </div>
-          </div>
-        </div>
-        <div class="product-card">
-          <div class="product-icon">
-            <img src="/img/battery.png" alt="Sprint Health & Capacity Tracker">
-          </div>
-          <div>
-            <h3>Sprint Health &amp; Capacity Tracker for Jira Dashboards</h3>
-            <p class="product-platform">Atlassian Cloud</p>
-            <p>Visualise your sprint health, pacing, and scope creep at a glance. A high-performance battery-style gauge
-              designed for modern agile dashboards.</p>
-            <div class="product-links">
-              <a href="https://marketplace.atlassian.com/apps/2969894539/sprint-progress-health-monitor-for-jira-dashboard"
-                target="_blank" rel="noopener" class="product-cta">
-                Install
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </a>
-              <a href="/docs/battery.html" class="product-link">Documentation</a>
-            </div>
-          </div>
-        </div>
-        <div class="product-card">
-          <div class="product-icon">
-            <img src="/img/cards.png" alt="Metric Cards & KPI Dashboard for Jira">
-          </div>
-          <div>
-            <h3>Metric Cards &amp; KPI Dashboard for Jira Dashboards</h3>
-            <p class="product-platform">Atlassian Cloud</p>
-            <p>Display multiple configurable metric cards on your Jira dashboard. Choose from Basic, Progress, Trend,
-              Ratio, Distribution, and List card types to track your team's key metrics at a glance.</p>
-            <div class="product-links">
-              <a href="https://marketplace.atlassian.com/apps/643439298/metric-cards-kpi-dashboard-for-jira"
-                target="_blank" rel="noopener" class="product-cta">
-                Install
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </a>
-              <a href="/docs/cards.html" class="product-link">Documentation</a>
-            </div>
-          </div>
-        </div>
 
-        <div class="product-card product-card--soon">
-          <div class="product-icon">
-            <img src="/img/numbers.png" alt="KPI Formula, Trend &amp; Big Number Dashboard for Jira">
-          </div>
-          <div>
-            <span class="product-coming-soon">Coming Soon</span>
-            <h3>KPI Formula, Trend &amp; Big Number Dashboard for Jira</h3>
-            <p class="product-platform">Atlassian Cloud</p>
-            <p>Combine multiple JQL queries and numeric fields with mathematical formulas, then display the result as a
-              bold big number with period-over-period trend indicators. Fully custom KPI cards for your Jira dashboard.</p>
-            <div class="product-links">
-              <a href="/docs/numbers.html" class="product-link">Documentation</a>
+      <!-- Atlassian Cloud group -->
+      <div class="platform-group">
+        <div class="platform-head">
+          <span class="platform-name platform-name--atlassian">Atlassian Cloud</span>
+          <span class="platform-sub">Gadgets for Jira &amp; Bitbucket dashboards</span>
+        </div>
+        <div class="showcase-grid">
+          <div class="shot-card">
+            <div class="shot-img"><img src="/img/shots/gauge-jira.png" alt="Gauge Chart, Progress Bars &amp; Counters for Jira"></div>
+            <div class="shot-body">
+              <div class="shot-icon"><img src="/img/gauge.png" alt=""></div>
+              <h3 class="shot-name">Gauge Chart, Progress Bars &amp; Counters</h3>
+              <p class="shot-desc">Show JQL results as gauges, counters and progress bars on any Jira dashboard — with color thresholds and target markers.</p>
+              <div class="shot-actions">
+                <a href="https://marketplace.atlassian.com/apps/176485135/gauge-kpi-widgets-for-jira-dashboards?hosting=cloud&tab=overview" target="_blank" rel="noopener" class="product-cta">Install</a>
+                <a href="/docs/gauge.html" class="product-link">Docs</a>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="product-card">
-          <div class="product-icon">
-            <img src="/img/mermaid.png" alt="Mermaid Diagrams for Bitbucket">
-          </div>
-          <div>
-            <h3>Mermaid Diagrams for Bitbucket</h3>
-            <p class="product-platform">Atlassian Cloud</p>
-            <p>Render Mermaid diagrams and Markdown files directly inside the Bitbucket repository file viewer.
-              Supports all Mermaid diagram types, six themes, zoom &amp; pan, and a built-in live editor.</p>
-            <div class="product-links">
-              <a href="https://marketplace.atlassian.com/apps/240968513/mermaid-diagrams-for-bitbucket" target="_blank"
-                rel="noopener" class="product-cta">
-                Install
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </a>
-              <a href="/docs/bitbucket-mermaid.html" class="product-link">Documentation</a>
+          <div class="shot-card">
+            <div class="shot-img"><img src="/img/shots/pivot-jira.png" alt="Multi-Dimensional Pivot Table for Jira"></div>
+            <div class="shot-body">
+              <div class="shot-icon"><img src="/img/pivot.png" alt=""></div>
+              <h3 class="shot-name">Multi-Dimensional Pivot Table</h3>
+              <p class="shot-desc">Build interactive, multi-dimensional pivot tables with live JQL, calculated fields, cell coloring and deep drill-down.</p>
+              <div class="shot-actions">
+                <a href="https://marketplace.atlassian.com/apps/3693964024/multi-dimensional-pivot-table-for-jira-dashboard?hosting=cloud&tab=overview" target="_blank" rel="noopener" class="product-cta">Install</a>
+                <a href="/docs/pivot.html" class="product-link">Docs</a>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="products-platform-label">monday.com</div>
-        <div class="product-card">
-          <div class="product-icon">
-            <img src="/img/geomap.png" alt="World Map for monday.com">
-          </div>
-          <div>
-            <h3>World Map &amp; Region Analytics</h3>
-            <p class="product-platform">monday.com</p>
-            <p>Visualize board data on an interactive world map. Color countries by value, display bubbles or pie charts
-              per region, and animate changes over time with timeline playback.</p>
-            <div class="product-links">
-              <a href="https://monday.com/marketplace/listing/10001146/world-map--region-analytics" target="_blank"
-                rel="noopener" class="product-cta">
-                Install
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </a>
-              <a href="/docs/monday-geomap.html" class="product-link">Documentation</a>
+          <div class="shot-card">
+            <div class="shot-img"><img src="/img/shots/treemap-jira.png" alt="Treemap &amp; Issue Hierarchy Charts for Jira"></div>
+            <div class="shot-body">
+              <div class="shot-icon"><img src="/img/treemap.png" alt=""></div>
+              <h3 class="shot-name">Treemap &amp; Issue Hierarchy</h3>
+              <p class="shot-desc">Explore your Jira data through interactive treemaps and sunbursts with categorical heatmap coloring and full drill-down.</p>
+              <div class="shot-actions">
+                <a href="https://marketplace.atlassian.com/apps/863764855/issue-distribution-drilldown-charts-for-jira-dashboard?hosting=cloud&tab=overview" target="_blank" rel="noopener" class="product-cta">Install</a>
+                <a href="/docs/treemap.html" class="product-link">Docs</a>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="product-card">
-          <div class="product-icon">
-            <img src="/img/gauge.png" alt="Gauge & Counter for monday.com">
-          </div>
-          <div>
-            <h3>Gauge &amp; KPI Widgets</h3>
-            <p class="product-platform">monday.com</p>
-            <p>Visual dashboard widgets for tracking board metrics at a glance. Display aggregated column values as
-              gauges, counters, or progress bars on any monday.com dashboard.</p>
-            <div class="product-links">
-              <a href="https://monday.com/marketplace/listing/10001149/gauge--kpi-widgets" target="_blank"
-                rel="noopener" class="product-cta">
-                Install
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </a>
-              <a href="/docs/monday-gauge.html" class="product-link">Documentation</a>
-            </div>
-          </div>
-        </div>
 
-        <div class="product-card product-card--soon">
-          <div class="product-icon">
-            <img src="/img/pivot.png" alt="Pivot Table for monday.com">
+          <div class="shot-card">
+            <div class="shot-img"><img src="/img/shots/battery-jira.png" alt="Sprint Health &amp; Capacity Tracker for Jira"></div>
+            <div class="shot-body">
+              <div class="shot-icon"><img src="/img/battery.png" alt=""></div>
+              <h3 class="shot-name">Sprint Health &amp; Capacity Tracker</h3>
+              <p class="shot-desc">Track sprint health, pacing and scope creep with a battery-style gauge — compare up to four boards side by side.</p>
+              <div class="shot-actions">
+                <a href="https://marketplace.atlassian.com/apps/2969894539/sprint-progress-health-monitor-for-jira-dashboard" target="_blank" rel="noopener" class="product-cta">Install</a>
+                <a href="/docs/battery.html" class="product-link">Docs</a>
+              </div>
+            </div>
           </div>
-          <div>
-            <span class="product-coming-soon">Coming Soon</span>
-            <h3>Multi-Dimensional Pivot Table</h3>
-            <p class="product-platform">monday.com</p>
-            <p>Transform your board data into interactive pivot tables. Drag any column to rows or columns, define
-              custom metrics and formulas, color cells by value, and drill down into the items behind any number.</p>
-            <div class="product-links">
-              <a href="/docs/monday-pivot.html" class="product-link">Documentation</a>
+
+          <div class="shot-card">
+            <div class="shot-img"><img src="/img/shots/cards-jira.png" alt="Metric Cards &amp; KPI Dashboard for Jira"></div>
+            <div class="shot-body">
+              <div class="shot-icon"><img src="/img/cards.png" alt=""></div>
+              <h3 class="shot-name">Metric Cards &amp; KPI Dashboard</h3>
+              <p class="shot-desc">Six configurable card types — basic, progress, trend, ratio, distribution and list — in a drag-and-drop KPI grid.</p>
+              <div class="shot-actions">
+                <a href="https://marketplace.atlassian.com/apps/643439298/metric-cards-kpi-dashboard-for-jira" target="_blank" rel="noopener" class="product-cta">Install</a>
+                <a href="/docs/cards.html" class="product-link">Docs</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="shot-card">
+            <div class="shot-img"><img src="/img/shots/mermaid-jira.png" alt="Mermaid Diagrams for Bitbucket"></div>
+            <div class="shot-body">
+              <div class="shot-icon"><img src="/img/mermaid.png" alt=""></div>
+              <h3 class="shot-name">Mermaid Diagrams for Bitbucket</h3>
+              <p class="shot-desc">Render Mermaid diagrams and Markdown right inside the Bitbucket file viewer, with a live editor and six themes.</p>
+              <div class="shot-actions">
+                <a href="https://marketplace.atlassian.com/apps/240968513/mermaid-diagrams-for-bitbucket" target="_blank" rel="noopener" class="product-cta">Install</a>
+                <a href="/docs/bitbucket-mermaid.html" class="product-link">Docs</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="shot-card">
+            <div class="shot-img">
+              <span class="shot-soon">Coming Soon</span>
+              <img src="/img/shots/numbers-jira.png" alt="KPI Formula, Trend &amp; Big Number Dashboard for Jira">
+            </div>
+            <div class="shot-body">
+              <div class="shot-icon"><img src="/img/numbers.png" alt=""></div>
+              <h3 class="shot-name">KPI Formula, Trend &amp; Big Numbers</h3>
+              <p class="shot-desc">Combine JQL queries and fields with math formulas, then show one big number with period-over-period trend indicators.</p>
+              <div class="shot-actions">
+                <a href="/docs/numbers.html" class="product-link">Docs</a>
+              </div>
             </div>
           </div>
         </div>
+      </div>
 
-        <div class="product-card product-card--soon">
-          <div class="product-icon">
-            <img src="/img/cards.png" alt="Metric Cards &amp; KPI Dashboard for monday.com">
+      <!-- monday.com group -->
+      <div class="platform-group">
+        <div class="platform-head">
+          <span class="platform-name platform-name--monday">monday.com</span>
+          <span class="platform-sub">Widgets &amp; views for monday boards</span>
+        </div>
+        <div class="showcase-grid">
+          <div class="shot-card">
+            <div class="shot-img"><img src="/img/shots/geomap-mon.png" alt="World Map &amp; Region Analytics for monday.com"></div>
+            <div class="shot-body">
+              <div class="shot-icon"><img src="/img/geomap.png" alt=""></div>
+              <h3 class="shot-name">World Map &amp; Region Analytics</h3>
+              <p class="shot-desc">Visualize board data on an interactive world map — choropleth, bubbles or pie charts per country, with timeline playback.</p>
+              <div class="shot-actions">
+                <a href="https://monday.com/marketplace/listing/10001146/world-map--region-analytics" target="_blank" rel="noopener" class="product-cta">Install</a>
+                <a href="/docs/monday-geomap.html" class="product-link">Docs</a>
+              </div>
+            </div>
           </div>
-          <div> 
-            <h3>Metric Cards &amp; KPI Dashboard</h3>
-            <p class="product-platform">monday.com</p>
-            <p>Build a fully customizable KPI dashboard inside monday.com. Choose from 6 card types — Trend, Basic,
-              Progress, Ratio, Distribution, and List — arrange them in a drag-and-drop grid, and filter by any
-              board column or time period.</p>
-            <div class="product-links">
-              <a href="https://monday.com/marketplace/listing/10001150/metric-cards--kpi-dashboard" target="_blank"
-                rel="noopener" class="product-cta">
-                Install
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </a>
-              <a href="/docs/monday-cards.html" class="product-link">Documentation</a>
+
+          <div class="shot-card">
+            <div class="shot-img"><img src="/img/shots/gauge-mon.png" alt="Gauge &amp; KPI Widgets for monday.com"></div>
+            <div class="shot-body">
+              <div class="shot-icon"><img src="/img/gauge.png" alt=""></div>
+              <h3 class="shot-name">Gauge &amp; KPI Widgets</h3>
+              <p class="shot-desc">Aggregate board column values into beautiful, real-time gauges, counters and progress bar widgets.</p>
+              <div class="shot-actions">
+                <a href="https://monday.com/marketplace/listing/10001149/gauge--kpi-widgets" target="_blank" rel="noopener" class="product-cta">Install</a>
+                <a href="/docs/monday-gauge.html" class="product-link">Docs</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="shot-card">
+            <div class="shot-img"><img src="/img/shots/cards-mon.png" alt="Metric Cards &amp; KPI Dashboard for monday.com"></div>
+            <div class="shot-body">
+              <div class="shot-icon"><img src="/img/cards.png" alt=""></div>
+              <h3 class="shot-name">Metric Cards &amp; KPI Dashboard</h3>
+              <p class="shot-desc">Build a drag-and-drop KPI dashboard with six card types, custom layouts and real-time metric tracking.</p>
+              <div class="shot-actions">
+                <a href="https://monday.com/marketplace/listing/10001208/metric-cards-kpi-dashboard" target="_blank" rel="noopener" class="product-cta">Install</a>
+                <a href="/docs/monday-cards.html" class="product-link">Docs</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="shot-card">
+            <div class="shot-img">
+              <span class="shot-soon">Coming Soon</span>
+              <img src="/img/shots/pivot-mon.png" alt="Multi-Dimensional Pivot Table for monday.com">
+            </div>
+            <div class="shot-body">
+              <div class="shot-icon"><img src="/img/pivot.png" alt=""></div>
+              <h3 class="shot-name">Multi-Dimensional Pivot Table</h3>
+              <p class="shot-desc">Reshape board data into interactive pivot tables with custom metrics, formulas and visual analysis.</p>
+              <div class="shot-actions">
+                <a href="/docs/monday-pivot.html" class="product-link">Docs</a>
+              </div>
             </div>
           </div>
         </div>
@@ -701,7 +733,7 @@
     </div>
   </section>
 
-  <!-- Trust & Compliance -->
+  <!-- Trust -->
   <section class="section">
     <div class="section-inner">
       <div class="section-header">
@@ -757,6 +789,21 @@
       <span class="footer-copy">&copy; 2026 Plugio. All rights reserved.</span>
     </div>
   </footer>
+
+  <script>
+    // Mobile nav toggle
+    (function () {
+      var header = document.querySelector('.header-dark');
+      var burger = document.querySelector('.nav-burger');
+      if (!header || !burger) return;
+      function close() { header.classList.remove('nav-open'); burger.setAttribute('aria-expanded', 'false'); }
+      burger.addEventListener('click', function () {
+        var open = header.classList.toggle('nav-open');
+        burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      document.querySelectorAll('.main-nav a').forEach(function (a) { a.addEventListener('click', close); });
+    })();
+  </script>
 
 </body>
 
